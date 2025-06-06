@@ -131,7 +131,7 @@ const Register = () => {
               type="submit"
               className="btn bg-green-500 hover:bg-green-700 text-white mt-4"
             >
-              Sign Up
+              Register
             </button>
           </form>
           <p className="font-semibold text-center pt-5">

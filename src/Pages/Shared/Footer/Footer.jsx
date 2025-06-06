@@ -32,9 +32,11 @@ const Footer = () => {
                 </h2>
               </Link>
               <p className="mt-2 text-gray-400 max-w-sm">
-                A freelancer marketplace is an online platform where clients can
-                post tasks or projects and hire skilled freelancers to complete
-                them.
+                A volunteer management system is a platform that helps
+                organizations recruit, schedule, and track volunteers
+                efficiently. It streamlines communication, event coordination,
+                and performance tracking to enhance volunteer engagement and
+                impact.
               </p>
             </div>
 

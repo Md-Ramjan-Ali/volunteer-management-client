@@ -1,24 +1,24 @@
-import React, { use } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router";
-import { AuthContext } from "../../../AuthContext/AuthContext";
-import Logo from "../../../assets/logo.png";
-import { Tooltip } from "react-tooltip";
-import ToggleTheme from "../../ToggleTheme/ToggleTheme";
-import Swal from "sweetalert2";
+// import { AuthContext } from "../../../AuthContext/AuthContext";
+import Logo from "../../../assets/volunteer-logo.png";
+import ToggleTheme from "../../../Components/ToggleTheme/ToggleTheme";
+// import { Tooltip } from "react-tooltip";
+// import Swal from "sweetalert2";
 
 const Navbar = () => {
-  const { user, logOUt } = use(AuthContext);
+  // const { user, logOUt } = use(AuthContext);
 
-  const handleLogOut = () => {
-    logOUt();
+  // const handleLogOut = () => {
+  //   logOUt();
 
-    Swal.fire({
-      icon: "success",
-      title: "LogOut Successfully",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  };
+  //   Swal.fire({
+  //     icon: "success",
+  //     title: "LogOut Successfully",
+  //     showConfirmButton: false,
+  //     timer: 1500,
+  //   });
+  // };
 
   const links = (
     <>
@@ -57,7 +57,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center cursor-pointer">
           <img className="w-16 hidden md:flex" src={Logo} alt="" />
           <h2 className=" text-2xl font-bold ">
-            <span className="text-green-500">Job</span>Pond
+            <span className="text-green-500">Seba</span>Connect
           </h2>
         </Link>
       </div>
@@ -68,7 +68,8 @@ const Navbar = () => {
         <div className="card items-center">
           <ToggleTheme></ToggleTheme>
         </div>
-        <div
+
+        {/* <div
           className="cursor-pointer"
           data-tooltip-id="my-tooltip"
           data-tooltip-place="left"
@@ -100,9 +101,10 @@ const Navbar = () => {
               </button>
             </Link>
           </>
-        )}
+        )} */}
+        <button className="btn">Login</button>
       </div>
-      <Tooltip id="my-tooltip" />
+      {/* <Tooltip id="my-tooltip" /> */}
     </nav>
   );
 };

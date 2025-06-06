@@ -6,7 +6,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { Link } from "react-router";
-import FooterLogo from "../../assets/logo.png";
+import FooterLogo from "../../../assets/volunteer-logo.png";
 
 const Footer = () => {
   const handleMassege = (e) => {
@@ -23,14 +23,12 @@ const Footer = () => {
       <footer className="bg-[#1e293b] text-white py-10 mt-20">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 ">
           {/* Left: Text and Image */}
-          <div
-         
-          >
+          <div>
             <div className="text-center md:text-left space-y-6 mb-10">
               <Link to="/" className="flex gap-1 items-center cursor-pointer">
                 <img className="w-16" src={FooterLogo} alt="" />
                 <h2 className=" text-2xl font-bold ">
-                  <span className="text-green-500">Job</span>Pond
+                  <span className="text-green-500">Seba</span>Connect
                 </h2>
               </Link>
               <p className="mt-2 text-gray-400 max-w-sm">
@@ -102,11 +100,7 @@ const Footer = () => {
           </div>
 
           {/* Right: Contact Form */}
-          <form
-            onSubmit={handleMassege}
-            className="space-y-6"
-          
-          >
+          <form onSubmit={handleMassege} className="space-y-6">
             <h2 className="text-2xl font-bold">Contact With Us</h2>
             <div>
               <label className="block mb-2 text-sm text-gray-300">

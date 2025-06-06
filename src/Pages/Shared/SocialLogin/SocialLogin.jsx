@@ -1,18 +1,34 @@
 import React, { use } from 'react';
-import { AuthContext } from '../../Context/AuthContext/AuthContext';
 import { useNavigate } from 'react-router';
+import { AuthContext } from '../../../Context/AuthContext';
+import { toast } from 'react-toastify';
 
 const SocialLogin = () => {
-  const {signInGoogle}=use(AuthContext)
+  const { signInGoogle, setUser } = use(AuthContext);
   const navigate=useNavigate()
 
   const handleGoogleSignIn=()=>{
-    signInGoogle().then(result=>{
-      console.log(result.user);
-      navigate('/')
-    }).catch(error=>{
-      console.log(error.code);
-    })
+    signInGoogle()
+          .then((result) => {
+            const googleUser = result.user;
+            toast.success("Google Login Successfully!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+            setUser(googleUser);
+            setTimeout(() => {
+              navigate(`${location.state ? location.state : "/"}`);
+            }, 1500);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
   }
   return (
     <div className="">

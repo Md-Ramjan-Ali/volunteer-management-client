@@ -1,22 +1,16 @@
 import React from 'react';
-import Navbar from '../Components/Header/Navbar/Navbar';
 import { Outlet } from 'react-router';
-import Footer from '../Components/Footer/Footer';
-import { ToastContainer } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
+import Navbar from '../Pages/Shared/Navbar/Navbar';
+import Footer from '../Pages/Shared/Footer/Footer';
 
 const AuthLayout = () => {
   return (
     <div>
-      <header>
-        <Navbar></Navbar>
-      </header>
-      <main>
-        <Outlet></Outlet>
-      </main>
-      <footer>
-        <Footer></Footer>
-      </footer>
-      <ToastContainer/>
+      <Navbar></Navbar>
+     <Outlet></Outlet>
+     <Footer></Footer>
+      {/* <ToastContainer/> */}
     </div>
   );
 };

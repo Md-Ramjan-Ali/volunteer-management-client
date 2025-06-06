@@ -1,24 +1,24 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
-// import { AuthContext } from "../../../AuthContext/AuthContext";
 import Logo from "../../../assets/volunteer-logo.png";
 import ToggleTheme from "../../../Components/ToggleTheme/ToggleTheme";
-// import { Tooltip } from "react-tooltip";
-// import Swal from "sweetalert2";
+import { Tooltip } from "react-tooltip";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../../Context/AuthContext";
 
 const Navbar = () => {
-  // const { user, logOUt } = use(AuthContext);
+  const { user, logOUt } = use(AuthContext);
 
-  // const handleLogOut = () => {
-  //   logOUt();
+  const handleLogOut = () => {
+    logOUt();
 
-  //   Swal.fire({
-  //     icon: "success",
-  //     title: "LogOut Successfully",
-  //     showConfirmButton: false,
-  //     timer: 1500,
-  //   });
-  // };
+    Swal.fire({
+      icon: "success",
+      title: "LogOut Successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
 
   const links = (
     <>
@@ -69,7 +69,7 @@ const Navbar = () => {
           <ToggleTheme></ToggleTheme>
         </div>
 
-        {/* <div
+        <div
           className="cursor-pointer"
           data-tooltip-id="my-tooltip"
           data-tooltip-place="left"
@@ -101,10 +101,9 @@ const Navbar = () => {
               </button>
             </Link>
           </>
-        )} */}
-        <button className="btn">Login</button>
+        )}
       </div>
-      {/* <Tooltip id="my-tooltip" /> */}
+      <Tooltip id="my-tooltip" />
     </nav>
   );
 };

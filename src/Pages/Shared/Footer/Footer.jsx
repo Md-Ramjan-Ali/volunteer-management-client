@@ -9,7 +9,7 @@ import { Link } from "react-router";
 import FooterLogo from "../../../assets/volunteer-logo.png";
 
 const Footer = () => {
-  const handleMassege = (e) => {
+  const handleMessage = (e) => {
     e.preventDefault();
 
     const form = e.target;
@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
 
           {/* Right: Contact Form */}
-          <form onSubmit={handleMassege} className="space-y-6">
+          <form onSubmit={handleMessage} className="space-y-6">
             <h2 className="text-2xl font-bold">Contact With Us</h2>
             <div>
               <label className="block mb-2 text-sm text-gray-300">

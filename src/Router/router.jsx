@@ -7,6 +7,9 @@ import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/Error/ErrorPage";
+import AllVolunteerPosts from "../Pages/AllVolunteerPosts/AllVolunteerPosts";
+import PrivetRouter from "../PrivetRouter/PrivetRouter";
+import MyProfile from "../Pages/MyProfile/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +19,14 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: '/allVolunteerPosts',
+        Component: AllVolunteerPosts
+      },
+      {
+        path: '/myProfile',
+        element: <PrivetRouter><MyProfile></MyProfile></PrivetRouter>
       },
       {
         path: "/terms",

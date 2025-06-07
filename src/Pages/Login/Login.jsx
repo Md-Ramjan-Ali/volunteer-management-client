@@ -34,7 +34,7 @@ const Login = () => {
         }, 1500);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
         toast.error("Incorrect Email and Password!", {
           position: "top-right",
           autoClose: 5000,

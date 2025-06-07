@@ -25,6 +25,16 @@ const Navbar = () => {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
+      <li>
+        <NavLink to="/allVolunteerposts">All volunteer Need posts</NavLink>
+      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/myProfile">My Profile</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -55,8 +65,8 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/" className="flex items-center cursor-pointer">
-          <img className="w-16 hidden md:flex" src={Logo} alt="" />
-          <h2 className=" text-2xl font-bold ">
+          <img className="w-16" src={Logo} alt="" />
+          <h2 className=" text-2xl font-bold hidden md:flex">
             <span className="text-green-500">Seba</span>Connect
           </h2>
         </Link>
@@ -77,7 +87,7 @@ const Navbar = () => {
         >
           {user ? (
             <img
-              className="rounded-full w-12 h-12 border card shadow-sm"
+              className="rounded-full max-w-10 max-h-10 w-full h-full border card shadow-sm"
               src={`${user ? user?.photoURL : ""}`}
               alt=""
             />

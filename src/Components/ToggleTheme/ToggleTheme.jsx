@@ -19,7 +19,7 @@ const ToggleTheme = () => {
        
         checked={darkSide}
         onChange={toggleDarkMode}
-        size={30}
+        size={26}
       />
     </div>
   );

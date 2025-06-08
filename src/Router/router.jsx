@@ -9,7 +9,8 @@ import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/Error/ErrorPage";
 import AllVolunteerPosts from "../Pages/AllVolunteerPosts/AllVolunteerPosts";
 import PrivetRouter from "../PrivetRouter/PrivetRouter";
-import MyProfile from "../Pages/MyProfile/MyProfile";
+import AddVolunteer from "../Pages/MyProfile/AddVolunteer";
+import MyPost from "../Pages/MyProfile/MyPost";
 
 const router = createBrowserRouter([
   {
@@ -25,8 +26,12 @@ const router = createBrowserRouter([
         Component: AllVolunteerPosts
       },
       {
-        path: '/myProfile',
-        element: <PrivetRouter><MyProfile></MyProfile></PrivetRouter>
+        path: '/addVolunteer',
+        element: <PrivetRouter><AddVolunteer></AddVolunteer></PrivetRouter>
+      },
+      {
+        path: '/myPost',
+        element: <PrivetRouter><MyPost></MyPost></PrivetRouter>
       },
       {
         path: "/terms",

@@ -5,6 +5,7 @@ import ToggleTheme from "../../../Components/ToggleTheme/ToggleTheme";
 import { Tooltip } from "react-tooltip";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../Context/AuthContext";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Navbar = () => {
   const { user, logOUt } = use(AuthContext);
@@ -28,10 +29,31 @@ const Navbar = () => {
       <li>
         <NavLink to="/allVolunteerposts">All volunteer Need posts</NavLink>
       </li>
+
       {user && (
         <>
           <li>
-            <NavLink to="/myProfile">My Profile</NavLink>
+            <Link>
+              <div className="dropdown">
+                <div tabIndex={0} className="flex items-center">
+                  My Profile
+                  <span>
+                    <RiArrowDropDownLine className="pt-1" size={24} />
+                  </span>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-box z-1 w-56 p-2 shadow-sm"
+                >
+                  <li>
+                    <NavLink to='/addVolunteer'>Add Volunteer need Post</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to='/myPost'>Manage My Posts</NavLink>
+                  </li>
+                </ul>
+              </div>
+            </Link>
           </li>
         </>
       )}

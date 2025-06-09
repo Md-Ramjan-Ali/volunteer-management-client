@@ -33,27 +33,25 @@ const Navbar = () => {
       {user && (
         <>
           <li>
-            <Link>
-              <div className="dropdown">
-                <div tabIndex={0} className="flex items-center">
-                  My Profile
-                  <span>
-                    <RiArrowDropDownLine className="pt-1" size={24} />
-                  </span>
-                </div>
-                <ul
-                  tabIndex={0}
-                  className="dropdown-content menu bg-base-100 rounded-box z-1 w-56 p-2 shadow-sm  "
-                >
-                  <li>
-                    <NavLink to='/addVolunteer'>Add Volunteer need Post</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to='/myPost'>Manage My Posts</NavLink>
-                  </li>
-                </ul>
+            <div className="dropdown">
+              <div tabIndex={0} className="flex items-center cursor-pointer">
+                My Profile
+                <span>
+                  <RiArrowDropDownLine className="pt-1" size={24} />
+                </span>
               </div>
-            </Link>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 rounded-box z-1 w-56 p-2 shadow-sm  "
+              >
+                <li>
+                  <NavLink to="/addVolunteer">Add Volunteer need Post</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/myPost">Manage My Posts</NavLink>
+                </li>
+              </ul>
+            </div>
           </li>
         </>
       )}

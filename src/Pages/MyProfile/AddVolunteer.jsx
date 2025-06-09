@@ -7,9 +7,13 @@ const AddVolunteer = () => {
   const [deadline, setDeadline] = useState(new Date());
   const { user } = useAuth();
 
-  const handleAddVolunteer=e=>{
-    e.preventDefault()
-  }
+  const handleAddVolunteer = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const volunteerData = Object.fromEntries(formData.entries());
+    console.log(volunteerData);
+  };
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">
@@ -29,7 +33,7 @@ const AddVolunteer = () => {
                   type="url"
                   name="thumbnail"
                   placeholder="Thumbnail URL"
-                  className="input input-bordered w-full"
+                  className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-green-700"
                   required
                 />
               </fieldset>
@@ -41,7 +45,7 @@ const AddVolunteer = () => {
                 <input
                   name="title"
                   type="text"
-                  className="input input-bordered w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
                   placeholder="Post Title"
                   required
                 />
@@ -54,7 +58,7 @@ const AddVolunteer = () => {
               </label>
               <textarea
                 name="description"
-                className="textarea textarea-bordered w-full"
+                className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
                 placeholder="Describe what needs to be done"
                 required
               />
@@ -67,7 +71,7 @@ const AddVolunteer = () => {
                 </label>
                 <select
                   name="category"
-                  className="select select-bordered w-full"
+                  className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
                   required
                 >
                   <option value="">Select Category</option>
@@ -86,7 +90,7 @@ const AddVolunteer = () => {
                   type="text"
                   name="location"
                   placeholder="Location"
-                  className="input input-bordered w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
                   required
                 />
               </fieldset>
@@ -99,7 +103,7 @@ const AddVolunteer = () => {
                   type="number"
                   name="volunteersNeeded"
                   placeholder="No. of Volunteers Needed"
-                  className="input input-bordered w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
                   required
                 />
               </fieldset>
@@ -109,9 +113,10 @@ const AddVolunteer = () => {
                   Deadline
                 </label>
                 <DatePicker
+                  name="deadline"
                   selected={deadline}
                   onChange={(date) => setDeadline(date)}
-                  className="input input-bordered w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
                   dateFormat="yyyy-MM-dd"
                   minDate={new Date()}
                 />
@@ -124,9 +129,9 @@ const AddVolunteer = () => {
                 <input
                   type="email"
                   name="email"
-                  value={user.email}
+                  value={user?.email || ""}
                   readOnly
-                  className="input input-bordered w-full  cursor-not-allowed"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
                 />
               </fieldset>
 
@@ -138,15 +143,15 @@ const AddVolunteer = () => {
                 <input
                   type="text"
                   name="name"
-                  value={user.displayName}
+                  value={user?.displayName || ""}
                   readOnly
-                  className="input input-bordered w-full  cursor-not-allowed"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
                 />
               </fieldset>
             </div>
             <div className="card-actions pt-5">
               <button className="btn bg-green-500 hover:bg-green-700 text-white  w-full">
-                Add Task
+                Add Post
               </button>
             </div>
           </form>

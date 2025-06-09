@@ -121,29 +121,29 @@ const AddVolunteer = () => {
                   minDate={new Date()}
                 />
               </fieldset>
-              {/* User Email */}
-              <fieldset className="fieldset ">
-                <label className=" text-[.885rem] font-semibold">
-                  User Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={user?.email || ""}
-                  readOnly
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
-                />
-              </fieldset>
 
               {/* User Name */}
               <fieldset className="fieldset ">
                 <label className=" text-[.885rem] font-semibold">
-                  User Name
+                  Organizer Name
                 </label>
                 <input
                   type="text"
                   name="name"
                   value={user?.displayName || ""}
+                  readOnly
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
+                />
+              </fieldset>
+              {/* User Email */}
+              <fieldset className="fieldset ">
+                <label className=" text-[.885rem] font-semibold">
+                  Organizer Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={user?.email || ""}
                   readOnly
                   className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
                 />

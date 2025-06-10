@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import useAuth from "../../Components/Hooks/useAuth";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const AddVolunteer = () => {
   const [deadline, setDeadline] = useState(new Date());
@@ -12,6 +14,24 @@ const AddVolunteer = () => {
     const form = e.target;
     const formData = new FormData(form);
     const volunteerData = Object.fromEntries(formData.entries());
+
+    axios
+      .post("http://localhost:5000/volunteers", volunteerData)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Add Volunteer Post successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     console.log(volunteerData);
   };
 
@@ -129,7 +149,7 @@ const AddVolunteer = () => {
                 </label>
                 <input
                   type="text"
-                  name="name"
+                  name="OrganizerName"
                   value={user?.displayName || ""}
                   readOnly
                   className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
@@ -142,7 +162,7 @@ const AddVolunteer = () => {
                 </label>
                 <input
                   type="email"
-                  name="email"
+                  name="OrganizerEmail"
                   value={user?.email || ""}
                   readOnly
                   className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"

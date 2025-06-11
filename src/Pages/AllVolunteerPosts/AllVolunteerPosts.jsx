@@ -8,13 +8,13 @@ import AllVolunteerTable from "./AllVolunteerTable";
 const AllVolunteerPosts = () => {
   const [allVolunteerPosts, setAllVolunteerPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [layout,setLayout]=useState('grid')
-
+  const [layout, setLayout] = useState("grid");
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/volunteers?search=${searchTerm}`)
-      .then((res) => setAllVolunteerPosts(res.data)).catch(error=>console.log(error));
+      .then((res) => setAllVolunteerPosts(res.data))
+      .catch((error) => console.log(error));
   }, [searchTerm]);
 
   return (
@@ -32,26 +32,23 @@ const AllVolunteerPosts = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="flex justify-end gap-5 w-64">
+        <div className="flex justify-end gap-5 w-full max-w-[260px]">
           <button
             onClick={() => setLayout("table")}
             className={`${
-              layout === "table" ? "text-green-500" : ""
+              layout === "table" ? "text-green-500" : "text-black"
             }`}
             title="Table View"
           >
-            <MdTableRows size={36} className="" />
+            <MdTableRows size={28} className="" />
           </button>
           <button
             onClick={() => setLayout("grid")}
-            className={`${
-              layout === "grid" ? "text-green-500" : ""
-            }`}
+            className={`${layout === "grid" ? "text-green-500" : "text-black"}`}
             title="Grid View"
           >
-            <RiLayoutGrid2Fill size={36} className="" />
+            <RiLayoutGrid2Fill size={28} className="" />
           </button>
-
         </div>
       </div>
 

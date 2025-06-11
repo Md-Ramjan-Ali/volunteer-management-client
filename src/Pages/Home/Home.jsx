@@ -5,13 +5,16 @@ import VolunteerNeeds from "../../Components/VolunteerNeeds/VolunteerNeeds";
 
 const Home = () => {
   return (
-    <div className="max-w-screen-xl mx-auto my-10">
+    <div className="max-w-screen-xl mx-auto my-10 space-y-10">
       <Helmet>
         <title>Home | SebaConnect</title>
       </Helmet>
-
-      <Slider></Slider>
-      <VolunteerNeeds></VolunteerNeeds>
+      <section>
+        <Slider></Slider>
+      </section>
+      <section>
+        <VolunteerNeeds></VolunteerNeeds>
+      </section>
     </div>
   );
 };

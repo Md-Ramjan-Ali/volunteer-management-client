@@ -11,6 +11,7 @@ import AllVolunteerPosts from "../Pages/AllVolunteerPosts/AllVolunteerPosts";
 import PrivetRouter from "../PrivetRouter/PrivetRouter";
 import AddVolunteer from "../Pages/MyProfile/AddVolunteer";
 import MyPost from "../Pages/MyProfile/MyPost";
+import VolunteerDetails from "../Pages/VolunteerDetails/VolunteerDetails";
 
 const router = createBrowserRouter([
   {
@@ -22,16 +23,32 @@ const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: '/allVolunteerPosts',
-        Component: AllVolunteerPosts
+        path: "/allVolunteerPosts",
+        Component: AllVolunteerPosts,
       },
       {
-        path: '/addVolunteer',
-        element: <PrivetRouter><AddVolunteer></AddVolunteer></PrivetRouter>
+        path: "/volunteerDetails/:id",
+        element: (
+          <PrivetRouter>
+            <VolunteerDetails></VolunteerDetails>
+          </PrivetRouter>
+        ),
       },
       {
-        path: '/myPost',
-        element: <PrivetRouter><MyPost></MyPost></PrivetRouter>
+        path: "/addVolunteer",
+        element: (
+          <PrivetRouter>
+            <AddVolunteer></AddVolunteer>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/myPost",
+        element: (
+          <PrivetRouter>
+            <MyPost></MyPost>
+          </PrivetRouter>
+        ),
       },
       {
         path: "/terms",

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import VolunteerNeedsCard from "./VolunteerNeedsCard";
+import { Link } from "react-router";
 
 const VolunteerNeeds = () => {
   const [volunteerNeeds, setVolunteerNeeds] = useState([]);
@@ -10,12 +11,6 @@ const VolunteerNeeds = () => {
       .get("http://localhost:5000/volunteers/volunteerNeedNow")
       .then((res) => setVolunteerNeeds(res.data))
       .catch((error) => console.log(error));
-
-    // fetch("http://localhost:5000/volunteers/volunteerNeedNow").then(res=>res.json()).then(result=>{
-    //   setVolunteerNeeds(result)
-    //   }).catch(error=>{
-    //     console.log(error);
-    //   });
   }, []);
 
   console.log(volunteerNeeds);
@@ -32,6 +27,11 @@ const VolunteerNeeds = () => {
             volunteer={volunteer}
           ></VolunteerNeedsCard>
         ))}
+      </div>
+      <div className="text-center mt-8">
+        <Link to="/allVolunteerPosts">
+          <button className="btn px-10 font-medium">See All</button>
+        </Link>
       </div>
     </div>
   );

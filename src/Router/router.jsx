@@ -28,6 +28,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/volunteerDetails/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/volunteers/${params.id}`),
         element: (
           <PrivetRouter>
             <VolunteerDetails></VolunteerDetails>

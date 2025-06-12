@@ -1,5 +1,4 @@
 import React from "react";
-import errorPage from "../../assets/ErrorPage.png";
 import { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
 
@@ -9,20 +8,31 @@ const ErrorPage = () => {
       <Helmet>
         <title>Error | SebaConnect</title>
       </Helmet>
-      <div className="flex flex-col justify-center items-center space-y-4 pt-10 lg:pt-15">
-        <div className="card bg-base-100 w-96 shadow-sm">
-          <img src={errorPage} alt="" />
+
+      <section className="flex items-center min-h-screen w-full p-16 dark:bg-gray-50 dark:text-gray-800">
+        <div className="flex flex-col items-center justify-center px-5 mx-auto my-8">
+          <div className="text-center">
+            <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-400">
+              <span className="sr-only">Error</span>404
+            </h2>
+            <p className="text-2xl font-semibold md:text-3xl">
+              Sorry, we couldn't find this page.
+            </p>
+            <p className="mt-4 mb-8 dark:text-gray-600">
+              But don't worry, you can find plenty of other things on our
+              homepage.
+            </p>
+            <Link
+              to="/"
+              rel="noopener noreferrer"
+              href="#"
+              className="btn bg-green-500 text-white font-semibold rounded dark:bg-violet-600 dark:text-gray-50"
+            >
+              Back to homepage
+            </Link>
+          </div>
         </div>
-        <h2 className="text-3xl lg:text-5xl font-bold text-[#e11111]">
-          404 - Page Not Found
-        </h2>
-        <p>Oops! The page you're looking for doesn't exist.</p>
-        <Link to="/">
-          <button className="btn bg-primary text-white font-bold rounded">
-            Go Back Home
-          </button>
-        </Link>
-      </div>
+      </section>
     </div>
   );
 };

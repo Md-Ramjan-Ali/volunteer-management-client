@@ -33,6 +33,7 @@ const AllVolunteerPosts = () => {
           />
         </div>
         <div className="flex justify-end gap-5 w-full max-w-[260px]">
+          {/* btn table and grid */}
           <button
             onClick={() => setLayout("table")}
             className={`${
@@ -40,18 +41,19 @@ const AllVolunteerPosts = () => {
             }`}
             title="Table View"
           >
-            <MdTableRows size={28} className="" />
+            <MdTableRows size={28} className="cursor-pointer" />
           </button>
           <button
             onClick={() => setLayout("grid")}
             className={`${layout === "grid" ? "text-green-500" : "text-black"}`}
             title="Grid View"
           >
-            <RiLayoutGrid2Fill size={28} className="" />
+            <RiLayoutGrid2Fill size={28} className="cursor-pointer" />
           </button>
         </div>
       </div>
 
+            {/* All Volunteer Content */}
       <div className="">
         {layout === "grid" ? (
           <AllVolunteerCard

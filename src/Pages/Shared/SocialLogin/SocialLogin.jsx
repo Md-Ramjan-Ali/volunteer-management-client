@@ -1,11 +1,12 @@
 import React, { use } from 'react';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../../Context/AuthContext';
 import { toast } from 'react-toastify';
 
 const SocialLogin = () => {
   const { signInGoogle, setUser } = use(AuthContext);
   const navigate=useNavigate()
+  const location=useLocation()
 
   const handleGoogleSignIn=()=>{
     signInGoogle()

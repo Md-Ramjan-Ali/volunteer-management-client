@@ -1,7 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import BeAVolunteerModel from "../../Components/BeAVolunteerModel/BeAVolunteerModel";
+import useAuth from "../../Components/Hooks/useAuth";
 
 const VolunteerDetails = () => {
+  const { user } = useAuth();
   const volunteer = useLoaderData();
   const {
     title,
@@ -12,7 +15,7 @@ const VolunteerDetails = () => {
     location,
     OrganizerName,
     OrganizerEmail,
-    _id,
+    volunteersNeeded,
   } = volunteer;
   return (
     <div className="max-w-screen-xl mx-auto my-5 p-3">
@@ -37,6 +40,9 @@ const VolunteerDetails = () => {
               <strong>Deadline:</strong> {deadline}
             </p>
             <p>
+              <strong>Volunteer Needed:</strong> {volunteersNeeded}
+            </p>
+            <p>
               <strong>Location:</strong> {location}
             </p>
             <p>
@@ -48,12 +54,25 @@ const VolunteerDetails = () => {
           </div>
 
           <div className=" ">
-            <button className="btn w-full mt-6  bg-green-600 hover:bg-green-700 text-white font-semibold  transition">
-              Be a Volunteer
-            </button>
+            {user.email !== volunteer.OrganizerEmail && (
+              <button
+                onClick={() =>
+                  document.getElementById("VolunteerModal").showModal()
+                }
+                className="btn w-full mt-6  bg-green-600 hover:bg-green-700 text-white font-semibold  transition"
+              >
+                Be a Volunteer
+              </button>
+            )}
+            {user.email === volunteer.OrganizerEmail && (
+              <p className="text-red-500 mt-6 font-semibold text-center">
+                You cannot volunteer for your own post.
+              </p>
+            )}
           </div>
         </div>
       </div>
+      <BeAVolunteerModel user={user} volunteer={volunteer}></BeAVolunteerModel>
     </div>
   );
 };

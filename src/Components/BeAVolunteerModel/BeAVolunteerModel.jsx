@@ -1,0 +1,275 @@
+import axios from "axios";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+
+const BeAVolunteerModel = ({ volunteer, user }) => {
+  const [suggestion, setSuggestion] = useState("");
+  const navigate = useNavigate();
+
+  const handleRequest = (e) => {
+    e.preventDefault();
+
+    const requestData = {
+      ...volunteer,
+      volunteerName: user.displayName,
+      volunteerEmail: user.email,
+      suggestion,
+      status: "requested",
+    };
+
+   
+
+    axios
+      .post("http://localhost:5000/volunteers/requests", requestData)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Request Volunteer Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        setTimeout(() => {
+          navigate(`/volunteerDetails/${volunteer._id}`);
+        }, 100);
+
+        console.log(res.data);
+      })
+      .catch((error) => {
+        toast.error("Already Requested!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setTimeout(() => {
+          navigate("/allVolunteerPosts");
+        }, 100);
+        console.log(error);
+      });
+
+    // decrement in the volunteer need data
+    axios
+      .patch(`http://localhost:5000/volunteers/decrement/${volunteer._id}`)
+      .then((res) => {
+        if (res.data.modifiedCount) {
+          console.log(res.data);
+        }
+      })
+      .catch((error) => {
+        alert("your post you do not request");
+        console.log(error);
+      });
+    
+  };
+  return (
+    <div>
+      <dialog id="VolunteerModal" className="modal">
+        <div className="modal-box w-11/12 max-w-5xl">
+          <form method="dialog">
+            {/* if there is a button in form, it will close the modal */}
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
+          <div className="">
+            <h3 className="text-xl font-bold mb-4 text-center">
+              Volunteer Request
+            </h3>
+
+            <form onSubmit={handleRequest}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
+                {/*  Thumbnail */}
+                <fieldset className="fieldset ">
+                  <label className="text-[.885rem] font-semibold">
+                    Thumbnail
+                  </label>
+                  <input
+                    type="url"
+                    name="thumbnail"
+                    defaultValue={volunteer.thumbnail}
+                    placeholder="Thumbnail URL"
+                    className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-green-700 cursor-not-allowed"
+                    readOnly
+                  />
+                </fieldset>
+                {/* Post title */}
+                <fieldset className="fieldset ">
+                  <label className="text-[.885rem] font-semibold">
+                    Post Title
+                  </label>
+                  <input
+                    name="title"
+                    defaultValue={volunteer.title}
+                    type="text"
+                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full cursor-not-allowed"
+                    placeholder="Post Title"
+                    readOnly
+                  />
+                </fieldset>
+              </div>
+              {/* description */}
+              <fieldset className="fieldset ">
+                <label className=" text-[.885rem] font-semibold">
+                  Description
+                </label>
+                <textarea
+                  name="description"
+                  defaultValue={volunteer.description}
+                  className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full cursor-not-allowed"
+                  placeholder="Describe what needs to be done"
+                  readOnly
+                />
+              </fieldset>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
+                {/* Category */}
+                <fieldset className="fieldset ">
+                  <label className=" text-[.885rem] font-semibold">
+                    Category
+                  </label>
+                  <select
+                    name="category"
+                    defaultValue={volunteer.category}
+                    className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full cursor-not-allowed"
+                    readOnly
+                  >
+                    <option defaultValue="">Select Category</option>
+                    <option defaultValue="healthcare">Healthcare</option>
+                    <option defaultValue="education">Education</option>
+                    <option defaultValue="social-service">
+                      Social Service
+                    </option>
+                    <option defaultValue="animal-welfare">
+                      Animal Welfare
+                    </option>
+                  </select>
+                </fieldset>
+                {/* Location */}
+                <fieldset className="fieldset ">
+                  <label className=" text-[.885rem] font-semibold">
+                    Location
+                  </label>
+                  <input
+                    type="text"
+                    name="location"
+                    defaultValue={volunteer.location}
+                    placeholder="Location"
+                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full cursor-not-allowed"
+                    readOnly
+                  />
+                </fieldset>
+                {/* No. of volunteers needed */}
+                <fieldset className="fieldset ">
+                  <label className=" text-[.885rem] font-semibold">
+                    No. of volunteers needed
+                  </label>
+                  <input
+                    type="number"
+                    name="volunteersNeeded"
+                    defaultValue={volunteer.volunteersNeeded}
+                    placeholder="No. of Volunteers Needed"
+                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full cursor-not-allowed"
+                    readOnly
+                  />
+                </fieldset>
+                {/* deadline */}
+                <fieldset className="fieldset ">
+                  <label className=" text-[.885rem] font-semibold">
+                    Deadline
+                  </label>
+                  <input
+                    name="deadline"
+                    defaultValue={volunteer.deadline}
+                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full cursor-not-allowed"
+                    readOnly
+                  />
+                </fieldset>
+
+                {/* User Name */}
+                <fieldset className="fieldset ">
+                  <label className=" text-[.885rem] font-semibold">
+                    Organizer Name
+                  </label>
+                  <input
+                    type="text"
+                    name="OrganizerName"
+                    defaultValue={volunteer.OrganizerName}
+                    readOnly
+                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
+                  />
+                </fieldset>
+                {/* User Email */}
+                <fieldset className="fieldset ">
+                  <label className=" text-[.885rem] font-semibold">
+                    Organizer Email
+                  </label>
+                  <input
+                    type="email"
+                    name="OrganizerEmail"
+                    defaultValue={volunteer.OrganizerEmail}
+                    readOnly
+                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
+                  />
+                </fieldset>
+              </div>
+              {/* Suggestion  */}
+              <fieldset className="fieldset ">
+                <label className=" text-[.885rem] font-semibold">
+                  Suggestion
+                </label>
+                <textarea
+                  placeholder="Your Suggestion"
+                  value={suggestion}
+                  onChange={(e) => setSuggestion(e.target.value)}
+                  className="textarea textarea-bordered w-full"
+                />
+              </fieldset>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
+                {/* User Name */}
+                <fieldset className="fieldset ">
+                  <label className=" text-[.885rem] font-semibold">
+                    Volunteer name
+                  </label>
+                  <input
+                    type="text"
+                    name="volunteerName"
+                    value={user?.displayName || ""}
+                    readOnly
+                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
+                  />
+                </fieldset>
+                {/* User Email */}
+                <fieldset className="fieldset ">
+                  <label className=" text-[.885rem] font-semibold">
+                    volunteer email
+                  </label>
+                  <input
+                    type="email"
+                    name="volunteerEmail"
+                    value={user?.email || ""}
+                    readOnly
+                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
+                  />
+                </fieldset>
+              </div>
+              <div className="mt-5">
+                <button className="btn bg-green-500 hover:bg-green-700 text-white  w-full">
+                  Requested
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
+  );
+};
+
+export default BeAVolunteerModel;

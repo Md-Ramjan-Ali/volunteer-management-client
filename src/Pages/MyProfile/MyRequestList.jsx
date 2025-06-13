@@ -1,6 +1,7 @@
-import axios from 'axios';
-import React, { use, useState } from 'react';
-import Swal from 'sweetalert2';
+import axios from "axios";
+import React, { use, useState } from "react";
+import Swal from "sweetalert2";
+import EmptyVolunteerRequests from "./EmptyVolunteerRequests";
 
 const MyRequestList = ({ volunteerRequestByPromised }) => {
   const requestData = use(volunteerRequestByPromised);
@@ -17,16 +18,17 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
       confirmButtonText: "Yes, Cancel it!",
       cancelButtonText: "No, Keep it",
     }).then((result) => {
-    
       if (result.isConfirmed) {
-       
-        axios.patch(`http://localhost:5000/volunteers/increment/${id}`).then(res=>{
-          if(res.data.modifiedCount){
-            console.log(res.data);
-          }
-        }).catch(error=>{
-          console.log(error);
-        });
+        axios
+          .patch(`http://localhost:5000/volunteers/increment/${id}`)
+          .then((res) => {
+            if (res.data.modifiedCount) {
+              console.log(res.data);
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
 
         axios
           .delete(`http://localhost:5000/volunteers/requests/${id}`)
@@ -48,11 +50,18 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
       }
     });
   };
+
+  if (requests.length === 0) {
+    return <EmptyVolunteerRequests></EmptyVolunteerRequests>;
+  }
   return (
     <div>
       <div className="overflow-x-auto rounded-lg">
+        <h2 className="text-xl font-semibold mb-4 text-center">
+          My Volunteer Request Posts
+        </h2>
         <table className="table w-full text-sm">
-          <thead className="bg-gray-100 text-gray-700">
+          <thead className="bg-gray-100 text-black">
             <tr>
               <th className="p-3 text-left">Thumbnail</th>
               <th className="p-3 text-left">Title</th>

@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router";
 
+
 const VolunteerNeedsCard = ({ volunteer }) => {
   const { thumbnail, title, category, deadline, _id } = volunteer;
+
+  
   
   return (
     <div>

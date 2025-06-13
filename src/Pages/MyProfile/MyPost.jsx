@@ -22,11 +22,7 @@ const MyPost = () => {
             defaultChecked
           />
           <div className="tab-content bg-base-100 border-base-300 p-6 ">
-            <h2 className="text-xl font-semibold mb-4 text-center">
-              My Volunteer Need Posts
-            </h2>
             {/* My volunteer need post data */}
-
             <Suspense fallback={<h1>Data Loading...</h1>}>
               <MyPostNeedCard
                 volunteerCreatedByPromised={volunteerCreatedByPromised(
@@ -46,9 +42,6 @@ const MyPost = () => {
             aria-label="My Volunteer Request posts"
           />
           <div className="tab-content bg-base-100 border-base-300 p-6">
-            <h2 className="text-xl font-semibold mb-4 text-center">
-              My Volunteer Request Posts
-            </h2>
             {/* My volunteer requested data */}
             <Suspense fallback={'Request Data Loading...'}>
               <MyRequestList

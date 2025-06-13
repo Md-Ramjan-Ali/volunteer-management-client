@@ -26,12 +26,13 @@ const AddVolunteer = () => {
             timer: 1500,
           });
         }
+
         console.log(res.data);
       })
       .catch((error) => {
         console.log(error);
       });
-
+      form.reset()
     console.log(volunteerData);
   };
 
@@ -64,7 +65,7 @@ const AddVolunteer = () => {
                 </label>
                 <input
                   name="title"
-                  type="text"
+                  type="title"
                   className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
                   placeholder="Post Title"
                   required
@@ -121,10 +122,10 @@ const AddVolunteer = () => {
                 </label>
                 <input
                   type="number"
+                  min={0}
                   name="volunteersNeeded"
                   placeholder="No. of Volunteers Needed"
                   className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
-                  required
                 />
               </fieldset>
               {/* deadline */}

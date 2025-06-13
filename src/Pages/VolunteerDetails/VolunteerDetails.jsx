@@ -54,15 +54,21 @@ const VolunteerDetails = () => {
           </div>
 
           <div className=" ">
-            {user.email !== volunteer.OrganizerEmail && (
-              <button
-                onClick={() =>
-                  document.getElementById("VolunteerModal").showModal()
-                }
-                className="btn w-full mt-6  bg-green-600 hover:bg-green-700 text-white font-semibold  transition"
-              >
-                Be a Volunteer
-              </button>
+            {volunteersNeeded === 0 ? (
+              <p className="text-red-500 font-semibold mt-4 text-center">
+                All volunteer positions are filled for this post.
+              </p>
+            ) : (
+              user.email !== volunteer.OrganizerEmail && (
+                <button
+                  onClick={() =>
+                    document.getElementById("VolunteerModal").showModal()
+                  }
+                  className="btn w-full mt-6  bg-green-600 hover:bg-green-700 text-white font-semibold  transition"
+                >
+                  Be a Volunteer
+                </button>
+              )
             )}
             {user.email === volunteer.OrganizerEmail && (
               <p className="text-red-500 mt-6 font-semibold text-center">

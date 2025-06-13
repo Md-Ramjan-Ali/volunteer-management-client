@@ -1,54 +1,42 @@
-import axios from 'axios';
-import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import { useLoaderData } from 'react-router';
-import Swal from 'sweetalert2';
+import axios from "axios";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import { useLoaderData, useNavigate } from "react-router";
+import Swal from "sweetalert2";
 
 const UpdateMyPost = () => {
-  const [deadline, setDeadline] = useState(new Date());
-  const volunteer=useLoaderData()
-  // console.log(volunteer);
+  const volunteer = useLoaderData();
+  const [deadline, setDeadline] = useState(new Date(volunteer.deadline));
 
+  const navigate = useNavigate();
 
-  const handleUpdateVolunteer=(e)=>{
-    e.preventDefault()
+  const handleUpdateVolunteer = (e) => {
+    e.preventDefault();
 
-    const form=e.target;
-    const formData=new FormData(form)
-    const updateVolunteer=Object.fromEntries(formData.entries())
+    const form = e.target;
+    const formData = new FormData(form);
+    const updateVolunteer = Object.fromEntries(formData.entries());
 
-    axios.put(`http://localhost:5000/volunteers/${volunteer._id}`,updateVolunteer).then(res=>{
-      // console.log(res.data);
-      if (res.data.modifiedCount) {
-        Swal.fire({
-          icon: "success",
-          title: "Update Task Successfully",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
+    axios
+      .put(`http://localhost:5000/volunteers/${volunteer._id}`, updateVolunteer)
+      .then((res) => {
+        if (res.data.modifiedCount) {
+          Swal.fire({
+            icon: "success",
+            title: "Update Volunteer Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
 
-    }).catch(error=>{
-      console.log(error);
-    });
-
-    // fetch(`http://localhost:5000/volunteers/${volunteer._id}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(updateVolunteer),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log("Update Response:", data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Update Error:", error);
-    //   });
-    
-
-  }
+        setTimeout(() => {
+          navigate("/myPost");
+        }, 1500);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="max-w-screen-xl mx-auto my-5">
       <div className="card bg-base-100 w-full shadow-sm">
@@ -154,7 +142,6 @@ const UpdateMyPost = () => {
                 </label>
                 <DatePicker
                   name="deadline"
-                  defaultValue={volunteer.deadline}
                   selected={deadline}
                   onChange={(date) => setDeadline(date)}
                   className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
@@ -191,7 +178,10 @@ const UpdateMyPost = () => {
               </fieldset>
             </div>
             <div className="mt-5">
-              <button type='submit' className="btn bg-green-500 hover:bg-green-700 text-white  w-full">
+              <button
+                type="submit"
+                className="btn bg-green-500 hover:bg-green-700 text-white  w-full"
+              >
                 Update
               </button>
             </div>

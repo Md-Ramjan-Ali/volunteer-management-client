@@ -1,12 +1,42 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link } from 'react-router';
+import Swal from 'sweetalert2';
 
 const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
   const myVolunteerPost=use(volunteerCreatedByPromised)
+  const [myVolunteer,setMyVolunteer]=useState(myVolunteerPost)
 
 
   const handleDelete=(id)=>{
     console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/volunteers/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your task has been deleted.",
+                icon: "success",
+              });
+            }
+          });
+
+        const remainingTask = myVolunteer.filter((vol) => vol._id !== id);
+        setMyVolunteer(remainingTask);
+      }
+    });
 
   }
   
@@ -40,7 +70,7 @@ const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
                 <td className="px-4 py-3">{volunteer.category}</td>
                 <td className="px-4 py-3 text-red-500">{volunteer.deadline}</td>
                 <td>
-                  <Link to={`/updateVolunteerPost/${volunteer._id}`}>
+                  <Link to={`/updateMyPost/${volunteer._id}`}>
                     <button className="btn btn-sm btn-outline btn-info mr-2">
                       Update
                     </button>

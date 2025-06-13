@@ -13,7 +13,7 @@ const VolunteerNeeds = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(volunteerNeeds);
+  
 
   return (
     <div className="mt-10">

@@ -2,12 +2,12 @@ import React, { Suspense } from "react";
 import MyPostNeedCard from "./MyPostNeedCard";
 import { volunteerCreatedByPromised } from "../../Api/volunteerApi";
 import useAuth from "../../Components/Hooks/useAuth";
+import MyRequestList from "./MyRequestLIst";
+import { volunteerRequestByPromised } from "../../Api/volunteerRequests";
 // import React, { useState } from "react";
 
 const MyPost = () => {
-  // const [volunteerPosts, setVolunteerPosts] = useState([]);
-  // const [volunteerRequests, setVolunteerRequests] = useState([]);
-  const {user}=useAuth()
+  const { user } = useAuth();
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">
@@ -26,13 +26,14 @@ const MyPost = () => {
               My Volunteer Need Posts
             </h2>
             {/* My volunteer need post data */}
-            
-              <Suspense fallback={<h1>Data Loading...</h1>}>
-                <MyPostNeedCard
-                  volunteerCreatedByPromised={volunteerCreatedByPromised(user.email)}
-                ></MyPostNeedCard>
-              </Suspense>
-            
+
+            <Suspense fallback={<h1>Data Loading...</h1>}>
+              <MyPostNeedCard
+                volunteerCreatedByPromised={volunteerCreatedByPromised(
+                  user.email
+                )}
+              ></MyPostNeedCard>
+            </Suspense>
           </div>
 
           {/* two tabs layout content */}
@@ -49,6 +50,13 @@ const MyPost = () => {
               My Volunteer Request Posts
             </h2>
             {/* My volunteer requested data */}
+            <Suspense fallback={'Request Data Loading...'}>
+              <MyRequestList
+                volunteerRequestByPromised={volunteerRequestByPromised(
+                  user.email
+                )}
+              ></MyRequestList>
+            </Suspense>
           </div>
         </div>
       </div>

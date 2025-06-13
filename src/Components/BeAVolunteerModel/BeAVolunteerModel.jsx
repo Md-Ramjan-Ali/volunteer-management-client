@@ -19,55 +19,58 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
       status: "requested",
     };
 
-   
-
     axios
       .post("http://localhost:5000/volunteers/requests", requestData)
       .then((res) => {
-        if (res.data.insertedId) {
+        const result = res.data;
+
+        if (
+          result.acknowledged &&
+          result.requestInsertedId &&
+          result.volunteersDecremented
+        ) {
           Swal.fire({
             icon: "success",
-            title: "Request Volunteer Successfully",
+            title: "Volunteer Request Submitted!",
             showConfirmButton: false,
             timer: 1500,
           });
-        }
-        setTimeout(() => {
-          navigate(`/volunteerDetails/${volunteer._id}`);
-        }, 100);
 
-        console.log(res.data);
+          setTimeout(() => {
+            navigate(`/volunteerDetails/${volunteer._id}`);
+          }, 100);
+        } else if (
+          result.acknowledged &&
+          result.requestInsertedId &&
+          !result.volunteersDecremented
+        ) {
+          Swal.fire({
+            icon: "warning",
+            title: "Request Added",
+            text: "But volunteer count wasn't updated. Please contact support.",
+          });
+          setTimeout(() => {
+            navigate(`/volunteerDetails/${volunteer._id}`);
+          }, 500);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Something went wrong!",
+            text: "Could not process the request. Please try again.",
+          });
+        }
       })
       .catch((error) => {
         toast.error("Already Requested!", {
           position: "top-right",
           autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
         });
+
         setTimeout(() => {
           navigate("/allVolunteerPosts");
-        }, 100);
+        }, 500);
         console.log(error);
       });
-
-    // decrement in the volunteer need data
-    axios
-      .patch(`http://localhost:5000/volunteers/decrement/${volunteer._id}`)
-      .then((res) => {
-        if (res.data.modifiedCount) {
-          console.log(res.data);
-        }
-      })
-      .catch((error) => {
-        alert("your post you do not request");
-        console.log(error);
-      });
-    
   };
   return (
     <div>

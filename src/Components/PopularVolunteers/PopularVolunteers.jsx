@@ -10,32 +10,32 @@ import {
 
 const categories = [
   {
-    icon: <FaPaw className="text-4xl text-green-600" />,
+    icon: <FaPaw className="text-4xl text-secondary" />,
     title: "Animal Welfare",
     description: "Care for stray animals and support local shelters.",
   },
   {
-    icon: <FaLeaf className="text-4xl text-green-600" />,
+    icon: <FaLeaf className="text-4xl text-secondary" />,
     title: "Environmental Cleanup",
     description: "Join efforts to keep our environment clean and green.",
   },
   {
-    icon: <FaBook className="text-4xl text-green-600" />,
+    icon: <FaBook className="text-4xl text-secondary" />,
     title: "Education & Mentorship",
     description: "Empower youth through education and mentorship.",
   },
   {
-    icon: <FaHeartbeat className="text-4xl text-green-600" />,
+    icon: <FaHeartbeat className="text-4xl text-secondary" />,
     title: "Health & Wellness",
     description: "Promote healthy living and support community health.",
   },
   {
-    icon: <FaUsers className="text-4xl text-green-600" />,
+    icon: <FaUsers className="text-4xl text-secondary" />,
     title: "Elderly Support",
     description: "Lend a hand to elderly in your neighborhood.",
   },
   {
-    icon: <FaHandsHelping className="text-4xl text-green-600" />,
+    icon: <FaHandsHelping className="text-4xl text-secondary" />,
     title: "Event Organization",
     description: "Help organize meaningful community events.",
   },

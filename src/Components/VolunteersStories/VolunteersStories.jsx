@@ -40,8 +40,8 @@ const VolunteersStories = () => {
               alt={story.name}
               className="w-24 h-24 mx-auto rounded-full object-cover mb-4"
             />
-            <p className="italic text-gray-600 mb-3">“{story.quote}”</p>
-            <h4 className="font-semibold text-lg text-green-700">
+            <p className="italic mb-3">“{story.quote}”</p>
+            <h4 className="font-semibold text-lg text-secondary">
               — {story.name}
             </h4>
           </div>

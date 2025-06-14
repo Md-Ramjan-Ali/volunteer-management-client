@@ -8,7 +8,7 @@ import VolunteersStories from "../../Components/VolunteersStories/VolunteersStor
 
 const Home = () => {
   return (
-    <div className="max-w-screen-xl mx-auto my-10 space-y-10">
+    <div className="max-w-screen-xl mx-auto my-5 space-y-10">
       <Helmet>
         <title>Home | SebaConnect</title>
       </Helmet>

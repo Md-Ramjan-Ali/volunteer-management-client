@@ -21,7 +21,7 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
                 />
               </figure>
             </div>
-            <div className="card-body">
+            <div className="card-body text-gray-700 dark:text-white">
               <h2 className="card-title font-semibold">{volunteer.title}</h2>
               <p className="">
                 <strong>category : </strong>

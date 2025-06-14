@@ -1,11 +1,11 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import Logo from "../../../assets/volunteer-logo.png";
-import ToggleTheme from "../../../Components/ToggleTheme/ToggleTheme";
 import { Tooltip } from "react-tooltip";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../Context/AuthContext";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import DarkToggler from "../../../Components/DarkToggler/DarkToggler";
 
 const Navbar = () => {
   const { user, logOUt } = use(AuthContext);
@@ -58,7 +58,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="navbar bg-base-100 shadow-sm px-10 sticky top-0 z-50">
+    <nav className="navbar bg-base-100 shadow-sm px-10 sticky top-0 z-50 dark:bg-gray-900 dark:text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">
@@ -93,15 +93,15 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="flex gap-8">{links}</ul>
+        <ul className="flex gap-8 ">{links}</ul>
       </div>
-      <div className="navbar-end gap-3">
-        <div className="card items-center">
-          <ToggleTheme></ToggleTheme>
+      <div className="navbar-end gap-5">
+        <div className="flex items-center">
+          <DarkToggler></DarkToggler>
         </div>
 
         <div
-          className="cursor-pointer"
+          className="cursor-pointer "
           data-tooltip-id="my-tooltip"
           data-tooltip-place="left"
           data-tooltip-content={user?.displayName}

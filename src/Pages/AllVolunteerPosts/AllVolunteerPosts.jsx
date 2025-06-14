@@ -21,10 +21,10 @@ const AllVolunteerPosts = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">
-      <div className="flex gap-5 items-center bg-base-100  p-2 rounded-md my-10">
+      <div className="flex gap-5 items-center  p-2 rounded-md my-10">
         <div className="flex gap-2 items-center">
-          <HiUserGroup className="text-2xl md:text-4xl" />
-          <h1 className="text-xl md:text-2xl font-semibold text-center">
+          <HiUserGroup className="text-2xl md:text-4xl text-primary dark:text-white" />
+          <h1 className="text-xl md:text-2xl font-semibold text-center text-secondary dark:text-white">
             All Volunteer
           </h1>
         </div>
@@ -32,11 +32,11 @@ const AllVolunteerPosts = () => {
           <input
             type="text"
             placeholder="Search by title..."
-            className="input border-1 focus:outline-0 w-full rounded-2xl  pl-10"
+            className="input border-1 focus:outline-0 w-full rounded-2xl  pl-10 dark:bg-gray-900 dark:border-white"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <span className="absolute left-4 md:pl-32 top-1/2 transform -translate-y-1/2 text-gray-500 text-xl z-20">
+          <span className="absolute left-4 md:pl-32 top-1/2 transform -translate-y-1/2 text-xl z-20">
             <CiSearch />
           </span>
         </div>
@@ -44,14 +44,14 @@ const AllVolunteerPosts = () => {
           {/* btn table and grid */}
           <button
             onClick={() => setLayout("table")}
-            className={`${layout === "table" ? "text-primary" : "text-black"}`}
+            className={`${layout === "table" ? "text-primary" : "text-black dark:text-white"}`}
             title="Table View"
           >
             <MdTableRows size={28} className="cursor-pointer" />
           </button>
           <button
             onClick={() => setLayout("grid")}
-            className={`${layout === "grid" ? "text-primary" : "text-black"}`}
+            className={`${layout === "grid" ? "text-primary" : "text-black dark:text-white"}`}
             title="Grid View"
           >
             <RiLayoutGrid2Fill size={28} className="cursor-pointer" />

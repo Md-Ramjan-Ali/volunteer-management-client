@@ -10,32 +10,32 @@ import {
 
 const categories = [
   {
-    icon: <FaPaw className="text-4xl text-secondary" />,
+    icon: <FaPaw className="text-4xl text-secondary  dark:text-white " />,
     title: "Animal Welfare",
     description: "Care for stray animals and support local shelters.",
   },
   {
-    icon: <FaLeaf className="text-4xl text-secondary" />,
+    icon: <FaLeaf className="text-4xl text-secondary  dark:text-white" />,
     title: "Environmental Cleanup",
     description: "Join efforts to keep our environment clean and green.",
   },
   {
-    icon: <FaBook className="text-4xl text-secondary" />,
+    icon: <FaBook className="text-4xl text-secondary  dark:text-white" />,
     title: "Education & Mentorship",
     description: "Empower youth through education and mentorship.",
   },
   {
-    icon: <FaHeartbeat className="text-4xl text-secondary" />,
+    icon: <FaHeartbeat className="text-4xl text-secondary  dark:text-white" />,
     title: "Health & Wellness",
     description: "Promote healthy living and support community health.",
   },
   {
-    icon: <FaUsers className="text-4xl text-secondary" />,
+    icon: <FaUsers className="text-4xl text-secondary  dark:text-white" />,
     title: "Elderly Support",
     description: "Lend a hand to elderly in your neighborhood.",
   },
   {
-    icon: <FaHandsHelping className="text-4xl text-secondary" />,
+    icon: <FaHandsHelping className="text-4xl text-secondary  dark:text-white" />,
     title: "Event Organization",
     description: "Help organize meaningful community events.",
   },
@@ -43,8 +43,8 @@ const categories = [
 
 const PopularVolunteers = () => {
   return (
-    <section className="my-20 px-4 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-8">
+    <section className="my-20 px-4 max-w-7xl mx-auto text-gray-700 dark:text-white">
+      <h2 className="text-3xl font-bold text-center mb-8 text-secondary dark:text-white">
         Explore Popular Causes
       </h2>
       <p className="text-center mb-12 max-w-2xl mx-auto">

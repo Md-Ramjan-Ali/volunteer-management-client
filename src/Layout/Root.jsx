@@ -5,16 +5,19 @@ import Footer from "../Pages/Shared/Footer/Footer";
 import Loading from "../Components/Loading/Loading";
 import { ToastContainer } from "react-toastify";
 
+
 const Root = () => {
   const { state } = useNavigation();
   return (
-    <div>
-      <Navbar></Navbar>
+    <div className="dark:bg-gray-900 dark:text-white">
+      
+        <Navbar></Navbar>
 
-      {state == "loading" ? <Loading /> : <Outlet></Outlet>}
+        {state == "loading" ? <Loading /> : <Outlet></Outlet>}
 
-      <Footer></Footer>
-      <ToastContainer/>
+        <Footer></Footer>
+        <ToastContainer />
+      
     </div>
   );
 };

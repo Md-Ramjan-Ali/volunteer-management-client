@@ -1,12 +1,9 @@
 import React from "react";
 import { Link } from "react-router";
 
-
 const VolunteerNeedsCard = ({ volunteer }) => {
   const { thumbnail, title, category, deadline, _id } = volunteer;
 
-  
-  
   return (
     <div>
       <div className="card rounded-xl shadow-md hover:shadow-xl transition overflow-hidden">
@@ -19,14 +16,15 @@ const VolunteerNeedsCard = ({ volunteer }) => {
             />
           </figure>
         </div>
-        <div className="card-body">
+        <div className="card-body text-gray-700 dark:text-white">
           <h2 className="card-title font-semibold">{title}</h2>
           <p className="">
-            <strong>category : </strong> 
+            <strong>category : </strong>
             {category}
           </p>
           <p className="">
-            <strong>Deadline : </strong>{deadline}
+            <strong>Deadline : </strong>
+            {deadline}
           </p>
           <div className="card-actions">
             <Link className="w-full" to={`/volunteerDetails/${_id}`}>

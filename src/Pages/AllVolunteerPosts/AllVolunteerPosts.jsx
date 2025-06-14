@@ -4,6 +4,8 @@ import AllVolunteerCard from "./AllVolunteerCard";
 import { RiLayoutGrid2Fill } from "react-icons/ri";
 import { MdTableRows } from "react-icons/md";
 import AllVolunteerTable from "./AllVolunteerTable";
+import { HiUserGroup } from "react-icons/hi2";
+import { CiSearch } from "react-icons/ci";
 
 const AllVolunteerPosts = () => {
   const [allVolunteerPosts, setAllVolunteerPosts] = useState([]);
@@ -19,26 +21,30 @@ const AllVolunteerPosts = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">
-      <h1 className="text-2xl font-semibold text-center mt-15 mb-5">
-        All Volunteer Post
-      </h1>
-      <div className="flex gap-10 bg-base-100  p-2 rounded-md my-10">
-        <div className="md:flex-1">
+      <div className="flex gap-5 items-center bg-base-100  p-2 rounded-md my-10">
+        <div className="flex gap-2 items-center">
+          <HiUserGroup className="text-2xl md:text-4xl" />
+          <h1 className="text-xl md:text-2xl font-semibold text-center">
+            All Volunteer
+          </h1>
+        </div>
+        <div className="flex-1 md:px-32 relative">
           <input
             type="text"
             placeholder="Search by title..."
-            className="input border-1 focus:outline-0 w-full rounded-2xl"
+            className="input border-1 focus:outline-0 w-full rounded-2xl  pl-10"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          <span className="absolute left-4 md:pl-32 top-1/2 transform -translate-y-1/2 text-gray-500 text-xl z-20">
+            <CiSearch />
+          </span>
         </div>
-        <div className="flex justify-end gap-5 w-full max-w-[260px]">
+        <div className="flex justify-end gap-5 ">
           {/* btn table and grid */}
           <button
             onClick={() => setLayout("table")}
-            className={`${
-              layout === "table" ? "text-primary" : "text-black"
-            }`}
+            className={`${layout === "table" ? "text-primary" : "text-black"}`}
             title="Table View"
           >
             <MdTableRows size={28} className="cursor-pointer" />
@@ -53,7 +59,7 @@ const AllVolunteerPosts = () => {
         </div>
       </div>
 
-            {/* All Volunteer Content */}
+      {/* All Volunteer Content */}
       <div className="">
         {layout === "grid" ? (
           <AllVolunteerCard

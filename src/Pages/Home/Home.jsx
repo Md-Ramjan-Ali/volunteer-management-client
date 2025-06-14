@@ -2,6 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import Slider from "../../Components/Slider/Slider";
 import VolunteerNeeds from "../../Components/VolunteerNeeds/VolunteerNeeds";
+import PopularVolunteers from "../../Components/PopularVolunteers/PopularVolunteers";
+import VolunteersStories from "../../Components/VolunteersStories/VolunteersStories";
+
 
 const Home = () => {
   return (
@@ -14,6 +17,12 @@ const Home = () => {
       </section>
       <section>
         <VolunteerNeeds></VolunteerNeeds>
+      </section>
+      <section>
+        <PopularVolunteers></PopularVolunteers>
+      </section>
+      <section>
+        <VolunteersStories></VolunteersStories>
       </section>
     </div>
   );

@@ -8,7 +8,7 @@ const Privacy = () => {
         <title>Privacy | SebaConnect</title>
       </Helmet>
       <div className="max-w-4xl mx-auto mt-20 px-3 lg:px-0">
-        <h2 className="text-3xl font-bold text-green-500 mb-4 text-center md:text-left">
+        <h2 className="text-3xl font-bold text-[#22c55e] mb-4 text-center md:text-left">
           Privacy Policy
         </h2>
         <p className="text-lg mb-6">

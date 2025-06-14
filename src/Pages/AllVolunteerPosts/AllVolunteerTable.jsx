@@ -15,7 +15,7 @@ const AllVolunteerTable = ({ allVolunteerPosts }) => {
             <th className="px-4 py-3">Action</th>
           </tr>
         </thead>
-        <tbody className="text-sm text-gray-800">
+        <tbody className="text-sm">
           {allVolunteerPosts.map((volunteer) => (
             <tr
               key={volunteer._id}
@@ -30,10 +30,10 @@ const AllVolunteerTable = ({ allVolunteerPosts }) => {
               </td>
               <td className="px-4 py-3 font-medium">{volunteer.title}</td>
               <td className="px-4 py-3">{volunteer.category}</td>
-              <td className="px-4 py-3 text-red-500">{volunteer.deadline}</td>
+              <td className="px-4 py-3 text-secondary">{volunteer.deadline}</td>
               <td className="px-4 py-3">
                 <Link to={`/volunteerDetails/${volunteer._id}`}>
-                  <button className="btn btn-sm bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition">
+                  <button className="btn btn-sm bg-primary text-white px-4 py-1 rounded hover:bg-secondary transition">
                     View Details
                   </button>
                 </Link>

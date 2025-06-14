@@ -32,7 +32,7 @@ const AddVolunteer = () => {
       .catch((error) => {
         console.log(error);
       });
-      form.reset()
+    form.reset();
     console.log(volunteerData);
   };
 
@@ -54,7 +54,7 @@ const AddVolunteer = () => {
                   type="url"
                   name="thumbnail"
                   placeholder="Thumbnail URL"
-                  className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-green-700"
+                  className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-secondary"
                   required
                 />
               </fieldset>
@@ -66,7 +66,7 @@ const AddVolunteer = () => {
                 <input
                   name="title"
                   type="title"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   placeholder="Post Title"
                   required
                 />
@@ -79,7 +79,7 @@ const AddVolunteer = () => {
               </label>
               <textarea
                 name="description"
-                className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
+                className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                 placeholder="Describe what needs to be done"
                 required
               />
@@ -92,7 +92,7 @@ const AddVolunteer = () => {
                 </label>
                 <select
                   name="category"
-                  className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
+                  className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   required
                 >
                   <option value="">Select Category</option>
@@ -111,7 +111,7 @@ const AddVolunteer = () => {
                   type="text"
                   name="location"
                   placeholder="Location"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   required
                 />
               </fieldset>
@@ -125,7 +125,7 @@ const AddVolunteer = () => {
                   min={0}
                   name="volunteersNeeded"
                   placeholder="No. of Volunteers Needed"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                 />
               </fieldset>
               {/* deadline */}
@@ -137,7 +137,7 @@ const AddVolunteer = () => {
                   name="deadline"
                   selected={deadline}
                   onChange={(date) => setDeadline(date)}
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   dateFormat="yyyy-MM-dd"
                   minDate={new Date()}
                 />
@@ -153,7 +153,7 @@ const AddVolunteer = () => {
                   name="OrganizerName"
                   value={user?.displayName || ""}
                   readOnly
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                 />
               </fieldset>
               {/* User Email */}
@@ -166,12 +166,12 @@ const AddVolunteer = () => {
                   name="OrganizerEmail"
                   value={user?.email || ""}
                   readOnly
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                 />
               </fieldset>
             </div>
             <div className="card-actions pt-5">
-              <button className="btn bg-green-500 hover:bg-green-700 text-white  w-full">
+              <button className="btn bg-primary hover:bg-secondary  text-white  w-full">
                 Add Post
               </button>
             </div>

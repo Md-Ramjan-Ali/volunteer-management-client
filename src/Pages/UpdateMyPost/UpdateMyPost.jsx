@@ -56,7 +56,7 @@ const UpdateMyPost = () => {
                   name="thumbnail"
                   defaultValue={volunteer.thumbnail}
                   placeholder="Thumbnail URL"
-                  className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-green-700 "
+                  className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-secondary "
                   required
                 />
               </fieldset>
@@ -69,7 +69,7 @@ const UpdateMyPost = () => {
                   name="title"
                   defaultValue={volunteer.title}
                   type="text"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full "
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
                   placeholder="Post Title"
                   required
                 />
@@ -83,7 +83,7 @@ const UpdateMyPost = () => {
               <textarea
                 name="description"
                 defaultValue={volunteer.description}
-                className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full "
+                className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
                 placeholder="Describe what needs to be done"
                 required
               />
@@ -97,7 +97,7 @@ const UpdateMyPost = () => {
                 <select
                   name="category"
                   defaultValue={volunteer.category}
-                  className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full "
+                  className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
                   required
                 >
                   <option defaultValue="">Select Category</option>
@@ -117,7 +117,7 @@ const UpdateMyPost = () => {
                   name="location"
                   defaultValue={volunteer.location}
                   placeholder="Location"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full "
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
                   required
                 />
               </fieldset>
@@ -131,7 +131,7 @@ const UpdateMyPost = () => {
                   name="volunteersNeeded"
                   defaultValue={volunteer.volunteersNeeded}
                   placeholder="No. of Volunteers Needed"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full "
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
                   required
                 />
               </fieldset>
@@ -144,7 +144,7 @@ const UpdateMyPost = () => {
                   name="deadline"
                   selected={deadline}
                   onChange={(date) => setDeadline(date)}
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   dateFormat="yyyy-MM-dd"
                   minDate={new Date()}
                 />
@@ -160,7 +160,7 @@ const UpdateMyPost = () => {
                   name="OrganizerName"
                   defaultValue={volunteer.OrganizerName}
                   readOnly
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full cursor-not-allowed "
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed "
                 />
               </fieldset>
               {/* User Email */}
@@ -173,14 +173,14 @@ const UpdateMyPost = () => {
                   name="OrganizerEmail"
                   defaultValue={volunteer.OrganizerEmail}
                   readOnly
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-green-700 w-full  cursor-not-allowed"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                 />
               </fieldset>
             </div>
             <div className="mt-5">
               <button
                 type="submit"
-                className="btn bg-green-500 hover:bg-green-700 text-white  w-full"
+                className="btn bg-primary hover:bg-secondary  text-white  w-full"
               >
                 Update
               </button>

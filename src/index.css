@@ -6,14 +6,20 @@
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, cupcake;
 }
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #F59E0B;
+  --color-secondary: #029891;
+}
 
 * {
   font-family: "Poppins", sans-serif;
 }
 
 nav ul .active {
-  border-bottom: 2px solid green;
-  color: green;
+  border-bottom: 2px solid #029891;
+  color: #F59E0B;
   padding-bottom: 5px;
   
 }

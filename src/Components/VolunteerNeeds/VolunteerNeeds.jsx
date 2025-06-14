@@ -30,7 +30,9 @@ const VolunteerNeeds = () => {
       </div>
       <div className="text-center mt-8">
         <Link to="/allVolunteerPosts">
-          <button className="btn px-10 font-medium">See All</button>
+          <button className="bg-primary hover:bg-secondary text-white btn px-10 font-medium">
+            See All
+          </button>
         </Link>
       </div>
     </div>

@@ -26,7 +26,7 @@ const ErrorPage = () => {
               to="/"
               rel="noopener noreferrer"
               href="#"
-              className="btn bg-green-500 text-white font-semibold rounded dark:bg-violet-600 dark:text-gray-50"
+              className="btn bg-primary text-white font-semibold rounded dark:bg-violet-600 dark:text-gray-50"
             >
               Back to homepage
             </Link>

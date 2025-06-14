@@ -64,7 +64,7 @@ const VolunteerDetails = () => {
                   onClick={() =>
                     document.getElementById("VolunteerModal").showModal()
                   }
-                  className="btn w-full mt-6  bg-green-600 hover:bg-green-700 text-white font-semibold  transition"
+                  className="btn w-full mt-6  bg-primary hover:bg-secondary  text-white font-semibold  transition"
                 >
                   Be a Volunteer
                 </button>

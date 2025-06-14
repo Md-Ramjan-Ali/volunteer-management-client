@@ -87,7 +87,8 @@ const Navbar = () => {
         <Link to="/" className="flex items-center cursor-pointer">
           <img className="w-16" src={Logo} alt="" />
           <h2 className=" text-2xl font-bold hidden md:flex">
-            <span className="text-green-500">Seba</span>Connect
+            <span className="text-primary">Seba</span>
+            <span className="text-secondary">Connect</span>
           </h2>
         </Link>
       </div>
@@ -119,14 +120,14 @@ const Navbar = () => {
         {user ? (
           <button
             onClick={handleLogOut}
-            className="btn bg-green-500 hover:bg-green-700 text-white"
+            className="btn bg-primary hover:bg-secondary text-white"
           >
             LogOut
           </button>
         ) : (
           <>
             <Link to="/auth/login">
-              <button className="btn bg-green-500 hover:bg-green-700 text-white">
+              <button className="btn bg-primary hover:bg-secondary text-white">
                 Login
               </button>
             </Link>

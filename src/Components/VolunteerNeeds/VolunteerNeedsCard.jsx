@@ -30,7 +30,7 @@ const VolunteerNeedsCard = ({ volunteer }) => {
           </p>
           <div className="card-actions">
             <Link className="w-full" to={`/volunteerDetails/${_id}`}>
-              <button className="btn mt-2 w-full font-semibold transition">
+              <button className="bg-primary hover:bg-secondary text-white btn mt-2 w-full font-semibold transition">
                 View Details
               </button>
             </Link>

@@ -36,7 +36,7 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
                   className="w-full"
                   to={`/volunteerDetails/${volunteer._id}`}
                 >
-                  <button className="btn mt-2 w-full font-semibold transition">
+                  <button className="bg-primary text-white btn mt-2 w-full font-semibold transition">
                     View Details
                   </button>
                 </Link>

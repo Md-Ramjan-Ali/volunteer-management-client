@@ -58,7 +58,7 @@ const Slider = () => {
                 bring hope and help to those in need.
               </p>
               <Link to="/allVolunteerPosts">
-                <button className="btn bg-green-600 text-white hover:bg-green-700 px-6 py-2 rounded-md">
+                <button className="btn bg-primary text-white hover:bg-secondary  px-6 py-2 rounded-md">
                   Get Started
                 </button>
               </Link>
@@ -81,7 +81,7 @@ const Slider = () => {
                 a difference.
               </p>
               <Link to="/allVolunteerPosts">
-                <button className="btn bg-green-600 text-white hover:bg-green-700 px-6 py-2 rounded-md">
+                <button className="btn bg-primary text-white hover:bg-secondary  px-6 py-2 rounded-md">
                   Start Volunteering
                 </button>
               </Link>
@@ -104,7 +104,7 @@ const Slider = () => {
                 impact in your community.
               </p>
               <Link to="/allVolunteerPosts">
-                <button className="btn bg-green-600 text-white hover:bg-green-700 px-6 py-2 rounded-md">
+                <button className="btn bg-primary text-white hover:bg-secondary  px-6 py-2 rounded-md">
                   Explore Opportunities
                 </button>
               </Link>

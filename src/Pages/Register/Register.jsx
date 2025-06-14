@@ -61,8 +61,6 @@ const Register = () => {
       });
   };
 
-  
-
   return (
     <div>
       <Helmet>
@@ -129,14 +127,14 @@ const Register = () => {
             </div>
             <button
               type="submit"
-              className="btn bg-green-500 hover:bg-green-700 text-white mt-4"
+              className="btn bg-primary hover:bg-secondary  text-white mt-4"
             >
               Register
             </button>
           </form>
           <p className="font-semibold text-center pt-5">
             Already Have An Account ?{" "}
-            <Link className="text-green-500 underline" to="/auth/login">
+            <Link className="text-[#22c55e] underline" to="/auth/login">
               Login
             </Link>
           </p>

@@ -13,6 +13,7 @@ import AddVolunteer from "../Pages/MyProfile/AddVolunteer";
 import MyPost from "../Pages/MyProfile/MyPost";
 import VolunteerDetails from "../Pages/VolunteerDetails/VolunteerDetails";
 import UpdateMyPost from "../Pages/UpdateMyPost/UpdateMyPost";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "/privacy",
         Component: Privacy,
+      },
+      {
+        path:'/contact',
+        Component: Contact
       },
     ],
   },

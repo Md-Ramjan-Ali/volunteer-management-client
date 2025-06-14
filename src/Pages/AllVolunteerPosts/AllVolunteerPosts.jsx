@@ -37,7 +37,7 @@ const AllVolunteerPosts = () => {
           <button
             onClick={() => setLayout("table")}
             className={`${
-              layout === "table" ? "text-green-500" : "text-black"
+              layout === "table" ? "text-primary" : "text-black"
             }`}
             title="Table View"
           >
@@ -45,7 +45,7 @@ const AllVolunteerPosts = () => {
           </button>
           <button
             onClick={() => setLayout("grid")}
-            className={`${layout === "grid" ? "text-green-500" : "text-black"}`}
+            className={`${layout === "grid" ? "text-primary" : "text-black"}`}
             title="Grid View"
           >
             <RiLayoutGrid2Fill size={28} className="cursor-pointer" />

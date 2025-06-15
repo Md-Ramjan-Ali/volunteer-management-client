@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 const BeAVolunteerModel = ({ volunteer, user }) => {
   const [suggestion, setSuggestion] = useState("");
   const navigate = useNavigate();
+  console.log(volunteer);
 
   const handleRequest = (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
       .post("http://localhost:5000/volunteers/requests", requestData)
       .then((res) => {
         const result = res.data;
+        console.log(result);
 
         if (
           result.acknowledged &&

@@ -9,7 +9,6 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
 
   // Cancel request
   const handleCancel = (id) => {
-    console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "Do you really want to cancel this volunteer request?",
@@ -20,27 +19,20 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .patch(`http://localhost:5000/volunteers/increment/${id}`)
-          .then((res) => {
-            if (res.data.modifiedCount) {
-              console.log(res.data);
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-
-        axios
           .delete(`http://localhost:5000/volunteers/requests/${id}`)
           .then((res) => {
             console.log(res.data);
-            if (res.data.deletedCount > 0) {
-              setRequests((prev) => prev.filter((r) => r._id != id));
-              Swal.fire(
-                "Cancelled!",
-                "Your volunteer request has been cancelled.",
-                "success"
-              );
+
+            if (res.data?.deleted?.deletedCount > 0) {
+              // Optionally check: res.data?.incremented?.modifiedCount > 0
+              setRequests((prev) => prev.filter((data) => data._id !== id));
+              Swal.fire({
+                title: "Cancelled!",
+                text: "Your volunteer request has been cancelled.",
+                icon: "success",
+              });
+            } else {
+              Swal.fire("Failed", "Unable to cancel the request.", "error");
             }
           })
           .catch((error) => {

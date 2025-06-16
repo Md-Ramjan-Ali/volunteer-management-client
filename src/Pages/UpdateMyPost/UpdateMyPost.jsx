@@ -1,14 +1,30 @@
-import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
-import { useLoaderData, useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Components/Hooks/useAxiosSecure";
+import Loading from "../../Components/Loading/Loading";
 
 const UpdateMyPost = () => {
-  const volunteer = useLoaderData();
-  const [deadline, setDeadline] = useState(new Date(volunteer.deadline));
-
+  const { id } = useParams();
+  const [volunteer, setVolunteer] = useState(null);
   const navigate = useNavigate();
+  const axiosSecure = useAxiosSecure();
+  const [deadline, setDeadline] = useState(new Date(null));
+
+  useEffect(() => {
+    axiosSecure
+      .get(`/volunteers/${id}`)
+      .then((res) => {
+        setVolunteer(res.data);
+        if (res.data?.deadline) {
+          setDeadline(new Date(res.data.deadline));
+        }
+      })
+      .catch((error) => {
+        console.error( error);
+      });
+  }, [id, axiosSecure]);
 
   const handleUpdateVolunteer = (e) => {
     e.preventDefault();
@@ -17,8 +33,8 @@ const UpdateMyPost = () => {
     const formData = new FormData(form);
     const updateVolunteer = Object.fromEntries(formData.entries());
 
-    axios
-      .put(`http://localhost:5000/volunteers/${volunteer._id}`, updateVolunteer)
+    axiosSecure
+      .put(`/volunteers/${volunteer._id}`, updateVolunteer)
       .then((res) => {
         if (res.data.modifiedCount) {
           Swal.fire({
@@ -37,6 +53,9 @@ const UpdateMyPost = () => {
         console.log(error);
       });
   };
+  if (!volunteer) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="max-w-screen-xl mx-auto my-5">
       <div className="card bg-base-100 w-full shadow-sm">

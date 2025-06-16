@@ -20,7 +20,7 @@ const useAxiosSecure = () => {
       return response;
     },
     (error) => {
-      if (error.status === 401) {
+      if (error.status === 401 || error.status === 403) {
         logOUt()
           .then(() => {
             console.log("LogOut user for 401 status code");

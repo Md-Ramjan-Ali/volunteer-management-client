@@ -1,11 +1,32 @@
-import React from "react";
-import { useLoaderData } from "react-router";
+import React, { useEffect, useState } from "react";
 import BeAVolunteerModel from "../../Components/BeAVolunteerModel/BeAVolunteerModel";
 import useAuth from "../../Components/Hooks/useAuth";
+import { useParams } from "react-router";
+import useAxiosSecure from "../../Components/Hooks/useAxiosSecure";
+import Loading from "../../Components/Loading/Loading";
 
 const VolunteerDetails = () => {
   const { user } = useAuth();
-  const volunteer = useLoaderData();
+  const { id } = useParams();
+  const axiosSecure = useAxiosSecure();
+  const [volunteer, setVolunteer] = useState(null);
+  console.log(volunteer);
+
+  useEffect(() => {
+    axiosSecure
+      .get(`/volunteers/${id}`)
+      .then((res) => {
+        setVolunteer(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [id, axiosSecure]);
+
+  if (!volunteer) {
+    return <Loading></Loading>;
+  }
+
   const {
     title,
     thumbnail,
@@ -17,6 +38,7 @@ const VolunteerDetails = () => {
     OrganizerEmail,
     volunteersNeeded,
   } = volunteer;
+
   return (
     <div className="max-w-screen-xl mx-auto my-5 p-3">
       <div className="card lg:card-side shadow-lg rounded-xl overflow-hidden">

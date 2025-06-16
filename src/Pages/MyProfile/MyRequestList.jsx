@@ -24,7 +24,6 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
             console.log(res.data);
 
             if (res.data?.deleted?.deletedCount > 0) {
-              // Optionally check: res.data?.incremented?.modifiedCount > 0
               setRequests((prev) => prev.filter((data) => data._id !== id));
               Swal.fire({
                 title: "Cancelled!",
@@ -53,7 +52,7 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
           My Volunteer Request Posts
         </h2>
         <table className="table w-full text-sm">
-          <thead className="bg-gray-100 text-black">
+          <thead className="bg-gray-100 dark:bg-gray-600 dark:text-white text-black">
             <tr>
               <th className="p-3 text-left">Thumbnail</th>
               <th className="p-3 text-left">Title</th>
@@ -65,7 +64,10 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
           </thead>
           <tbody>
             {requests.map((req) => (
-              <tr key={req._id} className="hover:bg-gray-50">
+              <tr
+                key={req._id}
+                className="hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-600 dark:text-white"
+              >
                 <td className="p-3">
                   <img
                     src={req.thumbnail}

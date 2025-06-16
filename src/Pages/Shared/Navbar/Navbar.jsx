@@ -42,7 +42,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-100 rounded-box z-1 w-56 p-2 shadow-sm  "
+                className="dropdown-content menu bg-base-100 dark:bg-black rounded-box z-1 w-56 p-2 shadow-sm  "
               >
                 <li>
                   <NavLink to="/addVolunteer">Add Volunteer need Post</NavLink>

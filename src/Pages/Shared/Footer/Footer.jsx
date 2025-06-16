@@ -1,15 +1,17 @@
 import React from "react";
 import {
+  FaEnvelope,
   FaFacebookF,
+  FaHome,
   FaInstagram,
   FaLinkedin,
+  FaPhone,
   FaTwitter,
 } from "react-icons/fa";
 import { Link } from "react-router";
 import FooterLogo from "../../../assets/volunteer-logo.png";
 
 const Footer = () => {
- 
   return (
     <div>
       <footer className="bg-[#1f2937] text-white pt-10 mt-20">
@@ -24,7 +26,7 @@ const Footer = () => {
                   <span className="text-secondary">Connect</span>
                 </h2>
               </Link>
-              <p className="mt-2 text-gray-400 max-w-sm">
+              <p className="mt-2 text-gray-300 max-w-sm">
                 A volunteer management system is a platform that helps
                 organizations recruit, schedule, and track volunteers
                 efficiently. It streamlines communication, event coordination,
@@ -57,8 +59,27 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-3">Follow Us</h3>
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold text-white">Follow Us</h3>
+            <div className="space-y-5 text-gray-300">
+              <div className="flex items-start gap-3">
+                <FaHome className="text-xl mt-1" />
+                <p>
+                  Volunteer for Bangladesh, House 57, <br />
+                  Road 7B, Block H, Banani, 1213, Bangladesh
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <FaEnvelope className="text-xl" />
+                <p>mrramjankhan100@gmail.com</p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <FaPhone className="text-xl" />
+                <p>+88 01928-294516</p>
+              </div>
+            </div>
             <div className="flex gap-4 text-gray-300 text-lg">
               <a
                 href="https://www.facebook.com/share/15NASC5RNv/"
@@ -94,12 +115,10 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-         
         </div>
 
         {/* Bottom Line */}
-        <div className="bg-[#111827] text-center mt-5 py-5">
+        <div className="bg-[#111827] text-gray-500 text-center mt-5 py-5">
           © {new Date().getFullYear()} Event Explorer. All rights reserved.
         </div>
       </footer>

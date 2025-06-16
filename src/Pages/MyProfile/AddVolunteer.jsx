@@ -38,7 +38,7 @@ const AddVolunteer = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">
-      <div className="card bg-base-100 w-full shadow-sm">
+      <div className="card bg-base-100 dark:bg-black w-full shadow-sm">
         <h1 className="text-center text-2xl font-bold pt-5">
           Add volunteer need post
         </h1>
@@ -47,26 +47,26 @@ const AddVolunteer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
               {/*  Thumbnail */}
               <fieldset className="fieldset ">
-                <label className="text-[.885rem] font-semibold">
+                <label className="text-[.885rem] font-semibold dark:text-white">
                   Thumbnail
                 </label>
-                <input
+                <input dark:bg-black
                   type="url"
                   name="thumbnail"
                   placeholder="Thumbnail URL"
-                  className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-secondary"
+                  className="input dark:bg-black w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-secondary"
                   required
                 />
               </fieldset>
               {/* Post title */}
               <fieldset className="fieldset ">
-                <label className="text-[.885rem] font-semibold">
+                <label className="text-[.885rem] font-semibold dark:text-white">
                   Post Title
                 </label>
-                <input
+                <input dark:bg-black
                   name="title"
                   type="title"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="input dark:bg-black rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   placeholder="Post Title"
                   required
                 />
@@ -74,12 +74,12 @@ const AddVolunteer = () => {
             </div>
             {/* description */}
             <fieldset className="fieldset ">
-              <label className=" text-[.885rem] font-semibold">
+              <label className=" text-[.885rem] font-semibold dark:text-white">
                 Description
               </label>
               <textarea
                 name="description"
-                className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                className="textarea dark:bg-black rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                 placeholder="Describe what needs to be done"
                 required
               />
@@ -87,12 +87,12 @@ const AddVolunteer = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
               {/* Category */}
               <fieldset className="fieldset ">
-                <label className=" text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold dark:text-white">
                   Category
                 </label>
                 <select
                   name="category"
-                  className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="select dark:bg-black rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   required
                 >
                   <option value="">Select Category</option>
@@ -104,40 +104,40 @@ const AddVolunteer = () => {
               </fieldset>
               {/* Location */}
               <fieldset className="fieldset ">
-                <label className=" text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold dark:text-white">
                   Location
                 </label>
-                <input
+                <input dark:bg-black
                   type="text"
                   name="location"
                   placeholder="Location"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="input dark:bg-black rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   required
                 />
               </fieldset>
               {/* No. of volunteers needed */}
               <fieldset className="fieldset ">
-                <label className=" text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold dark:text-white">
                   No. of volunteers needed
                 </label>
-                <input
+                <input dark:bg-black
                   type="number"
-                  min={0}
+                  min={1}
                   name="volunteersNeeded"
                   placeholder="No. of Volunteers Needed"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="input dark:bg-black rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                 />
               </fieldset>
               {/* deadline */}
               <fieldset className="fieldset ">
-                <label className=" text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold dark:text-white">
                   Deadline
                 </label>
                 <DatePicker
                   name="deadline"
                   selected={deadline}
                   onChange={(date) => setDeadline(date)}
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="input dark:bg-black rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   dateFormat="yyyy-MM-dd"
                   minDate={new Date()}
                 />
@@ -145,28 +145,28 @@ const AddVolunteer = () => {
 
               {/* User Name */}
               <fieldset className="fieldset ">
-                <label className=" text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold dark:text-white">
                   Organizer Name
                 </label>
-                <input
+                <input dark:bg-black
                   type="text"
                   name="OrganizerName"
                   value={user?.displayName || ""}
                   readOnly
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
+                  className="input dark:bg-black rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                 />
               </fieldset>
               {/* User Email */}
               <fieldset className="fieldset ">
-                <label className=" text-[.885rem] font-semibold">
+                <label className=" text-[.885rem] font-semibold dark:text-white">
                   Organizer Email
                 </label>
-                <input
+                <input dark:bg-black
                   type="email"
                   name="OrganizerEmail"
                   value={user?.email || ""}
                   readOnly
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
+                  className="input dark:bg-black rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                 />
               </fieldset>
             </div>

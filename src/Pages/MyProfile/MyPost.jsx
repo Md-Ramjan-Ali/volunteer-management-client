@@ -14,16 +14,16 @@ const MyPost = () => {
   return (
     <div className="max-w-screen-xl mx-auto my-5">
       <div className="">
-        <div className="tabs tabs-lift justify-center w-full ">
+        <div className="tabs tabs-lift justify-center w-full dark:bg-black text-white">
           {/* Tab 1 - My Volunteer Need Posts */}
           <input
             type="radio"
             name="my_tabs"
-            className="tab"
+            className="tab  text-black dark:bg-white"
             aria-label="My Volunteer Posts"
             defaultChecked
           />
-          <div className="tab-content bg-base-100 border-base-300 p-6 ">
+          <div className="tab-content bg-base-100 dark:bg-black border-base-300 p-6 ">
             {/* My volunteer need post data */}
             <Suspense fallback={<Loading></Loading>}>
               <MyPostNeedCard
@@ -40,10 +40,10 @@ const MyPost = () => {
           <input
             type="radio"
             name="my_tabs"
-            className="tab"
+            className="tab text-black dark:bg-white"
             aria-label="My Volunteer Request posts"
           />
-          <div className="tab-content bg-base-100 border-base-300 p-6">
+          <div className="tab-content bg-base-100 border-base-300 dark:bg-black p-6">
             {/* My volunteer requested data */}
             <Suspense fallback={<Loading></Loading>}>
               <MyRequestList

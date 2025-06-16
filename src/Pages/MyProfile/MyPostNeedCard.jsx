@@ -50,7 +50,7 @@ const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
           My Volunteer Need Posts
         </h2>
         <table className="table w-full text-sm ">
-          <thead className="bg-gray-100 text-black text-left text-sm uppercase">
+          <thead className="bg-gray-100 dark:bg-gray-600 dark:text-white text-black text-left text-sm uppercase">
             <tr>
               <th className="px-4 py-3">Thumbnail</th>
               <th className="px-4 py-3">Title</th>
@@ -63,7 +63,7 @@ const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
             {myVolunteer.map((volunteer) => (
               <tr
                 key={volunteer._id}
-                className="border-t hover:bg-gray-50 transition"
+                className="border-t hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-600 dark:text-white transition"
               >
                 <td className="px-4 py-3">
                   <img

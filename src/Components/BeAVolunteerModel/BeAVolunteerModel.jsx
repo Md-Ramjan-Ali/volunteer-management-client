@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import Loading from "../Loading/Loading";
 
 const BeAVolunteerModel = ({ volunteer, user }) => {
   const [suggestion, setSuggestion] = useState("");
@@ -13,7 +14,18 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
     e.preventDefault();
 
     const requestData = {
-      ...volunteer,
+   //values from organizer data
+      _id: volunteer._id,
+      thumbnail: volunteer.thumbnail,
+      title: volunteer.title,
+      description: volunteer.description,
+      category: volunteer.category,
+      location: volunteer.location,
+      deadline: volunteer.deadline,
+      OrganizerName: volunteer.OrganizerName,
+      OrganizerEmail: volunteer.OrganizerEmail,
+
+      // values from user data
       volunteerName: user.displayName,
       volunteerEmail: user.email,
       suggestion,
@@ -39,7 +51,8 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
           });
 
           setTimeout(() => {
-            navigate(`/volunteerDetails/${volunteer._id}`);
+            document.getElementById("VolunteerModal").close();
+            navigate("/myPost");
           }, 100);
         } else if (
           result.acknowledged &&
@@ -74,6 +87,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
         console.log(error);
       });
   };
+
   return (
     <div>
       <dialog id="VolunteerModal" className="modal">
@@ -145,7 +159,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
                     readOnly
                   >
-                    <option defaultValue="">Select Category</option>
+                    <option defaultValue="">{volunteer.category}</option>
                     <option defaultValue="healthcare">Healthcare</option>
                     <option defaultValue="education">Education</option>
                     <option defaultValue="social-service">

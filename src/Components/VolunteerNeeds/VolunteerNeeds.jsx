@@ -20,6 +20,13 @@ const VolunteerNeeds = () => {
       <h2 className="text-3xl text-secondary dark:text-white text-center font-semibold mt-25 mb-5">
         Volunteer Needs Now
       </h2>
+      <p className="max-w-6xl mx-auto text-center w-full mb-5 text-gray-500 dark:text-white">
+        Bangladesh is a vibrant South Asian country known for its rich culture,
+        resilience, and hospitable people. Despite economic growth, many
+        communities still face challenges in healthcare, education, and social
+        welfare. Volunteers can make a meaningful impact by supporting
+        underprivileged areas and empowering local initiatives.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {volunteerNeeds.map((volunteer) => (
           <VolunteerNeedsCard

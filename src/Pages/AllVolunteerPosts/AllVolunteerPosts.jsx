@@ -7,16 +7,16 @@ import AllVolunteerTable from "./AllVolunteerTable";
 import { HiUserGroup } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
 
-
 const AllVolunteerPosts = () => {
-
   const [allVolunteerPosts, setAllVolunteerPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [layout, setLayout] = useState("grid");
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/volunteers?search=${searchTerm}`)
+      .get(
+        `https://volunteer-management-server-side-five.vercel.app/volunteers?search=${searchTerm}`
+      )
       .then((res) => setAllVolunteerPosts(res.data))
       .catch((error) => console.log(error));
   }, [searchTerm]);
@@ -46,14 +46,18 @@ const AllVolunteerPosts = () => {
           {/* btn table and grid */}
           <button
             onClick={() => setLayout("table")}
-            className={`${layout === "table" ? "text-primary" : "text-black dark:text-white"}`}
+            className={`${
+              layout === "table" ? "text-primary" : "text-black dark:text-white"
+            }`}
             title="Table View"
           >
             <MdTableRows size={28} className="cursor-pointer" />
           </button>
           <button
             onClick={() => setLayout("grid")}
-            className={`${layout === "grid" ? "text-primary" : "text-black dark:text-white"}`}
+            className={`${
+              layout === "grid" ? "text-primary" : "text-black dark:text-white"
+            }`}
             title="Grid View"
           >
             <RiLayoutGrid2Fill size={28} className="cursor-pointer" />

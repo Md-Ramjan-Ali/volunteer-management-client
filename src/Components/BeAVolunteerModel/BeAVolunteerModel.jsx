@@ -14,7 +14,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
     e.preventDefault();
 
     const requestData = {
-   //values from organizer data
+      //values from organizer data
       _id: volunteer._id,
       thumbnail: volunteer.thumbnail,
       title: volunteer.title,
@@ -33,7 +33,10 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
     };
 
     axios
-      .post("http://localhost:5000/volunteers/requests", requestData)
+      .post(
+        "https://volunteer-management-server-side-five.vercel.app/volunteers/requests",
+        requestData
+      )
       .then((res) => {
         const result = res.data;
         console.log(result);
@@ -157,7 +160,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="category"
                     defaultValue={volunteer.category}
                     className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
-                    readOnly
+                    disabled
                   >
                     <option defaultValue="">{volunteer.category}</option>
                     <option defaultValue="healthcare">Healthcare</option>

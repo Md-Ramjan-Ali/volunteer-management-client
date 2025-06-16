@@ -16,7 +16,10 @@ const AddVolunteer = () => {
     const volunteerData = Object.fromEntries(formData.entries());
 
     axios
-      .post("http://localhost:5000/volunteers", volunteerData)
+      .post(
+        "https://volunteer-management-server-side-five.vercel.app/volunteers",
+        volunteerData
+      )
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
@@ -50,7 +53,8 @@ const AddVolunteer = () => {
                 <label className="text-[.885rem] font-semibold dark:text-white">
                   Thumbnail
                 </label>
-                <input dark:bg-black
+                <input
+                  dark:bg-black
                   type="url"
                   name="thumbnail"
                   placeholder="Thumbnail URL"
@@ -63,7 +67,8 @@ const AddVolunteer = () => {
                 <label className="text-[.885rem] font-semibold dark:text-white">
                   Post Title
                 </label>
-                <input dark:bg-black
+                <input
+                  dark:bg-black
                   name="title"
                   type="title"
                   className="input dark:bg-black rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
@@ -107,7 +112,8 @@ const AddVolunteer = () => {
                 <label className=" text-[.885rem] font-semibold dark:text-white">
                   Location
                 </label>
-                <input dark:bg-black
+                <input
+                  dark:bg-black
                   type="text"
                   name="location"
                   placeholder="Location"
@@ -120,7 +126,8 @@ const AddVolunteer = () => {
                 <label className=" text-[.885rem] font-semibold dark:text-white">
                   No. of volunteers needed
                 </label>
-                <input dark:bg-black
+                <input
+                  dark:bg-black
                   type="number"
                   min={1}
                   name="volunteersNeeded"
@@ -148,7 +155,8 @@ const AddVolunteer = () => {
                 <label className=" text-[.885rem] font-semibold dark:text-white">
                   Organizer Name
                 </label>
-                <input dark:bg-black
+                <input
+                  dark:bg-black
                   type="text"
                   name="OrganizerName"
                   value={user?.displayName || ""}
@@ -161,7 +169,8 @@ const AddVolunteer = () => {
                 <label className=" text-[.885rem] font-semibold dark:text-white">
                   Organizer Email
                 </label>
-                <input dark:bg-black
+                <input
+                  dark:bg-black
                   type="email"
                   name="OrganizerEmail"
                   value={user?.email || ""}

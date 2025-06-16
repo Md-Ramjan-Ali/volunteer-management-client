@@ -1,14 +1,15 @@
 import React, { Suspense } from "react";
 import MyPostNeedCard from "./MyPostNeedCard";
-import { volunteerCreatedByPromised } from "../../Api/volunteerApi";
 import useAuth from "../../Components/Hooks/useAuth";
 import MyRequestList from "./MyRequestLIst";
-import { volunteerRequestByPromised } from "../../Api/volunteerRequests";
 import Loading from "../../Components/Loading/Loading";
-// import React, { useState } from "react";
+import useVolunteerApi from "../../Api/useVolunteerApi";
+import useRequestApi from "../../Api/useRequestApi";
 
 const MyPost = () => {
   const { user } = useAuth();
+  const { volunteerCreatedByPromised } = useVolunteerApi();
+  const { volunteerRequestByPromised } = useRequestApi();
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">
@@ -27,8 +28,7 @@ const MyPost = () => {
             <Suspense fallback={<Loading></Loading>}>
               <MyPostNeedCard
                 volunteerCreatedByPromised={volunteerCreatedByPromised(
-                  user.email,
-                  user.accessToken
+                  user.email
                 )}
               ></MyPostNeedCard>
             </Suspense>

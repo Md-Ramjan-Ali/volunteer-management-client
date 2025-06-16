@@ -1,12 +1,69 @@
-# React + Vite
+# SebaConnect – Volunteer Management Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌱 A full-stack web application to manage and explore volunteer opportunities. Organizers can post volunteer needs, and users can join as volunteers with seamless authentication and a friendly interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Site
 
-## Expanding the ESLint configuration
+🔗 [Live Site URL](https://your-volunteer-site.web.app/)  
+🔗 [Client Repository](https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-ramjan88)  
+🔗 [Server Repository](https://github.com/Programming-Hero-Web-Course4/b11a11-server-side-ramjan88)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧩 Key Features
+
+- 🔐 Firebase authentication (Email/Password + Google login)
+- 📝 Add, update, and delete volunteer need posts
+- 🔎 View all volunteer posts with search and category filters
+- 🙋 “Be a Volunteer” feature with auto-filled data and request tracking
+- 📋 “My Volunteer Posts” and “My Requests” pages for management
+- 📬 Organizer can view all requests submitted for their posts
+- 💬 Toast and SweetAlert2 for real-time user feedback
+- 🔒 Protected routes and role-based data filtering
+- 🌗 Clean, responsive UI using Tailwind CSS, Flowbite, and DaisyUI
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend:** React, Tailwind CSS, DaisyUI, Flowbite
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication:** Firebase Authentication
+- **Deployment:** Firebase Hosting (Client) + Vercel (Server)
+
+---
+
+## 📦 npm Packages Used
+
+| Package                     | Purpose                                                  |
+|-----------------------------|----------------------------------------------------------|
+| `@tailwindcss/vite`         | Integrate Tailwind with Vite for efficient build process |
+| `axios`                     | Make HTTP requests to the server                         |
+| `firebase`                  | Firebase Auth & SDK                                      |
+| `flowbite`                  | UI components for Tailwind CSS                           |
+| `framer-motion`             | Smooth animations                                        |
+| `motion`                    | Animation utility (used with Framer Motion)              |
+| `react` & `react-dom`       | Core React libraries                                     |
+| `react-datepicker`          | Date picker input field                                  |
+| `react-helmet-async`        | Manage page metadata dynamically                         |
+| `react-icons`               | Icon library used in UI                                  |
+| `react-router`              | Routing and navigation                                   |
+| `react-toastify`            | Toast notifications for user feedback                   |
+| `react-toggle-dark-mode`    | UI component for toggling dark/light theme               |
+| `react-tooltip`             | Tooltips for hover hints                                |
+| `sweetalert2`               | Modals for confirmation, success, and error messages     |
+| `swiper`                    | Modern mobile touch slider                              |
+| `tailwindcss`               | Utility-first CSS framework                             |
+
+---
+
+## 🔐 Environment Variables
+
+### Client `.env`
+```env
+VITE_API_URL=https://your-volunteer-server.vercel.app
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com

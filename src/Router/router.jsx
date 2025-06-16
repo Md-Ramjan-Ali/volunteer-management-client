@@ -30,8 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/volunteerDetails/:id",
-        // loader: ({ params }) =>
-        //   fetch(`https://volunteer-management-server-side-five.vercel.app/volunteers/${params.id}`),
+
         element: (
           <PrivetRouter>
             <VolunteerDetails></VolunteerDetails>

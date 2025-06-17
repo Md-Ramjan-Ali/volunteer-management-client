@@ -24,10 +24,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
     };
 
     axios
-      .post(
-        "https://volunteer-management-server-side-five.vercel.app/volunteers/requests",
-        requestData
-      )
+      .post("http://localhost:5000/volunteers/requests", requestData)
       .then((res) => {
         const result = res.data;
         // console.log(result);
@@ -84,8 +81,8 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
 
   return (
     <div>
-      <dialog id="VolunteerModal" className="modal">
-        <div className="modal-box w-11/12 max-w-5xl">
+      <dialog id="VolunteerModal" className="modal ">
+        <div className="modal-box w-11/12 max-w-5xl dark:bg-gray-900">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -109,7 +106,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="thumbnail"
                     defaultValue={volunteer.thumbnail}
                     placeholder="Thumbnail URL"
-                    className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-secondary cursor-not-allowed"
+                    className="input dark:bg-gray-900 w-full rounded-md border-1  border-gray-400 focus:outline-none focus:border-2 focus:border-secondary cursor-not-allowed"
                     readOnly
                   />
                 </fieldset>
@@ -122,7 +119,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="title"
                     defaultValue={volunteer.title}
                     type="text"
-                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
+                    className="input dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
                     placeholder="Post Title"
                     readOnly
                   />
@@ -136,7 +133,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                 <textarea
                   name="description"
                   defaultValue={volunteer.description}
-                  className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
+                  className="textarea dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
                   placeholder="Describe what needs to be done"
                   readOnly
                 />
@@ -150,8 +147,8 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                   <select
                     name="category"
                     defaultValue={volunteer.category}
-                    className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
-                    readOnly
+                    className="select dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
+                    disabled
                   >
                     <option defaultValue="">{volunteer.category}</option>
                     <option defaultValue="healthcare">Healthcare</option>
@@ -174,7 +171,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="location"
                     defaultValue={volunteer.location}
                     placeholder="Location"
-                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
+                    className="input dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
                     readOnly
                   />
                 </fieldset>
@@ -188,7 +185,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="volunteersNeeded"
                     defaultValue={volunteer.volunteersNeeded}
                     placeholder="No. of Volunteers Needed"
-                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
+                    className="input dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
                     readOnly
                   />
                 </fieldset>
@@ -200,7 +197,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                   <input
                     name="deadline"
                     defaultValue={volunteer.deadline}
-                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
+                    className="input dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
                     readOnly
                   />
                 </fieldset>
@@ -215,7 +212,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="OrganizerName"
                     defaultValue={volunteer.OrganizerName}
                     readOnly
-                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
+                    className="input dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                   />
                 </fieldset>
                 {/* User Email */}
@@ -228,7 +225,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="OrganizerEmail"
                     defaultValue={volunteer.OrganizerEmail}
                     readOnly
-                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
+                    className="input dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                   />
                 </fieldset>
               </div>
@@ -241,7 +238,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                   placeholder="Your Suggestion"
                   value={suggestion}
                   onChange={(e) => setSuggestion(e.target.value)}
-                  className="textarea textarea-bordered w-full"
+                  className="textarea dark:bg-gray-900 border-gray-400 textarea-bordered w-full"
                 />
               </fieldset>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">
@@ -255,7 +252,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="volunteerName"
                     value={user?.displayName || ""}
                     readOnly
-                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
+                    className="input dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                   />
                 </fieldset>
                 {/* User Email */}
@@ -268,7 +265,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="volunteerEmail"
                     value={user?.email || ""}
                     readOnly
-                    className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
+                    className="input dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                   />
                 </fieldset>
               </div>

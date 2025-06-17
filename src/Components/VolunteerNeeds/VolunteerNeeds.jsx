@@ -8,9 +8,7 @@ const VolunteerNeeds = () => {
 
   useEffect(() => {
     axios
-      .get(
-        "https://volunteer-management-server-side-five.vercel.app/volunteers/volunteerNeedNow"
-      )
+      .get("http://localhost:5000/volunteers/volunteerNeedNow")
       .then((res) => setVolunteerNeeds(res.data))
       .catch((error) => console.log(error));
   }, []);

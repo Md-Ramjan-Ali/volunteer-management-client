@@ -1,12 +1,14 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../Context/AuthContext";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { signInUser, setUser } = use(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -62,19 +64,33 @@ const Login = () => {
             <input
               name="email"
               type="email"
-              className="input"
+              className="input focus:outline-0 border border-gray-400"
               placeholder="Email"
               required
             />
             {/* passowrd  */}
-            <label className="label">Password</label>
-            <input
-              name="password"
-              type="password"
-              className="input"
-              placeholder="Password"
-              required
-            />
+            <div className="relative">
+              <label className="label">Password</label>
+              <input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                className="input focus:outline-0 border border-gray-400"
+                placeholder="Password"
+                required
+              />
+              <p
+                onClick={() => {
+                  setShowPassword(!showPassword);
+                }}
+                className="btn btn-xs absolute top-6.5 right-6"
+              >
+                {showPassword ? (
+                  <FaEyeSlash size={15}></FaEyeSlash>
+                ) : (
+                  <FaEye size={15}></FaEye>
+                )}
+              </p>
+            </div>
 
             <div>
               <Link className="link link-hover">Forgot password?</Link>

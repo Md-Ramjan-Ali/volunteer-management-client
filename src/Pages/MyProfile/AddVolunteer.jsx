@@ -16,10 +16,7 @@ const AddVolunteer = () => {
     const volunteerData = Object.fromEntries(formData.entries());
 
     axios
-      .post(
-        "https://volunteer-management-server-side-five.vercel.app/volunteers",
-        volunteerData
-      )
+      .post("http://localhost:5000/volunteers", volunteerData)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

@@ -75,7 +75,7 @@ const Register = () => {
             <input
               name="name"
               type="text"
-              className="input"
+              className="input focus:outline-0 border border-gray-400"
               placeholder="Name"
               required
             />
@@ -85,7 +85,7 @@ const Register = () => {
             <input
               name="photo"
               type="text"
-              className="input"
+              className="input focus:outline-0 border border-gray-400"
               placeholder="Photo URl"
               required
             />
@@ -95,7 +95,7 @@ const Register = () => {
             <input
               name="email"
               type="email"
-              className="input"
+              className="input focus:outline-0 border border-gray-400"
               placeholder="Email"
               required
             />
@@ -106,7 +106,7 @@ const Register = () => {
               <input
                 name="password"
                 type={showPassword ? "text" : "password"}
-                className="input"
+                className="input focus:outline-0 border border-gray-400"
                 placeholder="Password"
                 required
                 title="Must be at least 6 characters, lowercase letter, uppercase letter"

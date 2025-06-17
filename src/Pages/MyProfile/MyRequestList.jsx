@@ -19,9 +19,7 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(
-            `https://volunteer-management-server-side-five.vercel.app/volunteers/requests/${id}`
-          )
+          .delete(`http://localhost:5000/volunteers/requests/${id}`)
           .then((res) => {
             console.log(res.data);
 

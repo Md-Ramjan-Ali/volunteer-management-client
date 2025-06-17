@@ -18,7 +18,11 @@ const MyPost = () => {
         <title>My Post | SebaConnect</title>
       </Helmet>
       <div className="">
-        <div className="tabs tabs-lift justify-center w-full dark:bg-gray-900 dark:text-white">
+        <div
+          className="tabs tabs-lift justify-center w-full bg-base-200 dark:bg-gray-900 dark:text-white"
+          data-aos="zoom-in"
+          data-aos-easing="linear"
+        >
           {/* Tab 1 - My Volunteer Need Posts */}
           <input
             type="radio"

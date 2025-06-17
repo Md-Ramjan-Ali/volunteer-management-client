@@ -106,7 +106,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="thumbnail"
                     defaultValue={volunteer.thumbnail}
                     placeholder="Thumbnail URL"
-                    className="input dark:bg-gray-900 w-full rounded-md border-1  border-gray-400 focus:outline-none focus:border-2 focus:border-secondary cursor-not-allowed"
+                    className="input bg-transparent dark:bg-gray-900 w-full rounded-md border-1  border-gray-400 focus:outline-none focus:border-2 focus:border-secondary cursor-not-allowed"
                     readOnly
                   />
                 </fieldset>
@@ -235,10 +235,11 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                   Suggestion
                 </label>
                 <textarea
+                  name="suggestion"
                   placeholder="Your Suggestion"
                   value={suggestion}
                   onChange={(e) => setSuggestion(e.target.value)}
-                  className="textarea dark:bg-gray-900 border-gray-400 textarea-bordered w-full"
+                  className="textarea dark:bg-gray-900 border-gray-400 focus:border-2 focus:border-secondary focus:outline-none w-full"
                 />
               </fieldset>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-5">

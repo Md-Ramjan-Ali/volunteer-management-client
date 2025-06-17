@@ -49,7 +49,11 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
       <Helmet>
         <title>Request Post | SebaConnect</title>
       </Helmet>
-      <div className="overflow-x-auto rounded-lg">
+      <div
+        className="overflow-x-auto rounded-lg"
+        data-aos="zoom-in"
+        data-aos-easing="linear"
+      >
         <h2 className="text-xl font-semibold mb-4 text-center">
           My Volunteer Request Posts
         </h2>

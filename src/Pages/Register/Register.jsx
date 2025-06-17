@@ -66,16 +66,20 @@ const Register = () => {
       <Helmet>
         <title>Register | SebaConnect</title>
       </Helmet>
-      <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10">
+      <div
+        className="card bg-base-200 dark:bg-gray-900 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10"
+        data-aos="zoom-in"
+        data-aos-easing="linear"
+      >
         <div className="card-body">
-          <h1 className="text-3xl font-bold text-center">Register now!</h1>
+          <h1 className="text-2xl font-bold text-center">Register now!</h1>
           <form onSubmit={handleSignUp} className="fieldset">
             {/* Name  */}
             <label className="label">Name</label>
             <input
               name="name"
               type="text"
-              className="input focus:outline-0 border border-gray-400"
+              className="input bg-base-200 dark:bg-transparent focus:outline-0 border border-gray-400"
               placeholder="Name"
               required
             />
@@ -85,7 +89,7 @@ const Register = () => {
             <input
               name="photo"
               type="text"
-              className="input focus:outline-0 border border-gray-400"
+              className="input bg-base-200 dark:bg-transparent focus:outline-0 border border-gray-400"
               placeholder="Photo URl"
               required
             />
@@ -95,7 +99,7 @@ const Register = () => {
             <input
               name="email"
               type="email"
-              className="input focus:outline-0 border border-gray-400"
+              className="input bg-base-200 dark:bg-transparent focus:outline-0 border border-gray-400"
               placeholder="Email"
               required
             />
@@ -106,7 +110,7 @@ const Register = () => {
               <input
                 name="password"
                 type={showPassword ? "text" : "password"}
-                className="input focus:outline-0 border border-gray-400"
+                className="input bg-base-200 dark:bg-transparent focus:outline-0 border border-gray-400"
                 placeholder="Password"
                 required
                 title="Must be at least 6 characters, lowercase letter, uppercase letter"

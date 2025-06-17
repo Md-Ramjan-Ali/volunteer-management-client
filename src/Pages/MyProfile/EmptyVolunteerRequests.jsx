@@ -4,11 +4,13 @@ import { Link } from "react-router";
 
 const EmptyVolunteerRequests = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-[70vh] text-center px-4">
+    <div
+      className="flex flex-col items-center justify-center h-[70vh] text-center px-4"
+      data-aos="zoom-in"
+      data-aos-easing="linear"
+    >
       <MdVolunteerActivism className="text-7xl text-secondary mb-4" />
-      <h2 className="text-2xl font-bold mb-2">
-        No Volunteer Requests Found
-      </h2>
+      <h2 className="text-2xl font-bold mb-2">No Volunteer Requests Found</h2>
       <p className=" mb-6 max-w-md">
         You haven't requested to volunteer for any posts yet.
         <br />

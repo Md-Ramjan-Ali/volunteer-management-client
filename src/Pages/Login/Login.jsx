@@ -55,26 +55,30 @@ const Login = () => {
       <Helmet>
         <title>Login | SebaConnect</title>
       </Helmet>
-      <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 ">
+      <div
+        className="card bg-base-200 dark:bg-gray-900 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 "
+        data-aos="zoom-in"
+        data-aos-easing="linear"
+      >
         <div className="card-body">
           <h1 className="text-3xl font-bold text-center">Login now!</h1>
           <form onSubmit={handleSignIn} className="fieldset">
             {/* email  */}
-            <label className="label">Email</label>
+            <label className="label dark:text-white">Email</label>
             <input
               name="email"
               type="email"
-              className="input focus:outline-0 border border-gray-400"
+              className="input bg-base-200 dark:bg-transparent focus:outline-0 border border-gray-400"
               placeholder="Email"
               required
             />
             {/* passowrd  */}
             <div className="relative">
-              <label className="label">Password</label>
+              <label className="label dark:text-white">Password</label>
               <input
                 name="password"
                 type={showPassword ? "text" : "password"}
-                className="input focus:outline-0 border border-gray-400"
+                className="input bg-base-200 dark:bg-transparent focus:outline-0 border border-gray-400"
                 placeholder="Password"
                 required
               />

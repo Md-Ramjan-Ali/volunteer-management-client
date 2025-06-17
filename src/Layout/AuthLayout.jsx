@@ -7,7 +7,7 @@ import Footer from '../Pages/Shared/Footer/Footer';
 const AuthLayout = () => {
   const {state}=useNavigation()
   return (
-    <div>
+    <div className="bg-base-200 dark:bg-gray-900 dark:text-white">
       <Navbar></Navbar>
       {state == "loading" ? <Loading /> : <Outlet></Outlet>}
       <Footer></Footer>

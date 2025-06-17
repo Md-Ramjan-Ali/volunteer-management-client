@@ -1,43 +1,43 @@
-import React, { use } from 'react';
-import { useLocation, useNavigate } from 'react-router';
-import { AuthContext } from '../../../Context/AuthContext';
-import { toast } from 'react-toastify';
+import React, { use } from "react";
+import { useLocation, useNavigate } from "react-router";
+import { AuthContext } from "../../../Context/AuthContext";
+import { toast } from "react-toastify";
 
 const SocialLogin = () => {
   const { signInGoogle, setUser } = use(AuthContext);
-  const navigate=useNavigate()
-  const location=useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleGoogleSignIn=()=>{
+  const handleGoogleSignIn = () => {
     signInGoogle()
-          .then((result) => {
-            const googleUser = result.user;
-            toast.success("Google Login Successfully!", {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: false,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
-            setUser(googleUser);
-            setTimeout(() => {
-              navigate(`${location.state ? location.state : "/"}`);
-            }, 1500);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-  }
+      .then((result) => {
+        const googleUser = result.user;
+        toast.success("Google Login Successfully!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setUser(googleUser);
+        setTimeout(() => {
+          navigate(`${location.state ? location.state : "/"}`);
+        }, 1500);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="">
       <div className="divider">OR</div>
       {/* Google */}
       <button
         onClick={() => handleGoogleSignIn()}
-        className="btn bg-white text-black border-[#e5e5e5] w-fit flex mx-auto"
+        className="btn bg-base-200 dark:bg-gray-900 text-gray-700 dark:text-white border-[#e5e5e5] w-fit flex mx-auto"
       >
         <svg
           aria-label="Google logo"

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { use, useState } from "react";
 import Swal from "sweetalert2";
 import EmptyVolunteerRequests from "./EmptyVolunteerRequests";
+import { Helmet } from "react-helmet-async";
 
 const MyRequestList = ({ volunteerRequestByPromised }) => {
   const requestData = use(volunteerRequestByPromised);
@@ -49,6 +50,9 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
   }
   return (
     <div>
+      <Helmet>
+        <title>Request Post | SebaConnect</title>
+      </Helmet>
       <div className="overflow-x-auto rounded-lg">
         <h2 className="text-xl font-semibold mb-4 text-center">
           My Volunteer Request Posts

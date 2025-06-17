@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const handleMessage = (e) => {
@@ -11,10 +12,15 @@ const Contact = () => {
     e.target.reset();
   };
   return (
-    <div className='max-w-screen-lg mx-auto my-5 px-2'>
+    <div className="max-w-screen-lg mx-auto my-5 px-2">
+      <Helmet>
+        <title>Contact | SebaConnect</title>
+      </Helmet>
       {/* Contact Form */}
       <form onSubmit={handleMessage} className="space-y-6">
-        <h2 className="text-2xl font-bold text-center text-secondary">Contact With Us</h2>
+        <h2 className="text-2xl font-bold text-center text-secondary">
+          Contact With Us
+        </h2>
         <div>
           <label className="text-[.885rem] font-semibold ">Full name</label>
           <input

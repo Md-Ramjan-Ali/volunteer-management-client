@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Components/Hooks/useAxiosSecure";
 import Loading from "../../Components/Loading/Loading";
+import { Helmet } from "react-helmet-async";
 
 const UpdateMyPost = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const UpdateMyPost = () => {
         }
       })
       .catch((error) => {
-        console.error( error);
+        console.error(error);
       });
   }, [id, axiosSecure]);
 
@@ -58,6 +59,9 @@ const UpdateMyPost = () => {
   }
   return (
     <div className="max-w-screen-xl mx-auto my-5">
+      <Helmet>
+        <title>Update Post | SebaConnect</title>
+      </Helmet>
       <div className="card bg-base-100 w-full shadow-sm">
         <h1 className="text-center text-2xl font-bold pt-5">
           Update volunteer need post

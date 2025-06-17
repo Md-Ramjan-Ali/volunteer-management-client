@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddVolunteer = () => {
   const [deadline, setDeadline] = useState(new Date());
@@ -42,6 +43,9 @@ const AddVolunteer = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">
+      <Helmet>
+        <title>Add Volunteer | SebaConnect</title>
+      </Helmet>
       <div className="card bg-base-100 dark:bg-black w-full shadow-sm">
         <h1 className="text-center text-2xl font-bold pt-5">
           Add volunteer need post

@@ -23,7 +23,9 @@ const Footer = () => {
                 <img className="w-16" src={FooterLogo} alt="" />
                 <h2 className=" text-2xl font-bold ">
                   <span className="text-primary">Seba</span>
-                  <span className="text-secondary">Connect</span>
+                  <span className="text-secondary dark:text-white">
+                    Connect
+                  </span>
                 </h2>
               </Link>
               <p className="mt-2 text-gray-300 max-w-sm">
@@ -119,7 +121,8 @@ const Footer = () => {
 
         {/* Bottom Line */}
         <div className="bg-[#111827] text-gray-500 text-center mt-5 py-5">
-          © {new Date().getFullYear()} Event Explorer. All rights reserved.
+          © {new Date().getFullYear()} SebaConnect | Volunteer Platform. All
+          rights reserved.
         </div>
       </footer>
     </div>

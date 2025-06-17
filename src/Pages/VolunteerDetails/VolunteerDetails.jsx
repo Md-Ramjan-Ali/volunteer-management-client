@@ -4,6 +4,7 @@ import useAuth from "../../Components/Hooks/useAuth";
 import { useParams } from "react-router";
 import useAxiosSecure from "../../Components/Hooks/useAxiosSecure";
 import Loading from "../../Components/Loading/Loading";
+import { Helmet } from "react-helmet-async";
 
 const VolunteerDetails = () => {
   const { user } = useAuth();
@@ -41,7 +42,14 @@ const VolunteerDetails = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto my-5 px-2">
-      <div className="card lg:card-side shadow-lg rounded-xl overflow-hidden">
+      <Helmet>
+        <title>Details | SebaConnect</title>
+      </Helmet>
+      <div
+        className="card lg:card-side shadow-lg rounded-xl overflow-hidden w-full"
+        data-aos="zoom-in"
+        data-aos-easing="linear"
+      >
         <div className="">
           <img
             src={thumbnail}
@@ -75,7 +83,7 @@ const VolunteerDetails = () => {
             </p>
           </div>
 
-          <div className=" ">
+          <div className=" w-full">
             {volunteersNeeded === 0 ? (
               <p className="text-red-500 font-semibold mt-4 text-center">
                 All volunteer positions are filled for this post.

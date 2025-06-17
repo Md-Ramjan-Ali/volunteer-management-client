@@ -43,24 +43,27 @@ const categories = [
 
 const PopularVolunteers = () => {
   return (
-    <section className="my-20 px-2 max-w-7xl mx-auto text-gray-700 dark:text-white">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-secondary dark:text-white">
-        Explore Popular Causes
-      </h2>
-      <p className="px-2 text-sm text-center mb-12 max-w-2xl mx-auto">
-        Find opportunities that match your passion. Whether it's helping the
-        environment or supporting education, there's a place for you.
-      </p>
+    <section className="my-30 px-2 max-w-7xl mx-auto text-gray-700 dark:text-white">
+      <div className="" data-aos="zoom-in" data-aos-easing="linear">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-5 text-secondary dark:text-white">
+          Explore Popular Causes
+        </h2>
+        <p className="px-2 text-sm text-center mb-12 max-w-2xl mx-auto">
+          Find opportunities that match your passion. Whether it's helping the
+          environment or supporting education, there's a place for you.
+        </p>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {categories.map((cat, i) => (
           <div
+            data-aos="zoom-in"
+            data-aos-easing="linear"
             key={i}
             className="rounded-xl p-6 text-center shadow-md hover:shadow-lg transition cursor-pointer"
           >
             <h2 className="flex justify-center items-center">{cat.icon}</h2>
             <h3 className="text-xl font-semibold mt-4 mb-2">{cat.title}</h3>
             <p className=" text-sm">{cat.description}</p>
-          
           </div>
         ))}
       </div>

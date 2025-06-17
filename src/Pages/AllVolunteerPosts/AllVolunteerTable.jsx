@@ -7,7 +7,7 @@ const AllVolunteerTable = ({ allVolunteerPosts }) => {
     <div className="overflow-x-auto rounded-xl shadow-md px-1">
       <table className="min-w-full table-auto border border-gray-300">
         <thead className="bg-gray-100 text-left text-gray-700 text-sm uppercase">
-          <tr>
+          <tr data-aos="zoom-in" data-aos-easing="linear">
             <th className="px-4 py-3">Thumbnail</th>
             <th className="px-4 py-3">Title</th>
             <th className="px-4 py-3">Category</th>
@@ -18,6 +18,8 @@ const AllVolunteerTable = ({ allVolunteerPosts }) => {
         <tbody className="text-sm">
           {allVolunteerPosts.map((volunteer) => (
             <tr
+              data-aos="zoom-in"
+              data-aos-easing="linear"
               key={volunteer._id}
               className="border-t hover:bg-gray-50 transition"
             >

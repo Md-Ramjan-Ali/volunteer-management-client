@@ -9,10 +9,10 @@ const Root = () => {
   const { state } = useNavigation();
 
   return (
-    <div className="dark:bg-gray-900 dark:text-white">
+    <div className="bg-base-200 dark:bg-gray-900 dark:text-white">
       <Navbar></Navbar>
 
-      {state == "loading" ? <Loading /> : <Outlet></Outlet>}
+      <main>{state == "loading" ? <Loading /> : <Outlet></Outlet>}</main>
 
       <Footer></Footer>
       <ToastContainer />

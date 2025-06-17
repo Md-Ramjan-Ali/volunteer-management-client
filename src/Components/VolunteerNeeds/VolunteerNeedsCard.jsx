@@ -9,7 +9,7 @@ const VolunteerNeedsCard = ({ volunteer }) => {
       <div
         data-aos="zoom-in"
         data-aos-easing="linear"
-        className="card rounded-xl shadow-md hover:shadow-xl transition overflow-hidden aos-init aos-animate"
+        className="card rounded-xl shadow-md hover:shadow-xl transition overflow-hidden"
       >
         <div>
           <figure>

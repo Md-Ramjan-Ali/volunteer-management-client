@@ -26,7 +26,7 @@ const VolunteerNeeds = () => {
 
   return (
     <div className="mt-10">
-      <div className="">
+      <div data-aos="zoom-in" data-aos-easing="linear" className="">
         <h2 className="text-3xl text-secondary dark:text-white text-center font-semibold mt-25 mb-5">
           Volunteer Needs Now
         </h2>
@@ -38,10 +38,7 @@ const VolunteerNeeds = () => {
           underprivileged areas and empowering local initiatives.
         </p>
       </div>
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2"
-     
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2">
         {volunteerNeeds.map((volunteer) => (
           <VolunteerNeedsCard
             key={volunteer._id}
@@ -49,7 +46,11 @@ const VolunteerNeeds = () => {
           ></VolunteerNeedsCard>
         ))}
       </div>
-      <div className="text-center mt-8">
+      <div
+        className="text-center mt-8"
+        data-aos="zoom-in"
+        data-aos-easing="linear"
+      >
         <Link to="/allVolunteerPosts">
           <button className="bg-primary hover:bg-secondary text-white btn px-10 font-medium">
             See All

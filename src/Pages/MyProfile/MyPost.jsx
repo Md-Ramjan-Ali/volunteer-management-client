@@ -5,6 +5,7 @@ import MyRequestList from "./MyRequestLIst";
 import Loading from "../../Components/Loading/Loading";
 import useVolunteerApi from "../../Api/useVolunteerApi";
 import useRequestApi from "../../Api/useRequestApi";
+import { Helmet } from "react-helmet-async";
 
 const MyPost = () => {
   const { user } = useAuth();
@@ -13,6 +14,9 @@ const MyPost = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">
+      <Helmet>
+              <title>My Post | SebaConnect</title>
+            </Helmet>
       <div className="">
         <div className="tabs tabs-lift justify-center w-full dark:bg-gray-900 dark:text-white">
           {/* Tab 1 - My Volunteer Need Posts */}

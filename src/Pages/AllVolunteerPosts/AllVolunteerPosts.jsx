@@ -7,9 +7,10 @@ import AllVolunteerTable from "./AllVolunteerTable";
 import { HiUserGroup } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
 import Loading from "../../Components/Loading/Loading";
+import { Helmet } from "react-helmet-async";
 
 const AllVolunteerPosts = () => {
-  const [loading,setLoading]=useState(true)
+  const [loading, setLoading] = useState(true);
   const [allVolunteerPosts, setAllVolunteerPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [layout, setLayout] = useState("grid");
@@ -21,17 +22,20 @@ const AllVolunteerPosts = () => {
       )
       .then((res) => {
         setAllVolunteerPosts(res.data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((error) => console.log(error));
   }, [searchTerm]);
 
-  if(loading){
-    return <Loading></Loading>
+  if (loading) {
+    return <Loading></Loading>;
   }
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">
+      <Helmet>
+        <title>All Post | SebaConnect</title>
+      </Helmet>
       <div className="flex gap-5 items-center  p-2 rounded-md my-10">
         <div className="flex gap-2 items-center">
           <HiUserGroup className="text-2xl md:text-4xl text-primary dark:text-white" />

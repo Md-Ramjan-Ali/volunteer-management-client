@@ -6,7 +6,11 @@ const VolunteerNeedsCard = ({ volunteer }) => {
 
   return (
     <div>
-      <div className="card rounded-xl shadow-md hover:shadow-xl transition overflow-hidden ">
+      <div
+        data-aos="zoom-in"
+        data-aos-easing="linear"
+        className="card rounded-xl shadow-md hover:shadow-xl transition overflow-hidden aos-init aos-animate"
+      >
         <div>
           <figure>
             <img

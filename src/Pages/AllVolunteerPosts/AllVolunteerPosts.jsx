@@ -6,8 +6,10 @@ import { MdTableRows } from "react-icons/md";
 import AllVolunteerTable from "./AllVolunteerTable";
 import { HiUserGroup } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
+import Loading from "../../Components/Loading/Loading";
 
 const AllVolunteerPosts = () => {
+  const [loading,setLoading]=useState(true)
   const [allVolunteerPosts, setAllVolunteerPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [layout, setLayout] = useState("grid");
@@ -17,9 +19,16 @@ const AllVolunteerPosts = () => {
       .get(
         `https://volunteer-management-server-side-five.vercel.app/volunteers?search=${searchTerm}`
       )
-      .then((res) => setAllVolunteerPosts(res.data))
+      .then((res) => {
+        setAllVolunteerPosts(res.data);
+        setLoading(false)
+      })
       .catch((error) => console.log(error));
   }, [searchTerm]);
+
+  if(loading){
+    return <Loading></Loading>
+  }
 
   return (
     <div className="max-w-screen-xl mx-auto my-5">

@@ -9,6 +9,8 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2">
         {allVolunteerPosts.map((volunteer) => (
           <div
+            data-aos="zoom-in"
+            data-aos-easing="linear"
             key={volunteer._id}
             className="card rounded-xl shadow-md hover:shadow-xl transition overflow-hidden"
           >

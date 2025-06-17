@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 
 const Root = () => {
   const { state } = useNavigation();
+
   return (
     <div className="dark:bg-gray-900 dark:text-white">
       <Navbar></Navbar>

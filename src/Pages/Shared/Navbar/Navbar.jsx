@@ -42,7 +42,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-100 dark:bg-black rounded-box z-1 w-56 p-2 shadow-sm  "
+                className="dropdown-content menu bg-base-100 dark:bg-gray-900 rounded-box z-1 w-56 p-2 shadow-sm  "
               >
                 <li>
                   <NavLink to="/addVolunteer">Add Volunteer need Post</NavLink>
@@ -58,7 +58,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="navbar bg-base-100 shadow-sm px-10 sticky top-0 z-50 dark:bg-gray-900 dark:text-white">
+    <nav className="navbar bg-base-100/50 backdrop-blur-sm  shadow-sm px-10 sticky top-0 z-50 dark:bg-gray-900/50 dark:text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">
@@ -88,7 +88,7 @@ const Navbar = () => {
           <img className="w-16" src={Logo} alt="" />
           <h2 className=" text-2xl font-bold hidden md:flex">
             <span className="text-primary">Seba</span>
-            <span className="text-secondary">Connect</span>
+            <span className="text-secondary dark:text-white">Connect</span>
           </h2>
         </Link>
       </div>

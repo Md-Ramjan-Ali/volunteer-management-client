@@ -2,10 +2,12 @@ import React, { use, useState } from "react";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 import EmptyMyVolunteerPosts from "./EmptyMyVolunteerPosts";
+import useAxiosSecure from "../../Components/Hooks/useAxiosSecure";
 
 const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
   const initialMyVolunteerPost = use(volunteerCreatedByPromised);
   const [myVolunteer, setMyVolunteer] = useState(initialMyVolunteerPost);
+  const axiosSecure = useAxiosSecure();
 
   const handleDelete = (id) => {
     console.log(id);
@@ -19,22 +21,15 @@ const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://volunteer-management-server-side-five.vercel.app/volunteers/${id}`,
-          {
-            method: "DELETE",
+        axiosSecure.delete(`/volunteers/${id}`).then((res) => {
+          if (res.data.deletedCount) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your Volunteer has been deleted.",
+              icon: "success",
+            });
           }
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your Volunteer has been deleted.",
-                icon: "success",
-              });
-            }
-          });
+        });
 
         const remainingVolunteer = myVolunteer.filter((vol) => vol._id !== id);
         setMyVolunteer(remainingVolunteer);

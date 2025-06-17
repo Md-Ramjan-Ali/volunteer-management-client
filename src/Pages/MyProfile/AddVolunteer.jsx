@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import useAuth from "../../Components/Hooks/useAuth";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import useAxiosSecure from "../../Components/Hooks/useAxiosSecure";
 
 const AddVolunteer = () => {
   const [deadline, setDeadline] = useState(new Date());
   const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
 
   const handleAddVolunteer = (e) => {
     e.preventDefault();
@@ -17,11 +18,8 @@ const AddVolunteer = () => {
     const volunteerData = Object.fromEntries(formData.entries());
     volunteerData.volunteersNeeded = parseInt(volunteerData.volunteersNeeded);
 
-    axios
-      .post(
-        "https://volunteer-management-server-side-five.vercel.app/volunteers",
-        volunteerData
-      )
+    axiosSecure
+      .post(`/volunteers`, volunteerData)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
@@ -30,15 +28,12 @@ const AddVolunteer = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          form.reset();
         }
-
-        console.log(res.data);
       })
       .catch((error) => {
         console.log(error);
       });
-    form.reset();
-    console.log(volunteerData);
   };
 
   return (

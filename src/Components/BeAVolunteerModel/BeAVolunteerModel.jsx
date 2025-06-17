@@ -1,13 +1,14 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const BeAVolunteerModel = ({ volunteer, user }) => {
   const [suggestion, setSuggestion] = useState("");
   const navigate = useNavigate();
   // console.log(volunteer);
+  const axiosSecure = useAxiosSecure();
 
   const handleRequest = (e) => {
     e.preventDefault();
@@ -22,11 +23,8 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
       status: "requested",
     };
 
-    axios
-      .post(
-        "https://volunteer-management-server-side-five.vercel.app/volunteers/requests",
-        requestData
-      )
+    axiosSecure
+      .post("/volunteers/requests", requestData)
       .then((res) => {
         const result = res.data;
         // console.log(result);

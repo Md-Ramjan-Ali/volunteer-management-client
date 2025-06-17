@@ -1,12 +1,13 @@
-import axios from "axios";
 import React, { use, useState } from "react";
 import Swal from "sweetalert2";
 import EmptyVolunteerRequests from "./EmptyVolunteerRequests";
 import { Helmet } from "react-helmet-async";
+import useAxiosSecure from "../../Components/Hooks/useAxiosSecure";
 
 const MyRequestList = ({ volunteerRequestByPromised }) => {
   const requestData = use(volunteerRequestByPromised);
   const [requests, setRequests] = useState(requestData || []);
+  const axiosSecure = useAxiosSecure();
 
   // Cancel request
   const handleCancel = (id) => {
@@ -19,10 +20,8 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
       cancelButtonText: "No, Keep it",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios
-          .delete(
-            `https://volunteer-management-server-side-five.vercel.app/volunteers/requests/${id}`
-          )
+        axiosSecure
+          .delete(`/volunteers/requests/${id}`)
           .then((res) => {
             console.log(res.data);
 

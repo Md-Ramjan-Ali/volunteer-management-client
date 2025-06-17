@@ -5,23 +5,21 @@ import { Link } from "react-router";
 import Loading from "../Loading/Loading";
 
 const VolunteerNeeds = () => {
-  const [loading,setLoading]=useState(true)
+  const [loading, setLoading] = useState(true);
   const [volunteerNeeds, setVolunteerNeeds] = useState([]);
 
   useEffect(() => {
     axios
-      .get(
-        "https://volunteer-management-server-side-five.vercel.app/volunteers/volunteerNeedNow"
-      )
+      .get("http://localhost:5000/volunteers/volunteerNeedNow")
       .then((res) => {
         setVolunteerNeeds(res.data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  if(loading){
-    return <Loading></Loading>
+  if (loading) {
+    return <Loading></Loading>;
   }
 
   return (

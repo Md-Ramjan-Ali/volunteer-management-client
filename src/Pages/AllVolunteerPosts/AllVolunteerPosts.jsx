@@ -17,9 +17,7 @@ const AllVolunteerPosts = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `https://volunteer-management-server-side-five.vercel.app/volunteers?search=${searchTerm}`
-      )
+      .get(`http://localhost:5000/volunteers?search=${searchTerm}`)
       .then((res) => {
         setAllVolunteerPosts(res.data);
         setLoading(false);

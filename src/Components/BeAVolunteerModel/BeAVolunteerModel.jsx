@@ -4,7 +4,6 @@ import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
-
 const BeAVolunteerModel = ({ volunteer, user }) => {
   const [suggestion, setSuggestion] = useState("");
   const navigate = useNavigate();
@@ -24,7 +23,10 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
     };
 
     axios
-      .post("http://localhost:5000/volunteers/requests", requestData)
+      .post(
+        "https://volunteer-management-server-side-five.vercel.app/volunteers/requests",
+        requestData
+      )
       .then((res) => {
         const result = res.data;
         // console.log(result);

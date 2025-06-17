@@ -14,9 +14,13 @@ const AddVolunteer = () => {
     const form = e.target;
     const formData = new FormData(form);
     const volunteerData = Object.fromEntries(formData.entries());
+    volunteerData.volunteersNeeded = parseInt(volunteerData.volunteersNeeded);
 
     axios
-      .post("http://localhost:5000/volunteers", volunteerData)
+      .post(
+        "https://volunteer-management-server-side-five.vercel.app/volunteers",
+        volunteerData
+      )
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

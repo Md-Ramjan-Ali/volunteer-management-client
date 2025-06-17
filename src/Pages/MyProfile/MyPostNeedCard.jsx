@@ -10,7 +10,6 @@ const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
   const axiosSecure = useAxiosSecure();
 
   const handleDelete = (id) => {
-    console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -21,15 +20,20 @@ const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure.delete(`/volunteers/${id}`).then((res) => {
-          if (res.data.deletedCount) {
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your Volunteer has been deleted.",
-              icon: "success",
-            });
-          }
-        });
+        axiosSecure
+          .delete(`/volunteers/${id}`)
+          .then((res) => {
+            if (res.data.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Volunteer has been deleted.",
+                icon: "success",
+              });
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
 
         const remainingVolunteer = myVolunteer.filter((vol) => vol._id !== id);
         setMyVolunteer(remainingVolunteer);

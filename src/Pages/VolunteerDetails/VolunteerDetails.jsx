@@ -11,7 +11,6 @@ const VolunteerDetails = () => {
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
   const [volunteer, setVolunteer] = useState(null);
-  // console.log(volunteer);
 
   useEffect(() => {
     axiosSecure

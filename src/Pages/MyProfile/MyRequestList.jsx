@@ -23,8 +23,6 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
         axiosSecure
           .delete(`/volunteers/requests/${id}`)
           .then((res) => {
-            console.log(res.data);
-
             if (res.data?.deleted?.deletedCount > 0) {
               setRequests((prev) => prev.filter((data) => data._id !== id));
               Swal.fire({
@@ -37,8 +35,7 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
             }
           })
           .catch((error) => {
-            console.error("Error canceling request:", error);
-            Swal.fire("Error!", "Something went wrong.", "error");
+            console.log(error);
           });
       }
     });

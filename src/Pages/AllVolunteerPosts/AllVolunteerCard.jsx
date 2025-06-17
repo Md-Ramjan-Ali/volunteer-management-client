@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const AllVolunteerCard = ({ allVolunteerPosts }) => {
-  // const { thumbnail, title, category, deadline, _id } = volunteer;
 
   return (
     <div>

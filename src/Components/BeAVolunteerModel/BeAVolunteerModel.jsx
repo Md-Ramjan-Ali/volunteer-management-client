@@ -7,7 +7,7 @@ import useAxiosSecure from "../Hooks/useAxiosSecure";
 const BeAVolunteerModel = ({ volunteer, user }) => {
   const [suggestion, setSuggestion] = useState("");
   const navigate = useNavigate();
-  // console.log(volunteer);
+  
   const axiosSecure = useAxiosSecure();
 
   const handleRequest = (e) => {
@@ -27,7 +27,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
       .post("/volunteers/requests", requestData)
       .then((res) => {
         const result = res.data;
-        // console.log(result);
+        
 
         if (
           result.acknowledged &&

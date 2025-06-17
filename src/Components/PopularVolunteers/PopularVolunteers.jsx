@@ -43,11 +43,11 @@ const categories = [
 
 const PopularVolunteers = () => {
   return (
-    <section className="my-20 px-4 max-w-7xl mx-auto text-gray-700 dark:text-white">
-      <h2 className="text-3xl font-bold text-center mb-8 text-secondary dark:text-white">
+    <section className="my-20 px-2 max-w-7xl mx-auto text-gray-700 dark:text-white">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-secondary dark:text-white">
         Explore Popular Causes
       </h2>
-      <p className="text-center mb-12 max-w-2xl mx-auto">
+      <p className="px-2 text-sm text-center mb-12 max-w-2xl mx-auto">
         Find opportunities that match your passion. Whether it's helping the
         environment or supporting education, there's a place for you.
       </p>

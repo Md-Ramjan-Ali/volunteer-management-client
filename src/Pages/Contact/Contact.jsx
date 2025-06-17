@@ -11,7 +11,7 @@ const Contact = () => {
     e.target.reset();
   };
   return (
-    <div className='max-w-screen-lg mx-auto my-5'>
+    <div className='max-w-screen-lg mx-auto my-5 px-2'>
       {/* Contact Form */}
       <form onSubmit={handleMessage} className="space-y-6">
         <h2 className="text-2xl font-bold text-center text-secondary">Contact With Us</h2>

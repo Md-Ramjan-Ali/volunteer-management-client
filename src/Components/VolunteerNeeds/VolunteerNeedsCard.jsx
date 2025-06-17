@@ -6,7 +6,7 @@ const VolunteerNeedsCard = ({ volunteer }) => {
 
   return (
     <div>
-      <div className="card rounded-xl shadow-md hover:shadow-xl transition overflow-hidden">
+      <div className="card rounded-xl shadow-md hover:shadow-xl transition overflow-hidden ">
         <div>
           <figure>
             <img

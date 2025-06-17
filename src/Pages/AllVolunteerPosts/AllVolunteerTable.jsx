@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const AllVolunteerTable = ({ allVolunteerPosts }) => {
   return (
-    <div className="overflow-x-auto rounded-xl shadow-md">
+    <div className="overflow-x-auto rounded-xl shadow-md px-1">
       <table className="min-w-full table-auto border border-gray-300">
         <thead className="bg-gray-100 text-left text-gray-700 text-sm uppercase">
           <tr>

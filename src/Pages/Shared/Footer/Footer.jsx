@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="bg-[#1f2937] text-white pt-10 mt-20">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 ">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-5 lg:px-0">
           {/* Left: Text and Image */}
           <div>
             <div className="text-center md:text-left space-y-6 mb-10">

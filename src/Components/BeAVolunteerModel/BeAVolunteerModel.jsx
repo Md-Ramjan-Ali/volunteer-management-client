@@ -3,27 +3,18 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
-import Loading from "../Loading/Loading";
+
 
 const BeAVolunteerModel = ({ volunteer, user }) => {
   const [suggestion, setSuggestion] = useState("");
   const navigate = useNavigate();
-  console.log(volunteer);
+  // console.log(volunteer);
 
   const handleRequest = (e) => {
     e.preventDefault();
 
     const requestData = {
-      //values from organizer data
-      _id: volunteer._id,
-      thumbnail: volunteer.thumbnail,
-      title: volunteer.title,
-      description: volunteer.description,
-      category: volunteer.category,
-      location: volunteer.location,
-      deadline: volunteer.deadline,
-      OrganizerName: volunteer.OrganizerName,
-      OrganizerEmail: volunteer.OrganizerEmail,
+      ...volunteer,
 
       // values from user data
       volunteerName: user.displayName,
@@ -39,7 +30,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
       )
       .then((res) => {
         const result = res.data;
-        console.log(result);
+        // console.log(result);
 
         if (
           result.acknowledged &&
@@ -68,7 +59,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
             text: "But volunteer count wasn't updated. Please contact support.",
           });
           setTimeout(() => {
-            navigate(`/volunteerDetails/${volunteer._id}`);
+            navigate("/myPost");
           }, 500);
         } else {
           Swal.fire({
@@ -160,7 +151,7 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                     name="category"
                     defaultValue={volunteer.category}
                     className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed"
-                    disabled
+                    readOnly
                   >
                     <option defaultValue="">{volunteer.category}</option>
                     <option defaultValue="healthcare">Healthcare</option>

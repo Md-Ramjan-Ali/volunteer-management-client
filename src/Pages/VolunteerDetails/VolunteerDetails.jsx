@@ -10,7 +10,7 @@ const VolunteerDetails = () => {
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
   const [volunteer, setVolunteer] = useState(null);
-  console.log(volunteer);
+  // console.log(volunteer);
 
   useEffect(() => {
     axiosSecure
@@ -40,7 +40,7 @@ const VolunteerDetails = () => {
   } = volunteer;
 
   return (
-    <div className="max-w-screen-xl mx-auto my-5 p-3">
+    <div className="max-w-screen-xl mx-auto my-5 px-2">
       <div className="card lg:card-side shadow-lg rounded-xl overflow-hidden">
         <div className="">
           <img

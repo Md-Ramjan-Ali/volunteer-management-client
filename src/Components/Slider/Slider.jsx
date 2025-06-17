@@ -50,7 +50,7 @@ const Slider = () => {
   ];
 
   return (
-    <div>
+    <div className="px-1">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -76,7 +76,7 @@ const Slider = () => {
                     initial={{ opacity: 0, y: -100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 2 }}
-                    className="text-2xl md:text-3xl font-bold mb-4"
+                    className="text-xl md:text-3xl font-bold mb-4"
                   >
                     {slide.title}
                   </motion.h2>
@@ -85,7 +85,7 @@ const Slider = () => {
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 2 }}
-                    className="md:text-lg mb-6 max-w-xl"
+                    className="text-xs md:text-lg mb-6 max-w-xl"
                   >
                     {slide.description}
                   </motion.p>

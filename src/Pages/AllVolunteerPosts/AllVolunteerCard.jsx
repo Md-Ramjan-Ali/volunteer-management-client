@@ -6,7 +6,7 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2">
         {allVolunteerPosts.map((volunteer) => (
           <div
             key={volunteer._id}

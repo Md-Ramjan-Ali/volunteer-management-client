@@ -21,7 +21,7 @@ const AllVolunteerTable = ({ allVolunteerPosts }) => {
               data-aos="zoom-in"
               data-aos-easing="linear"
               key={volunteer._id}
-              className="border-t hover:bg-gray-800 transition"
+              className="border-t hover:bg-gray-800/50 hover:text-white transition"
             >
               <td className="px-4 py-3">
                 <img

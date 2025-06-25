@@ -7,8 +7,8 @@
 ## 🌐 Live Site
 
 🔗 [Live Site URL](https://volunteer-management-web-c6c6d.web.app/)  
-🔗 [Client Repository](https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-ramjan88)  
-🔗 [Server Repository](https://github.com/Programming-Hero-Web-Course4/b11a11-server-side-ramjan88)
+🔗 [Client Repository](https://github.com/Md-Ramjan-Ali/volunteer-management-client)  
+🔗 [Server Repository](https://github.com/Md-Ramjan-Ali/volunteer-management-server)
 
 ---
 

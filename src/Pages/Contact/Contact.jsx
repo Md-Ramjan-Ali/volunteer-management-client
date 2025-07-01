@@ -12,7 +12,7 @@ const Contact = () => {
     e.target.reset();
   };
   return (
-    <div className="max-w-screen-lg mx-auto my-5 px-2">
+    <div className="max-w-screen-lg mx-auto py-5 px-2">
       <Helmet>
         <title>Contact | SebaConnect</title>
       </Helmet>

@@ -13,7 +13,7 @@ const MyPost = () => {
   const { volunteerRequestByPromised } = useRequestApi();
 
   return (
-    <div className="max-w-screen-xl mx-auto my-5">
+    <div className="max-w-screen-xl mx-auto py-5">
       <Helmet>
         <title>My Post | SebaConnect</title>
       </Helmet>

@@ -25,9 +25,9 @@ const VolunteerNeeds = () => {
   }
 
   return (
-    <div className="mt-10">
-      <div data-aos="zoom-in" data-aos-easing="linear" className="">
-        <h2 className="text-3xl text-secondary dark:text-white text-center font-semibold mt-25 mb-5">
+    <div className="max-w-screen-xl mx-auto mt-10">
+      <div className="">
+        <h2 className="text-3xl text-secondary dark:text-white text-center font-semibold mb-5">
           Volunteer Needs Now
         </h2>
         <p className="px-2 max-w-6xl mx-auto text-center w-full mb-5 text-gray-500 dark:text-white">

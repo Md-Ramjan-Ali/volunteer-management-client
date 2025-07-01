@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion"; // Fix import
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -50,7 +50,7 @@ const Slider = () => {
   ];
 
   return (
-    <div className="px-1">
+    <div className="">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

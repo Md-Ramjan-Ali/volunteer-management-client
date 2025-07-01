@@ -30,6 +30,7 @@ const Slider = () => {
       description:
         "Join hands to create a better tomorrow. Your time and effort can bring hope and help to those in need.",
       btnText: "Get Started",
+      link: "/allVolunteerposts",
     },
     {
       id: 2,
@@ -38,6 +39,7 @@ const Slider = () => {
       description:
         "Every action counts. Whether it's supporting education, the environment, or communities in crisis your volunteer work makes a difference.",
       btnText: "Start Volunteering",
+      link: "/allVolunteerposts",
     },
     {
       id: 3,
@@ -46,11 +48,12 @@ const Slider = () => {
       description:
         "Turn your passion into purpose. Connect with meaningful opportunities, meet like-minded people, and leave a lasting impact in your community.",
       btnText: "Explore Opportunities",
+      link: "/allVolunteerposts",
     },
   ];
 
   return (
-    <div className="">
+    <div className="w-full h-[80vh]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -89,7 +92,7 @@ const Slider = () => {
                   >
                     {slide.description}
                   </motion.p>
-                  <Link to="/allVolunteerPosts">
+                  <Link to={slide.link}>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}

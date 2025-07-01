@@ -34,8 +34,7 @@ const VolunteerNeeds = () => {
           Bangladesh is a vibrant South Asian country known for its rich
           culture, resilience, and hospitable people. Despite economic growth,
           many communities still face challenges in healthcare, education, and
-          social welfare. Volunteers can make a meaningful impact by supporting
-          underprivileged areas and empowering local initiatives.
+          social welfare.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2">

@@ -27,7 +27,7 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/allVolunteerposts">All volunteer Need posts</NavLink>
+        <NavLink to="/allVolunteerposts">All volunteer posts</NavLink>
       </li>
 
       {user && (
@@ -42,10 +42,10 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-100 dark:bg-gray-900 rounded-box z-1 w-56 p-2 shadow-sm  "
+                className="dropdown-content menu bg-[#1be6dc] dark:text-white dark:bg-gray-900 rounded-box z-1 w-56 p-2 shadow-sm  "
               >
                 <li>
-                  <NavLink to="/addVolunteer">Add Volunteer need Post</NavLink>
+                  <NavLink to="/addVolunteer">Add Volunteer Post</NavLink>
                 </li>
                 <li>
                   <NavLink to="/myPost">Manage My Posts</NavLink>
@@ -58,7 +58,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="navbar bg-base-100/50 backdrop-blur-sm  shadow-sm px-10 sticky top-0 z-50 dark:bg-gray-900/50 dark:text-white">
+    <nav className="navbar bg-gradient-to-r from-[#1be6dc]/70 to-[#029891]/70 dark:from-[#111827]/70 dark:to-[#111827]/70 backdrop-blur-sm  shadow-sm px-10 sticky top-0 z-50 dark:text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">
@@ -88,12 +88,12 @@ const Navbar = () => {
           <img className="w-16" src={Logo} alt="" />
           <h2 className=" text-2xl font-bold hidden md:flex">
             <span className="text-primary">Seba</span>
-            <span className="text-secondary dark:text-white">Connect</span>
+            <span className="text-[#02746e] dark:text-white">Connect</span>
           </h2>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="flex gap-8 ">{links}</ul>
+        <ul className="flex gap-8 text-white">{links}</ul>
       </div>
       <div className="navbar-end gap-5">
         <div className="flex items-center">
@@ -108,7 +108,7 @@ const Navbar = () => {
         >
           {user ? (
             <img
-              className="rounded-full max-w-10 max-h-10 w-full h-full border card shadow-sm"
+              className="rounded-full max-w-10 max-h-10  w-full h-full card shadow-sm"
               src={`${user ? user?.photoURL : ""}`}
               alt=""
             />

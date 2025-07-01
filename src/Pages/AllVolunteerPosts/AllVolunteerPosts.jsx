@@ -32,7 +32,7 @@ const AllVolunteerPosts = () => {
   }
 
   return (
-    <div className="max-w-screen-xl mx-auto my-5">
+    <div className="max-w-screen-xl mx-auto py-5">
       <Helmet>
         <title>All Post | SebaConnect</title>
       </Helmet>

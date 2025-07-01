@@ -4,6 +4,7 @@ import Slider from "../../Components/Slider/Slider";
 import VolunteerNeeds from "../../Components/VolunteerNeeds/VolunteerNeeds";
 import PopularVolunteers from "../../Components/PopularVolunteers/PopularVolunteers";
 import VolunteersStories from "../../Components/VolunteersStories/VolunteersStories";
+import VolunteerAbout from "../VolunteerAbout/VolunteerAbout";
 
 
 
@@ -22,10 +23,18 @@ const Home = () => {
         <VolunteerNeeds></VolunteerNeeds>
       </section>
       <section>
+        <VolunteerAbout></VolunteerAbout>
+      </section>
+      {/* <section>
         <PopularVolunteers></PopularVolunteers>
       </section>
       <section>
         <VolunteersStories></VolunteersStories>
+      </section> */}
+
+      {/*  */}
+      <section>
+      {/* <AboutUs></AboutUs> */}
       </section>
     </div>
   );

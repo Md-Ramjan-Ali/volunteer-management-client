@@ -9,7 +9,7 @@ const Root = () => {
   const { state } = useNavigation();
 
   return (
-    <div className=" dark:text-white dark:bg-gray-900">
+    <div className=" dark:text-white dark:bg-gray-900 overflow-hidden">
       <Navbar></Navbar>
 
       <main className="bg-base-200/40 dark:bg-gray-900">

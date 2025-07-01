@@ -26,7 +26,7 @@ const stories = [
 
 const VolunteersStories = () => {
   return (
-    <section className=" my-20 px-4 max-w-7xl mx-auto text-gray-700 dark:text-white">
+    <section className=" px-4 max-w-7xl mx-auto text-gray-700 dark:text-white">
       <div data-aos="zoom-in" data-aos-easing="linear" className="">
         <h2 className="text-3xl font-bold text-center mb-8 text-secondary dark:text-white">
           Volunteer Stories

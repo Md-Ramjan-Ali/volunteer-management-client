@@ -10,7 +10,7 @@
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #F59E0B;
+  --color-primary: #f59e0b;
   --color-secondary: #029891;
 }
 
@@ -19,9 +19,8 @@
 }
 
 nav ul .active {
-  border-bottom: 2px solid #F59E0B;
+  border-bottom: 2px solid #f59e0b;
+  color: white;
+
   padding-bottom: 5px;
-  
 }
-
-

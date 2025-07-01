@@ -55,10 +55,16 @@ const Navbar = () => {
           </li>
         </>
       )}
+      <li>
+        <NavLink to="/about">About Us</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact">Contact</NavLink>
+      </li>
     </>
   );
   return (
-    <nav className="navbar bg-gradient-to-r from-[#1be6dc]/70 to-[#029891]/70 dark:from-[#111827]/70 dark:to-[#111827]/70 backdrop-blur-sm  shadow-sm px-10 sticky top-0 z-50 dark:text-white">
+    <nav className="navbar bg-gradient-to-r from-[#1be6dc]/80 to-[#029891]/80 dark:from-[#111827]/70 dark:to-[#111827]/70 backdrop-blur-sm  shadow-sm px-10 sticky top-0 z-50 dark:text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">
@@ -93,7 +99,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="flex gap-8 text-white">{links}</ul>
+        <ul className="flex gap-8 text-shadow-gray-100 ">{links}</ul>
       </div>
       <div className="navbar-end gap-5">
         <div className="flex items-center">
@@ -120,7 +126,7 @@ const Navbar = () => {
         {user ? (
           <button
             onClick={handleLogOut}
-            className="btn bg-primary hover:bg-secondary text-white"
+            className="btn bg-secondary hover:bg-secondary text-white"
           >
             LogOut
           </button>

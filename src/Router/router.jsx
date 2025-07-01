@@ -14,6 +14,7 @@ import MyPost from "../Pages/MyProfile/MyPost";
 import VolunteerDetails from "../Pages/VolunteerDetails/VolunteerDetails";
 import UpdateMyPost from "../Pages/UpdateMyPost/UpdateMyPost";
 import Contact from "../Pages/Contact/Contact";
+import About from "../Pages/About/About";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         Component: Contact,
+      },
+      {
+        path: "/about",
+        Component: About,
       },
     ],
   },

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from "react";
+import { MdDateRange } from "react-icons/md";
+import { Link } from "react-router";
 
 const AllVolunteerCard = ({ allVolunteerPosts }) => {
-
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2">
@@ -23,15 +23,24 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
               </figure>
             </div>
             <div className="card-body text-gray-700 dark:text-white">
+              <p className="flex  gap-1 items-center">
+                <strong>
+                  <MdDateRange size={24} />
+                </strong>
+                {new Date(volunteer.deadline).toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </p>
               <h2 className="card-title font-semibold">{volunteer.title}</h2>
-              <p className="">
-                <strong>category : </strong>
+              <p className="line-clamp-2 text-gray-600 text-sm dark:text-white">
+                {volunteer.description}
+              </p>
+              <p className="bg-base-200 text-secondary dark:bg-gray-500 dark:text-white text-xs font-medium px-3 py-1 w-fit rounded-full">
                 {volunteer.category}
               </p>
-              <p className="">
-                <strong>Deadline : </strong>
-                {volunteer.deadline}
-              </p>
+
               <div className="card-actions">
                 <Link
                   className="w-full"

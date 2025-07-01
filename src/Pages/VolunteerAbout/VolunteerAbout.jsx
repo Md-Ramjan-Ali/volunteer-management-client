@@ -7,18 +7,17 @@ import { Link } from "react-router";
 
 const VolunteerAbout = () => {
   return (
-    <section className="max-w-screen-xl mx-auto min-h-screen py-10 px-4 md:px-6">
+    <section className="max-w-screen-xl mx-auto py-30 px-2 lg:px-0">
       <div className="grid gap-10 grid-cols-1 md:grid-cols-2 items-center">
         {/* Left Side */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{ duration: 2 }}
+          viewport={{ once: false }}
           className="space-y-8"
-          data-aos="fade-right"
         >
-          <p className="text-sm text-secondary font-semibold dark:text-white uppercase">
+          <p style={{letterSpacing: "5px"}} className="text-sm text-secondary font-semibold dark:text-white uppercase">
             About Us
           </p>
 
@@ -31,7 +30,7 @@ const VolunteerAbout = () => {
                 cursor
                 cursorStyle="_"
                 typeSpeed={70}
-                deleteSpeed={50}
+                deleteSpeed={30}
                 delaySpeed={1000}
               />
             </span>
@@ -46,10 +45,13 @@ const VolunteerAbout = () => {
           </Link>
 
           <p className="text-gray-700 dark:text-gray-300">
-            At <strong className="text-secondary dark:text-white">Volunteer Connect</strong>, we believe every act of
-            kindness has the power to create change. We connect volunteers with
-            causes they care about and enable communities to grow stronger
-            together.
+            At{" "}
+            <strong className="text-secondary dark:text-white">
+              Volunteer Connect
+            </strong>
+            , we believe every act of kindness has the power to create change.
+            We connect volunteers with causes they care about and enable
+            communities to grow stronger together.
           </p>
           <p className="text-gray-700 dark:text-gray-300">
             Whether you're driven by education, healthcare, environment, or
@@ -71,7 +73,11 @@ const VolunteerAbout = () => {
                 "Environmental Cleanup",
                 "Animal Welfare",
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2">
+                <div
+                  key={i}
+                  className="flex items-center gap-2"
+                  data-aos="fade-right"
+                >
                   <MdCheckCircle className="text-secondary dark:text-white" />
                   <span>{item}</span>
                 </div>
@@ -82,16 +88,15 @@ const VolunteerAbout = () => {
 
         {/* Right Side Image with Framer Motion */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          data-aos="zoom-in"
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2 }}
+          viewport={{ once: false }}
         >
           <img
             src={img}
             alt="Volunteers helping community"
-            className="w-full h-[28rem] md:h-[38rem] object-cover rounded-xl shadow-lg"
+            className="w-full h-[28rem] md:h-[80vh] object-cover rounded-xl shadow-lg"
           />
         </motion.div>
       </div>

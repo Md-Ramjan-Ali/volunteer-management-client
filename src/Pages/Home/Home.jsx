@@ -5,6 +5,7 @@ import VolunteerNeeds from "../../Components/VolunteerNeeds/VolunteerNeeds";
 import PopularVolunteers from "../../Components/PopularVolunteers/PopularVolunteers";
 import VolunteersStories from "../../Components/VolunteersStories/VolunteersStories";
 import VolunteerAbout from "../VolunteerAbout/VolunteerAbout";
+import OurMission from "../Practice/Practice";
 
 
 
@@ -12,7 +13,7 @@ const Home = () => {
 
 
   return (
-    <div className=" space-y-10">
+    <div className="">
       <Helmet>
         <title>Home | SebaConnect</title>
       </Helmet>
@@ -34,7 +35,7 @@ const Home = () => {
 
       {/*  */}
       <section>
-      {/* <AboutUs></AboutUs> */}
+     <OurMission></OurMission>
       </section>
     </div>
   );

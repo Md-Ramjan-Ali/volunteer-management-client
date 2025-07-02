@@ -68,7 +68,7 @@ const AllVolunteerPosts = () => {
           </div>
 
           {/* search option */}
-          <div className="flex-1 w-full relative">
+          <div className="md:flex-1 w-full relative">
             <input
               type="text"
               placeholder="Search by title..."
@@ -76,11 +76,11 @@ const AllVolunteerPosts = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
               className=" input input-bordered focus:outline-0 rounded-full w-full lg:pl-10 dark:bg-gray-800 dark:text-white dark:border-2 dark:border-white py-6"
             />
-            <span className="absolute left-4  top-1/2 transform -translate-y-1/2 text-xl z-20 hidden md:flex">
+            <span className="absolute left-4  top-1/2 transform -translate-y-1/2 text-xl z-20 hidden lg:flex">
               <CiSearch />
             </span>
             <select
-              className=" absolute right-2 dark:bg-gray-800 dark:text-white select border-0 focus:outline-0 bg-transparent focus:bg-transparent rounded-full w-fit z-50 focus:shadow-0 my-1"
+              className=" lg:absolute right-2 text-center dark:bg-gray-800 dark:text-white select lg:border-0 focus:outline-0 bg-transparent focus:bg-transparent rounded-full w-fit z-50 focus:shadow-0 my-1"
               onChange={(e) => setSortOrder(e.target.value)}
               value={sortOrder}
             >

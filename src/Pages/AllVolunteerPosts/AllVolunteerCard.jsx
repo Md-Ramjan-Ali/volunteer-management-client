@@ -40,7 +40,7 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
                 <p className="line-clamp-2 min-h-[40px] text-gray-600 text-sm dark:text-white">
                   {volunteer.description}
                 </p>
-                <p className="absolute top-0 left-0 bg-primary rounded-br-full text-white dark:bg-gray-500 dark:text-white text-xs font-medium px-3 py-2 w-fit">
+                <p className="absolute top-0 left-0 capitalize bg-primary rounded-br-full text-white dark:bg-gray-800 dark:text-white text-xs font-medium px-3 py-2 w-fit">
                   {volunteer.category}
                 </p>
               </div>
@@ -50,7 +50,7 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
                   className="w-full"
                   to={`/volunteerDetails/${volunteer._id}`}
                 >
-                  <button className="bg-primary hover:bg-secondary text-white btn mt-2 w-full font-semibold transition">
+                  <button className="bg-primary dark:bg-transparent hover:bg-secondary text-white btn mt-2 w-full font-semibold transition">
                     View Details
                   </button>
                 </Link>

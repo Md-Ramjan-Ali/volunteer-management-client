@@ -2,11 +2,11 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import Slider from "../../Components/Slider/Slider";
 import VolunteerNeeds from "../../Components/VolunteerNeeds/VolunteerNeeds";
-import PopularVolunteers from "../../Components/PopularVolunteers/PopularVolunteers";
-import VolunteersStories from "../../Components/VolunteersStories/VolunteersStories";
 import VolunteerAbout from "../VolunteerAbout/VolunteerAbout";
 import VolunteersMission from "../VolunteersMission/VolunteersMission";
 import BecomeVolunteer from "../../Components/BecomeVolunteer/BecomeVolunteer";
+import Accordion from "../Practice/Practice";
+import VolunteersStories from "../../Components/VolunteersStories/VolunteersStories";
 
 
 
@@ -33,16 +33,14 @@ const Home = () => {
       <section>
         <VolunteersMission></VolunteersMission>
       </section>
-
-      {/* <section>
-        <PopularVolunteers></PopularVolunteers>
-      </section>
       <section>
         <VolunteersStories></VolunteersStories>
-      </section> */}
+      </section>
 
       {/*  */}
-      <section></section>
+      <section>
+        {/* <Accordion></Accordion> */}
+      </section>
     </div>
   );
 };

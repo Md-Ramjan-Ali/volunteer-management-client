@@ -9,15 +9,31 @@ const VolunteerAbout = () => {
   return (
     <section className="max-w-screen-xl mx-auto py-30 px-2 lg:px-0">
       <div className="grid gap-10 grid-cols-1 md:grid-cols-2 items-center">
-        {/* Left Side */}
+        {/* left Side Image with Framer Motion */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 2 }}
           viewport={{ once: false }}
+        >
+          <img
+            src={img}
+            alt="Volunteers helping community"
+            className="w-full h-[28rem] md:h-[80vh] object-cover rounded-xl shadow-lg"
+          />
+        </motion.div>
+        {/* right Side */}
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2 }}
+          viewport={{ once: false }}
           className="space-y-8"
         >
-          <p style={{letterSpacing: "5px"}} className="text-sm text-secondary font-semibold dark:text-white uppercase">
+          <p
+            style={{ letterSpacing: "5px" }}
+            className="text-sm text-secondary font-semibold dark:text-white uppercase"
+          >
             About Us
           </p>
 
@@ -76,7 +92,7 @@ const VolunteerAbout = () => {
                 <div
                   key={i}
                   className="flex items-center gap-2"
-                  data-aos="fade-right"
+                  data-aos="fade-left"
                 >
                   <MdCheckCircle className="text-secondary dark:text-white" />
                   <span>{item}</span>
@@ -84,20 +100,6 @@ const VolunteerAbout = () => {
               ))}
             </div>
           </div>
-        </motion.div>
-
-        {/* Right Side Image with Framer Motion */}
-        <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 2 }}
-          viewport={{ once: false }}
-        >
-          <img
-            src={img}
-            alt="Volunteers helping community"
-            className="w-full h-[28rem] md:h-[80vh] object-cover rounded-xl shadow-lg"
-          />
         </motion.div>
       </div>
     </section>

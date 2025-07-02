@@ -50,7 +50,7 @@ const AllVolunteerPosts = () => {
       <Helmet>
         <title>All Post | SebaConnect</title>
       </Helmet>
-      <div className="flex gap-5 items-center justify-between p-2 rounded-md my-10">
+      <div className="flex gap-5 items-center justify-between p-2 rounded-md">
         {/* Filter & Sort deadline and search */}
         <div className="flex-1 flex flex-col md:flex-row justify-between items-center gap-4 px-5 py-10 ">
           <div className="">

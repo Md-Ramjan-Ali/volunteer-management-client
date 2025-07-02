@@ -58,11 +58,11 @@ const UpdateMyPost = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="max-w-screen-xl mx-auto my-5">
+    <div className="max-w-screen-xl mx-auto my-5 ">
       <Helmet>
         <title>Update Post | SebaConnect</title>
       </Helmet>
-      <div className="card bg-base-100 w-full shadow-sm">
+      <div className="card bg-base-100 w-full shadow-sm dark:bg-gray-800 dark:text-white">
         <h1 className="text-center text-2xl font-bold pt-5">
           Update volunteer need post
         </h1>
@@ -79,7 +79,7 @@ const UpdateMyPost = () => {
                   name="thumbnail"
                   defaultValue={volunteer.thumbnail}
                   placeholder="Thumbnail URL"
-                  className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-secondary "
+                  className="input w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-secondary dark:bg-gray-800 dark:text-white"
                   required
                 />
               </fieldset>
@@ -92,7 +92,7 @@ const UpdateMyPost = () => {
                   name="title"
                   defaultValue={volunteer.title}
                   type="text"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full dark:bg-gray-800 dark:text-white"
                   placeholder="Post Title"
                   required
                 />
@@ -106,7 +106,7 @@ const UpdateMyPost = () => {
               <textarea
                 name="description"
                 defaultValue={volunteer.description}
-                className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
+                className="textarea rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full dark:bg-gray-800 dark:text-white"
                 placeholder="Describe what needs to be done"
                 required
               />
@@ -120,7 +120,7 @@ const UpdateMyPost = () => {
                 <select
                   name="category"
                   defaultValue={volunteer.category}
-                  className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
+                  className="select rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full dark:bg-gray-800 dark:text-white"
                   required
                 >
                   <option defaultValue="">Select Category</option>
@@ -140,7 +140,7 @@ const UpdateMyPost = () => {
                   name="location"
                   defaultValue={volunteer.location}
                   placeholder="Location"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full dark:bg-gray-800 dark:text-white"
                   required
                 />
               </fieldset>
@@ -154,7 +154,7 @@ const UpdateMyPost = () => {
                   name="volunteersNeeded"
                   defaultValue={volunteer.volunteersNeeded}
                   placeholder="No. of Volunteers Needed"
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full "
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full dark:bg-gray-800 dark:text-white"
                   required
                 />
               </fieldset>
@@ -167,7 +167,7 @@ const UpdateMyPost = () => {
                   name="deadline"
                   selected={deadline}
                   onChange={(date) => setDeadline(date)}
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full dark:bg-gray-800 dark:text-white"
                   dateFormat="yyyy-MM-dd"
                   minDate={new Date()}
                 />
@@ -183,7 +183,7 @@ const UpdateMyPost = () => {
                   name="OrganizerName"
                   defaultValue={volunteer.OrganizerName}
                   readOnly
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed "
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full cursor-not-allowed dark:bg-gray-800 dark:text-white"
                 />
               </fieldset>
               {/* User Email */}
@@ -196,14 +196,14 @@ const UpdateMyPost = () => {
                   name="OrganizerEmail"
                   defaultValue={volunteer.OrganizerEmail}
                   readOnly
-                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
+                  className="input rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed dark:bg-gray-800 dark:text-white"
                 />
               </fieldset>
             </div>
             <div className="mt-5">
               <button
                 type="submit"
-                className="btn bg-primary hover:bg-secondary  text-white  w-full"
+                className="btn bg-primary hover:bg-secondary  text-white  w-full dark:bg-transparent"
               >
                 Update
               </button>

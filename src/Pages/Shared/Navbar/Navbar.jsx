@@ -29,29 +29,10 @@ const Navbar = () => {
       <li>
         <NavLink to="/allVolunteerposts">All volunteer posts</NavLink>
       </li>
-
       {user && (
         <>
           <li>
-            <div className="dropdown">
-              <div tabIndex={0} className="flex items-center cursor-pointer">
-                My Profile
-                <span>
-                  <RiArrowDropDownLine className="pt-1" size={24} />
-                </span>
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content menu bg-[#1be6dc] dark:text-white dark:bg-gray-900 rounded-box z-1 w-56 p-2 shadow-sm  "
-              >
-                <li>
-                  <NavLink to="/addVolunteer">Add Volunteer Post</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/myPost">Manage My Posts</NavLink>
-                </li>
-              </ul>
-            </div>
+            <NavLink to="/dash/dashboard">Dashboard</NavLink>
           </li>
         </>
       )}
@@ -64,7 +45,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="navbar bg-gradient-to-r from-[#1be6dc]/80 to-[#029891]/80 dark:from-[#111827]/70 dark:to-[#111827]/70 backdrop-blur-sm  shadow-sm px-10 sticky top-0 z-50 dark:text-white">
+    <nav className="navbar bg-gradient-to-r from-[#1be6dc]/80 to-[#029891]/80 dark:from-[#111827]/70 dark:to-[#111827]/70 backdrop-blur-sm  shadow-sm px-10 sticky top-0 z-50 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">
@@ -126,7 +107,7 @@ const Navbar = () => {
         {user ? (
           <button
             onClick={handleLogOut}
-            className="btn bg-secondary hover:bg-secondary text-white"
+            className="btn bg-secondary border-2 dark:border-secondary hover:bg-secondary dark:bg-transparent text-white"
           >
             LogOut
           </button>

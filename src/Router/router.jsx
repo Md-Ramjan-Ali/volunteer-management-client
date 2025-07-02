@@ -15,6 +15,11 @@ import VolunteerDetails from "../Pages/VolunteerDetails/VolunteerDetails";
 import UpdateMyPost from "../Pages/UpdateMyPost/UpdateMyPost";
 import Contact from "../Pages/Contact/Contact";
 import About from "../Pages/About/About";
+import DashLayOut from "../Pages/Dashboard/DashLayout/DashLayOut";
+import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import MyVolunteer from "../Pages/Dashboard/MyVolunteer/MyVolunteer";
+import MyRequest from "../Pages/Dashboard/MyRequest/MyRequest";
+
 
 const router = createBrowserRouter([
   {
@@ -31,37 +36,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/volunteerDetails/:id",
-
         element: (
           <PrivetRouter>
             <VolunteerDetails></VolunteerDetails>
           </PrivetRouter>
         ),
       },
-      {
-        path: "/addVolunteer",
-        element: (
-          <PrivetRouter>
-            <AddVolunteer></AddVolunteer>
-          </PrivetRouter>
-        ),
-      },
-      {
-        path: "/myPost",
-        element: (
-          <PrivetRouter>
-            <MyPost></MyPost>
-          </PrivetRouter>
-        ),
-      },
-      {
-        path: "/updateMyPost/:id",
-        element: (
-          <PrivetRouter>
-            <UpdateMyPost></UpdateMyPost>
-          </PrivetRouter>
-        ),
-      },
+      // {
+      //   path: "/updateMyPost/:id",
+      //   element: (
+      //     <PrivetRouter>
+      //       <UpdateMyPost></UpdateMyPost>
+      //     </PrivetRouter>
+      //   ),
+      // },
       {
         path: "/terms",
         Component: Terms,
@@ -91,6 +79,64 @@ const router = createBrowserRouter([
       {
         path: "/auth/register",
         Component: Register,
+      },
+    ],
+  },
+  {
+    path: "/dash",
+    element: (
+      <PrivetRouter>
+        <DashLayOut></DashLayOut>
+      </PrivetRouter>
+    ),
+    children: [
+      {
+        path: "/dash/dashboard",
+        element: (
+          <PrivetRouter>
+            <Dashboard></Dashboard>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dash/addVolunteer",
+        element: (
+          <PrivetRouter>
+            <AddVolunteer></AddVolunteer>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dash/myPost",
+        element: (
+          <PrivetRouter>
+            <MyPost></MyPost>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dash/myVolunteerList",
+        element: (
+          <PrivetRouter>
+            <MyVolunteer></MyVolunteer>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dash/myRequest",
+        element: (
+          <PrivetRouter>
+            <MyRequest></MyRequest>
+          </PrivetRouter>
+        ),
+      },
+      {
+        path: "/dash/updateMyPost/:id",
+        element: (
+          <PrivetRouter>
+            <UpdateMyPost></UpdateMyPost>
+          </PrivetRouter>
+        ),
       },
     ],
   },

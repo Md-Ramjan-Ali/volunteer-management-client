@@ -78,7 +78,7 @@ const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
                 <td className="px-4 py-3">{volunteer.category}</td>
                 <td className="px-4 py-3 text-red-500">{volunteer.deadline}</td>
                 <td>
-                  <Link to={`/updateMyPost/${volunteer._id}`}>
+                  <Link to={`/dash/updateMyPost/${volunteer._id}`}>
                     <button className="btn btn-sm btn-outline btn-info mr-3">
                       Update
                     </button>

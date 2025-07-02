@@ -42,7 +42,7 @@ const AddVolunteer = () => {
         <title>Add Volunteer | SebaConnect</title>
       </Helmet>
       <div
-        className="card bg-base-200 dark:bg-gray-900 w-full shadow-sm"
+        className="card bg-base-200/50 dark:bg-gray-900 w-full shadow-sm"
         data-aos="zoom-in"
         data-aos-easing="linear"
       >
@@ -61,7 +61,7 @@ const AddVolunteer = () => {
                   type="url"
                   name="thumbnail"
                   placeholder="Thumbnail URL"
-                  className="input bg-transparent dark:bg-gray-900 w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-secondary"
+                  className="input bg-transparent dark:bg-gray-900 dark:text-white w-full rounded-md border-1 border-gray-400 focus:outline-none focus:border-2 focus:border-secondary"
                   required
                 />
               </fieldset>
@@ -73,7 +73,7 @@ const AddVolunteer = () => {
                 <input
                   name="title"
                   type="title"
-                  className="input bg-transparent dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="input bg-transparent dark:bg-gray-900 dark:text-white rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   placeholder="Post Title"
                   required
                 />
@@ -86,7 +86,7 @@ const AddVolunteer = () => {
               </label>
               <textarea
                 name="description"
-                className="textarea bg-transparent dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                className="textarea bg-transparent dark:bg-gray-900 dark:text-white rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                 placeholder="Describe what needs to be done"
                 required
               />
@@ -99,7 +99,7 @@ const AddVolunteer = () => {
                 </label>
                 <select
                   name="category"
-                  className="select bg-transparent dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="select bg-transparent dark:bg-gray-900 dark:text-white rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   required
                 >
                   <option value="">Select Category</option>
@@ -118,7 +118,7 @@ const AddVolunteer = () => {
                   type="text"
                   name="location"
                   placeholder="Location"
-                  className="input bg-transparent dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="input bg-transparent dark:bg-gray-900 dark:text-white rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   required
                 />
               </fieldset>
@@ -132,7 +132,7 @@ const AddVolunteer = () => {
                   min={1}
                   name="volunteersNeeded"
                   placeholder="No. of Volunteers Needed"
-                  className="input bg-transparent dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="input bg-transparent dark:bg-gray-900 dark:text-white rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                 />
               </fieldset>
               {/* deadline */}
@@ -144,7 +144,7 @@ const AddVolunteer = () => {
                   name="deadline"
                   selected={deadline}
                   onChange={(date) => setDeadline(date)}
-                  className="input bg-transparent dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
+                  className="input bg-transparent dark:bg-gray-900 dark:text-white rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full"
                   dateFormat="yyyy-MM-dd"
                   minDate={new Date()}
                 />
@@ -160,7 +160,7 @@ const AddVolunteer = () => {
                   name="OrganizerName"
                   value={user?.displayName || ""}
                   readOnly
-                  className="input bg-transparent dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
+                  className="input bg-transparent dark:bg-gray-900 dark:text-white rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                 />
               </fieldset>
               {/* User Email */}
@@ -173,12 +173,12 @@ const AddVolunteer = () => {
                   name="OrganizerEmail"
                   value={user?.email || ""}
                   readOnly
-                  className="input bg-transparent dark:bg-gray-900 rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
+                  className="input bg-transparent dark:bg-gray-900 dark:text-white rounded-md border-1 focus:border-2 border-gray-400 focus:outline-none focus:border-secondary w-full  cursor-not-allowed"
                 />
               </fieldset>
             </div>
             <div className="card-actions pt-5">
-              <button className="btn bg-primary hover:bg-secondary  text-white  w-full">
+              <button className="btn bg-primary hover:bg-secondary  text-white dark:bg-transparent  w-full">
                 Add Post
               </button>
             </div>

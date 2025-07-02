@@ -6,6 +6,7 @@ import PopularVolunteers from "../../Components/PopularVolunteers/PopularVolunte
 import VolunteersStories from "../../Components/VolunteersStories/VolunteersStories";
 import VolunteerAbout from "../VolunteerAbout/VolunteerAbout";
 import VolunteersMission from "../VolunteersMission/VolunteersMission";
+import BecomeVolunteer from "../../Components/BecomeVolunteer/BecomeVolunteer";
 
 
 
@@ -24,11 +25,15 @@ const Home = () => {
         <VolunteerNeeds></VolunteerNeeds>
       </section>
       <section>
+        <BecomeVolunteer></BecomeVolunteer>
+      </section>
+      <section>
         <VolunteerAbout></VolunteerAbout>
       </section>
       <section>
         <VolunteersMission></VolunteersMission>
       </section>
+
       {/* <section>
         <PopularVolunteers></PopularVolunteers>
       </section>
@@ -37,9 +42,7 @@ const Home = () => {
       </section> */}
 
       {/*  */}
-      <section>
-     {/* <OurMission></OurMission> */}
-      </section>
+      <section></section>
     </div>
   );
 };

@@ -17,8 +17,8 @@ const VolunteersMission = () => {
           Our Mission
         </p>
 
-        <h2 className="text-3xl md:text-5xl font-semibold text-gray-800 dark:text-white leading-snug mb-4">
-          Caring Hearts,Stronger
+        <h2 className="text-3xl md:text-5xl font-semibold text-gray-600 dark:text-white leading-snug mb-4">
+          Caring Hearts, Stronger
           <br />
           Communities
         </h2>

@@ -50,12 +50,12 @@ const AllVolunteerPosts = () => {
       <Helmet>
         <title>All Post | SebaConnect</title>
       </Helmet>
-      <div className="flex gap-5 items-center justify-between p-2 rounded-md">
+      <div className="flex gap-5 flex-col lg:flex-row items-center justify-between p-2 rounded-md">
         {/* Filter & Sort deadline and search */}
         <div className="flex-1 flex flex-col md:flex-row justify-between items-center gap-4 px-5 py-10 ">
           <div className="">
             <select
-              className="select select-bordered focus:outline-0 dark:bg-gray-800 dark:text-white"
+              className="select  select-bordered focus:outline-0 dark:bg-gray-800 dark:text-white"
               onChange={(e) => setFilterCategory(e.target.value)}
               value={filterCategory}
             >
@@ -74,9 +74,9 @@ const AllVolunteerPosts = () => {
               placeholder="Search by title..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className=" input input-bordered focus:outline-0 rounded-full w-full pl-10 dark:bg-gray-800 dark:text-white dark:border-2 dark:border-white py-6"
+              className=" input input-bordered focus:outline-0 rounded-full w-full lg:pl-10 dark:bg-gray-800 dark:text-white dark:border-2 dark:border-white py-6"
             />
-            <span className="absolute left-4  top-1/2 transform -translate-y-1/2 text-xl z-20">
+            <span className="absolute left-4  top-1/2 transform -translate-y-1/2 text-xl z-20 hidden md:flex">
               <CiSearch />
             </span>
             <select

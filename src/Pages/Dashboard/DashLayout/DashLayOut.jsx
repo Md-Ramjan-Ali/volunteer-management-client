@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink, Outlet } from "react-router";
 import DashNavbar from "../DashNavbar/DashNavbar";
 import Logo from "../../../assets/volunteer-logo.png";
+import "../dashboard.css";
 
 const DashLayOut = () => {
   return (
@@ -13,7 +14,7 @@ const DashLayOut = () => {
         <div className="drawer lg:drawer-open">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
-          {/* Drawer Content */}
+          {/* page content */}
           <div className="drawer-content flex flex-col">
             {/* Mobile Navbar */}
             <div className="navbar flex lg:hidden bg-gradient-to-r from-[#1be6dc]/80 to-[#029891]/80 dark:from-[#111827]/70 dark:to-[#111827]/70 backdrop-blur-sm  shadow-sm px-10 sticky top-0 z-50 dark:text-white">
@@ -61,7 +62,6 @@ const DashLayOut = () => {
               className="drawer-overlay"
             ></label>
             <div className="bg-white dark:bg-gray-800 text-base-content w-[70vw] sm:w-72 md:w-80 xl:w-96 p-6 flex flex-col justify-between min-h-screen pt-20 lg:pt-0">
-              {/* Top: Logo + Links */}
               <div className="space-y-6">
                 <Link to="/dash/dashboard">
                   <div className="flex items-center px-6 border-b-2 border-gray-300 pb-4 mt-4">
@@ -71,12 +71,12 @@ const DashLayOut = () => {
                   </div>
                 </Link>
 
-                {/* Nav Links */}
+                {/* side and navbar Links */}
                 <ul className="space-y-4 mt-5">
                   <li>
                     <NavLink
                       to="/dash/dashboard"
-                      className="text-gray-700 dark:text-gray-300  dark:hover:bg-gray-500 text-[1rem] font-medium px-4 py-3 flex items-center rounded-md"
+                      className="text-gray-700 dark:text-gray-300   text-[1rem] font-medium px-4 py-3 flex items-center rounded-md"
                     >
                       Profile
                     </NavLink>
@@ -84,7 +84,7 @@ const DashLayOut = () => {
                   <li>
                     <NavLink
                       to="/dash/addVolunteer"
-                      className="text-gray-700 dark:text-gray-300  dark:hover:bg-gray-500 text-[1rem] font-medium px-4 py-3 flex items-center rounded-md"
+                      className="text-gray-700 dark:text-gray-300   text-[1rem] font-medium px-4 py-3 flex items-center rounded-md"
                     >
                       Add Volunteer
                     </NavLink>
@@ -92,7 +92,7 @@ const DashLayOut = () => {
                   <li>
                     <NavLink
                       to="/dash/myVolunteerList"
-                      className="text-gray-700 dark:text-gray-300  dark:hover:bg-gray-500 text-[1rem] font-medium px-4 py-3 flex items-center rounded-md"
+                      className="text-gray-700 dark:text-gray-300   text-[1rem] font-medium px-4 py-3 flex items-center rounded-md"
                     >
                       My volunteer list
                     </NavLink>
@@ -100,35 +100,13 @@ const DashLayOut = () => {
                   <li>
                     <NavLink
                       to="/dash/myRequest"
-                      className="text-gray-700 dark:text-gray-300  dark:hover:bg-gray-500 text-[1rem] font-medium px-4 py-3 flex items-center rounded-md"
+                      className="text-gray-700 dark:text-gray-300   text-[1rem] font-medium px-4 py-3 flex items-center rounded-md"
                     >
                       My Request list
                     </NavLink>
                   </li>
                 </ul>
               </div>
-
-              {/* Bottom: Logout */}
-              {/* <div className="mt-6 p-8 pb-14 border-t-2 border-gray-300">
-                <ul>
-                  <li>
-                    <NavLink
-                      to="/dashboard/myProfile"
-                      className="text-white text-[1rem] font-medium px-4 py-3 flex items-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600"
-                    >
-                      My Profile
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/dashboard/updateProfile"
-                      className="text-white text-[1rem] font-medium px-4 py-3 flex items-center rounded-md mb-5 bg-gradient-to-r from-purple-600 to-indigo-600"
-                    >
-                      Update Profile
-                    </NavLink>
-                  </li>
-                </ul>
-              </div> */}
             </div>
           </div>
         </div>

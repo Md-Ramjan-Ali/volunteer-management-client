@@ -18,7 +18,7 @@ const Contact = () => {
       </Helmet>
       {/* Contact Form */}
       <form onSubmit={handleMessage} className="space-y-6">
-        <h2 className="text-2xl font-bold text-center text-secondary">
+        <h2 className="text-2xl font-bold text-center text-secondary dark:text-white">
           Contact With Us
         </h2>
         <div>
@@ -50,7 +50,7 @@ const Contact = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-primary text-white font-semibold py-3 rounded-md hover:bg-secondary  transition"
+          className="w-full bg-primary dark:bg-transparent border text-white font-semibold py-3 rounded-md hover:bg-secondary  transition"
         >
           SEND MESSAGE
         </button>

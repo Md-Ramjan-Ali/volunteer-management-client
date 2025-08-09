@@ -29,7 +29,7 @@ const VolunteerNeeds = () => {
     <div className="max-w-screen-xl mx-auto pt-10">
       <div className="">
         <h2 className="text-3xl text-secondary dark:text-white text-center font-semibold mb-5">
-          <Typewriter
+          {/* <Typewriter
             words={["Volunteer Needs Now"]}
             loop={0}
             cursor
@@ -37,10 +37,13 @@ const VolunteerNeeds = () => {
             typeSpeed={70}
             deleteSpeed={30}
             delaySpeed={1000}
-          />
+          /> */}
+          Volunteer Needs Now
         </h2>
         <p className="px-2 max-w-6xl mx-auto text-center w-full mb-5 text-gray-500 dark:text-white">
-          Building Bridges, Changing Lives.
+          Join hands with us to support urgent volunteer needs in your
+          community. Your time, skills, and compassion can make an immediate and
+          lasting difference.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2">

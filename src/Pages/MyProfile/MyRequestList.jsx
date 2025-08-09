@@ -50,7 +50,7 @@ const MyRequestList = ({ volunteerRequestByPromised }) => {
         <title>Request Post | SebaConnect</title>
       </Helmet>
       <div
-        className="overflow-x-auto rounded-lg"
+        className="overflow-x-auto rounded-lg min-h-screen"
         data-aos="zoom-in"
         data-aos-easing="linear"
       >

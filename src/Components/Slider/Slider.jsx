@@ -53,7 +53,7 @@ const Slider = () => {
   ];
 
   return (
-    <div className="w-full h-[80vh]">
+    <div className="w-full h-[90vh]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

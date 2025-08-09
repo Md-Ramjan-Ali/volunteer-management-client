@@ -47,7 +47,7 @@ const MyPostNeedCard = ({ volunteerCreatedByPromised }) => {
 
   return (
     <div>
-      <div className="overflow-x-auto rounded-xl">
+      <div className="overflow-x-auto rounded-xl min-h-screen">
         <h2 className="text-xl font-semibold mb-4 text-center">
           My Volunteer Need Posts
         </h2>

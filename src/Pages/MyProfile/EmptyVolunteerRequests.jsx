@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const EmptyVolunteerRequests = () => {
   return (
     <div
-      className="flex flex-col items-center justify-center h-[70vh] text-center px-4"
+      className="flex flex-col items-center justify-center h-[70vh] text-center px-4 dark:text-white"
       data-aos="zoom-in"
       data-aos-easing="linear"
     >

@@ -26,7 +26,7 @@ const Dashboard = () => {
         </div>
         <div className="px-5">
           <h2 className="text-center text-2xl font-bold mt-10">My Profile</h2>
-          <div className="flex justify-between mt-10 mb-5">
+          <div className="flex flex-col md:flex-row justify-between mt-10 mb-5">
             <div className="text-xl text-gray-700 dark:text-white">
               <h2>Your Name</h2>
               <h2 className="font-bold">{user.displayName}</h2>

@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const AllVolunteerCard = ({ allVolunteerPosts }) => {
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 px-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 px-2">
         {allVolunteerPosts.map((volunteer) => (
           <div
             data-aos="zoom-in"
@@ -22,9 +22,9 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
                 />
               </figure>
             </div>
-            <div className="flex flex-col justify-between p-3 pt-4 space-y-2 text-gray-700 dark:text-white">
+            <div className="flex flex-col justify-between items-center p-3 pt-4 space-y-2 text-gray-700 dark:text-white">
               <div className="flex flex-col justify-between space-y-2">
-                <p className="flex  gap-1 items-center">
+                <p className="flex  gap-1 items-center justify-center">
                   <strong>
                     <MdDateRange size={24} />
                   </strong>
@@ -34,13 +34,13 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
                     year: "numeric",
                   })}
                 </p>
-                <h2 className="text-2xl font-semibold min-h-[60px]">
+                <h2 className="text-xl font-semibold w-[70%] mx-auto text-center">
                   {volunteer.title}
                 </h2>
-                <p className="line-clamp-2 min-h-[40px] text-gray-600 text-sm dark:text-white">
+                <p className="line-clamp-2 min-h-[40px] text-gray-600 text-sm dark:text-white w-[90%] mx-auto text-center">
                   {volunteer.description}
                 </p>
-                <p className="absolute top-0 left-0 capitalize bg-primary rounded-br-full text-white dark:bg-gray-800 dark:text-white text-xs font-medium px-3 py-2 w-fit">
+                <p className="absolute top-0 left-0 capitalize bg-secondary rounded-br-full text-white dark:bg-gray-800 dark:text-white text-xs font-medium px-3 py-2 w-fit">
                   {volunteer.category}
                 </p>
               </div>
@@ -50,7 +50,7 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
                   className="w-full"
                   to={`/volunteerDetails/${volunteer._id}`}
                 >
-                  <button className="bg-primary dark:bg-transparent hover:bg-secondary text-white btn mt-2 w-full font-semibold transition">
+                  <button className="bg-primary dark:bg-transparent hover:bg-secondary text-white mt-2 w-full font-base transition px-4 py-2 rounded-tr-full rounded-bl-full rounded-br-full cursor-pointer">
                     View Details
                   </button>
                 </Link>

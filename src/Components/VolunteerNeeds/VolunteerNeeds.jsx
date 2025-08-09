@@ -37,7 +37,7 @@ const VolunteerNeeds = () => {
           lasting difference.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5 px-2">
         {volunteerNeeds.map((volunteer) => (
           <VolunteerNeedsCard
             key={volunteer._id}
@@ -51,7 +51,7 @@ const VolunteerNeeds = () => {
         data-aos-easing="linear"
       >
         <Link to="/allVolunteerPosts">
-          <button className="bg-primary hover:bg-secondary text-white btn px-10 font-medium">
+          <button className="bg-primary hover:bg-secondary text-white px-10 py-2 rounded-tr-2xl rounded-bl-2xl font-medium cursor-pointer transition">
             See All
           </button>
         </Link>

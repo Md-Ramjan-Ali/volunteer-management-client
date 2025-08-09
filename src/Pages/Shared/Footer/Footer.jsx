@@ -65,9 +65,9 @@ const Footer = () => {
             <h3 className="text-xl font-semibold text-white">Follow Us</h3>
             <div className="space-y-5 text-gray-300">
               <div className="flex items-start gap-3">
-                <FaHome className="text-xl mt-1" />
+                <FaHome className="text-3xl mt-1" />
                 <p>
-                  Volunteer for Bangladesh, House 57, <br />
+                  Volunteer for Bangladesh, House 57,
                   Road 7B, Block H, Banani, 1213, Bangladesh
                 </p>
               </div>

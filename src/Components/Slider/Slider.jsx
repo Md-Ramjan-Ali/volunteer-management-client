@@ -99,7 +99,7 @@ const Slider = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 1, delay: 1.4 }}
-                      className="btn bg-primary text-white hover:bg-secondary px-6 py-2 rounded-md"
+                      className="bg-primary text-white hover:bg-secondary px-6 py-2 rounded-tr-2xl rounded-bl-2xl cursor-pointer"
                     >
                       {slide.btnText}
                     </motion.button>

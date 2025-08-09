@@ -10,6 +10,7 @@ import DarkToggler from "../../../Components/DarkToggler/DarkToggler";
 const Navbar = () => {
   const { user, logOUt } = use(AuthContext);
 
+
   const handleLogOut = () => {
     logOUt();
 
@@ -48,20 +49,20 @@ const Navbar = () => {
     <nav className="navbar bg-gradient-to-r from-[#1be6dc]/80 to-[#029891]/80 dark:from-[#111827]/70 dark:to-[#111827]/70 backdrop-blur-sm  shadow-sm px-10 sticky top-0 z-100 ">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="lg:hidden">
+          <div tabIndex={0} role="button" className="xl:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              className="inline-block h-6 w-6 stroke-current"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
             </svg>
           </div>
           <ul
@@ -79,7 +80,7 @@ const Navbar = () => {
           </h2>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden xl:flex">
         <ul className="flex gap-8 text-white text-shadow-gray-100 ">{links}</ul>
       </div>
       <div className="navbar-end gap-5">

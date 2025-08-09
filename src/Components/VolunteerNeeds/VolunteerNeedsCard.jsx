@@ -21,9 +21,9 @@ const VolunteerNeedsCard = ({ volunteer }) => {
             />
           </figure>
         </div>
-        <div className="flex flex-col justify-between p-3 pt-4 space-y-2 text-gray-700 dark:text-white">
+        <div className="flex flex-col justify-between items-center p-3 pt-4 space-y-2 text-gray-700 dark:text-white">
           <div className="flex flex-col justify-between space-y-2">
-            <p className="flex  gap-1 items-center">
+            <p className="flex  gap-1 items-center justify-center">
               <strong>
                 <MdDateRange size={24} />
               </strong>
@@ -33,18 +33,18 @@ const VolunteerNeedsCard = ({ volunteer }) => {
                 year: "numeric",
               })}
             </p>
-            <h2 className="text-2xl font-semibold">{title}</h2>
-            <p className="line-clamp-2 min-h-[40px] text-gray-600 text-sm dark:text-white">
+            <h2 className="text-xl font-semibold w-[70%] mx-auto text-center">{title}</h2>
+            <p className="line-clamp-2 min-h-[40px] text-gray-600 text-sm dark:text-white w-[90%] mx-auto text-center">
               {description}
             </p>
-            <p className="absolute top-0 left-0 bg-primary rounded-br-full text-white dark:bg-gray-500 dark:text-white text-xs font-medium px-3 py-2 w-fit">
+            <p className="absolute top-0 left-0 bg-secondary rounded-br-full text-white dark:bg-gray-500 dark:text-white text-xs font-medium px-3 py-2 w-fit">
               {category}
             </p>
           </div>
 
           <div className="">
             <Link className="w-full" to={`/volunteerDetails/${_id}`}>
-              <button className="bg-primary hover:bg-secondary text-white btn mt-2 w-full font-semibold transition">
+              <button className="bg-primary hover:bg-secondary text-white mt-2 w-full font-base transition px-4 py-2 rounded-tr-full rounded-bl-full rounded-br-full cursor-pointer">
                 View Details
               </button>
             </Link>

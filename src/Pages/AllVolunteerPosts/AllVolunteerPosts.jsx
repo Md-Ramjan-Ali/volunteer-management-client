@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import AllVolunteerCard from "./AllVolunteerCard";
 import { RiLayoutGrid2Fill } from "react-icons/ri";
@@ -9,6 +8,7 @@ import { CiSearch } from "react-icons/ci";
 import Loading from "../../Components/Loading/Loading";
 import { Helmet } from "react-helmet-async";
 import EmtyAllVolunteerPost from "./EmtyAllVolunteerPost";
+import useAxiosPublic from "../../Components/Hooks/useAxiosPublic";
 
 const AllVolunteerPosts = () => {
   const [loading, setLoading] = useState(true);
@@ -17,6 +17,7 @@ const AllVolunteerPosts = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [filterCategory, setFilterCategory] = useState("");
+  const axiosPublic =useAxiosPublic();
 
   useEffect(() => {
     const queryParams = new URLSearchParams();
@@ -25,9 +26,9 @@ const AllVolunteerPosts = () => {
     if (sortOrder) queryParams.append("sort", sortOrder);
     if (filterCategory) queryParams.append("category", filterCategory);
 
-    axios
+    axiosPublic
       .get(
-        `https://volunteer-management-server-side-five.vercel.app/volunteers?${queryParams.toString()}`
+        `/volunteers?${queryParams.toString()}`
       )
       .then((result) => {
         setAllVolunteerPosts(result.data);
@@ -36,7 +37,7 @@ const AllVolunteerPosts = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [searchTerm, sortOrder, filterCategory]);
+  }, [axiosPublic,searchTerm, sortOrder, filterCategory]);
 
   if (loading) {
     return <Loading></Loading>;

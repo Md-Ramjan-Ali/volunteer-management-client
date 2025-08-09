@@ -1,25 +1,25 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import VolunteerNeedsCard from "./VolunteerNeedsCard";
 import { Link } from "react-router";
 import Loading from "../Loading/Loading";
-import { Typewriter } from "react-simple-typewriter";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 const VolunteerNeeds = () => {
   const [loading, setLoading] = useState(true);
   const [volunteerNeeds, setVolunteerNeeds] = useState([]);
+  const axiosPublic = useAxiosPublic();
 
   useEffect(() => {
-    axios
+    axiosPublic
       .get(
-        "https://volunteer-management-server-side-five.vercel.app/volunteers/volunteerNeedNow"
+        "/volunteers/volunteerNeedNow"
       )
       .then((res) => {
         setVolunteerNeeds(res.data);
         setLoading(false);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [axiosPublic]);
 
   if (loading) {
     return <Loading></Loading>;
@@ -29,15 +29,6 @@ const VolunteerNeeds = () => {
     <div className="max-w-screen-xl mx-auto pt-10">
       <div className="">
         <h2 className="text-3xl text-secondary dark:text-white text-center font-semibold mb-5">
-          {/* <Typewriter
-            words={["Volunteer Needs Now"]}
-            loop={0}
-            cursor
-            cursorStyle="_"
-            typeSpeed={70}
-            deleteSpeed={30}
-            delaySpeed={1000}
-          /> */}
           Volunteer Needs Now
         </h2>
         <p className="px-2 max-w-6xl mx-auto text-center w-full mb-5 text-gray-500 dark:text-white">

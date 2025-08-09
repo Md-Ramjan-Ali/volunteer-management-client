@@ -7,8 +7,8 @@ import { Link } from "react-router";
 
 const VolunteerAbout = () => {
   return (
-    <section className="max-w-screen-xl mx-auto py-30 px-2 lg:px-0">
-      <div className="grid gap-10 grid-cols-1 md:grid-cols-2 items-center">
+    <section className="max-w-screen-xl mx-auto py-30 px-2 ">
+      <div className="grid gap-10 grid-cols-1 sm:grid-cols-1 xl:grid-cols-2 items-center">
         {/* left Side Image with Framer Motion */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}

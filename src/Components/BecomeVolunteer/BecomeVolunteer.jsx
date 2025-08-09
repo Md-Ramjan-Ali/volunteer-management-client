@@ -4,8 +4,8 @@ import { Link } from "react-router";
 
 const BecomeVolunteer = () => {
   return (
-    <section className=" px-2 lg:px-0 bg-gray-50 dark:bg-gray-900 py-10 mt-15">
-      <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <section className=" px-2 bg-gray-50 dark:bg-gray-900 py-10 mt-15">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-10 items-center">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}

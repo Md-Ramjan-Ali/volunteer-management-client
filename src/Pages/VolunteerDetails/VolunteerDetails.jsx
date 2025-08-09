@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import BeAVolunteerModel from "../../Components/BeAVolunteerModel/BeAVolunteerModel";
 import useAuth from "../../Components/Hooks/useAuth";
-import useAxiosSecure from "../../Components/Hooks/useAxiosSecure";
+// import useAxiosSecure from "../../Components/Hooks/useAxiosSecure";
 import Loading from "../../Components/Loading/Loading";
 import useAxiosPublic from "../../Components/Hooks/useAxiosPublic";
 import VolunteerNeedsCard from "../../Components/VolunteerNeeds/VolunteerNeedsCard";
@@ -32,14 +32,14 @@ const InfoItem = ({ icon, label, value }) => (
 const VolunteerDetails = () => {
   const { user } = useAuth();
   const { id } = useParams();
-  const axiosSecure = useAxiosSecure();
+  // const axiosSecure = useAxiosSecure();
   const axiosPublic = useAxiosPublic();
   const [loading, setLoading] = useState(true);
   const [volunteerNeeds, setVolunteerNeeds] = useState([]);
   const [volunteer, setVolunteer] = useState(null);
 
   useEffect(() => {
-    axiosSecure
+    axiosPublic
       .get(`/volunteers/${id}`)
       .then((res) => setVolunteer(res.data))
       .catch((error) => console.error(error));
@@ -51,7 +51,7 @@ const VolunteerDetails = () => {
         setLoading(false);
       })
       .catch((error) => console.log(error));
-  }, [id, axiosPublic, axiosSecure]);
+  }, [id, axiosPublic]);
 
   if (loading || !volunteer) return <Loading />;
 

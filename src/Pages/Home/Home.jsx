@@ -7,6 +7,7 @@ import VolunteersMission from "../VolunteersMission/VolunteersMission";
 import BecomeVolunteer from "../../Components/BecomeVolunteer/BecomeVolunteer";
 import Accordion from "../Practice/Practice";
 import VolunteersStories from "../../Components/VolunteersStories/VolunteersStories";
+import VolunteerGroup from "../../Components/VolunteerGroup/VolunteerGroup";
 
 
 
@@ -32,6 +33,9 @@ const Home = () => {
       </section>
       <section>
         <VolunteersMission></VolunteersMission>
+      </section>
+      <section>
+        <VolunteerGroup></VolunteerGroup>
       </section>
       <section>
         <VolunteersStories></VolunteersStories>

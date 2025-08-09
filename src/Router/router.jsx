@@ -20,7 +20,6 @@ import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import MyVolunteer from "../Pages/Dashboard/MyVolunteer/MyVolunteer";
 import MyRequest from "../Pages/Dashboard/MyRequest/MyRequest";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,11 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/volunteerDetails/:id",
-        element: (
-          <PrivetRouter>
-            <VolunteerDetails></VolunteerDetails>
-          </PrivetRouter>
-        ),
+        element: <VolunteerDetails></VolunteerDetails>,
       },
       // {
       //   path: "/updateMyPost/:id",

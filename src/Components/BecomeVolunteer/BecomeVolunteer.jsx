@@ -25,7 +25,7 @@ const BecomeVolunteer = () => {
             and change to communities in need.
           </p>
           <Link to="allVolunteerPosts">
-            <button className="bg-primary hover:bg-secondary transition text-white px-6 py-3 rounded-md font-medium shadow-lg cursor-pointer">
+            <button className="bg-primary hover:bg-secondary transition text-white px-6 py-3 font-medium shadow-lg cursor-pointer rounded-tr-2xl rounded-bl-2xl">
               Get Involved →
             </button>
           </Link>

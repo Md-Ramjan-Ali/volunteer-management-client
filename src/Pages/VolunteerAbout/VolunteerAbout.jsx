@@ -55,7 +55,7 @@ const VolunteerAbout = () => {
           </h2>
 
           <Link to="/about">
-            <button className="bg-primary text-white px-6 py-2 rounded-md hover:bg-secondary transition mb-5 cursor-pointer">
+            <button className="bg-primary text-white px-6 py-2 hover:bg-secondary transition mb-5 cursor-pointer rounded-tr-2xl rounded-bl-2xl">
               Learn More
             </button>
           </Link>

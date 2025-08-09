@@ -270,8 +270,8 @@ const BeAVolunteerModel = ({ volunteer, user }) => {
                   />
                 </fieldset>
               </div>
-              <div className="mt-5">
-                <button className="btn bg-primary hover:bg-secondary  text-white  w-full">
+              <div className="mt-5 flex justify-center">
+                <button className="px-4 py-2 bg-primary border-1 dark:border-secondary hover:bg-secondary dark:bg-transparent text-white rounded-tr-2xl rounded-bl-2xl cursor-pointer transition">
                   Requested
                 </button>
               </div>

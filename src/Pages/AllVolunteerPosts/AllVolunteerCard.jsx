@@ -11,7 +11,7 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
             data-aos="zoom-in"
             data-aos-easing="linear"
             key={volunteer._id}
-            className="flex flex-col justify-between h-full rounded-xl shadow-md hover:shadow-xl transition overflow-hidden relative"
+            className="flex flex-col justify-between h-full rounded-xl shadow-md hover:shadow-xl transition overflow-hidden relative dark:border-1 border-gray-200 dark:border-gray-700"
           >
             <div className="">
               <figure>
@@ -49,8 +49,11 @@ const AllVolunteerCard = ({ allVolunteerPosts }) => {
                 <Link
                   className="w-full"
                   to={`/volunteerDetails/${volunteer._id}`}
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
                 >
-                  <button className="bg-primary dark:bg-transparent hover:bg-secondary text-white mt-2 w-full font-base transition px-4 py-2 rounded-tr-full rounded-bl-full rounded-br-full cursor-pointer">
+                  <button className="bg-primary hover:bg-secondary text-white border-1 dark:border-secondary dark:bg-transparent mt-2 w-full font-base transition px-4 py-2 rounded-tr-full rounded-bl-full rounded-br-full cursor-pointer">
                     View Details
                   </button>
                 </Link>

@@ -56,7 +56,7 @@ const Login = () => {
         <title>Login | SebaConnect</title>
       </Helmet>
       <div
-        className="card bg-base-200 dark:bg-gray-900 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 "
+        className="card bg-base-200 dark:bg-gray-900 w-full max-w-sm mx-auto shrink-0 shadow-2xl my-10 dark:border-1 border-gray-200 dark:border-gray-700"
         data-aos="zoom-in"
         data-aos-easing="linear"
       >

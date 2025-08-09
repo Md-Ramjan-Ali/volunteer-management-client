@@ -10,7 +10,7 @@ const VolunteerNeedsCard = ({ volunteer }) => {
       <div
         data-aos="zoom-in"
         data-aos-easing="linear"
-        className="flex flex-col justify-between h-full rounded-xl shadow-md hover:shadow-xl transition overflow-hidden relative"
+        className="flex flex-col justify-between h-full rounded-xl shadow-md hover:shadow-xl transition overflow-hidden relative dark:border-1 border-gray-200 dark:border-gray-700"
       >
         <div className="">
           <figure>
@@ -33,7 +33,9 @@ const VolunteerNeedsCard = ({ volunteer }) => {
                 year: "numeric",
               })}
             </p>
-            <h2 className="text-xl font-semibold w-[70%] mx-auto text-center">{title}</h2>
+            <h2 className="text-xl font-semibold w-[70%] mx-auto text-center">
+              {title}
+            </h2>
             <p className="line-clamp-2 min-h-[40px] text-gray-600 text-sm dark:text-white w-[90%] mx-auto text-center">
               {description}
             </p>
@@ -43,8 +45,12 @@ const VolunteerNeedsCard = ({ volunteer }) => {
           </div>
 
           <div className="">
-            <Link className="w-full" to={`/volunteerDetails/${_id}`}>
-              <button className="bg-primary hover:bg-secondary text-white mt-2 w-full font-base transition px-4 py-2 rounded-tr-full rounded-bl-full rounded-br-full cursor-pointer">
+            <Link
+              className="w-full"
+              to={`/volunteerDetails/${_id}`}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <button className="bg-primary hover:bg-secondary text-white border-1 dark:border-secondary dark:bg-transparent mt-2 w-full font-base transition px-4 py-2 rounded-tr-full rounded-bl-full rounded-br-full cursor-pointer">
                 View Details
               </button>
             </Link>

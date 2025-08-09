@@ -5,9 +5,9 @@ import VolunteerNeeds from "../../Components/VolunteerNeeds/VolunteerNeeds";
 import VolunteerAbout from "../VolunteerAbout/VolunteerAbout";
 import VolunteersMission from "../VolunteersMission/VolunteersMission";
 import BecomeVolunteer from "../../Components/BecomeVolunteer/BecomeVolunteer";
-import Accordion from "../Practice/Practice";
 import VolunteersStories from "../../Components/VolunteersStories/VolunteersStories";
 import VolunteerGroup from "../../Components/VolunteerGroup/VolunteerGroup";
+import Accordion from "../../Components/Accordion/Accordion";
 
 
 
@@ -38,12 +38,10 @@ const Home = () => {
         <VolunteerGroup></VolunteerGroup>
       </section>
       <section>
-        <VolunteersStories></VolunteersStories>
+        <Accordion></Accordion>
       </section>
-
-      {/*  */}
       <section>
-        {/* <Accordion></Accordion> */}
+        <VolunteersStories></VolunteersStories>
       </section>
     </div>
   );

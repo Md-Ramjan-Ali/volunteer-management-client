@@ -38,7 +38,7 @@ const Slider = () => {
       title: "Be the Reason Someone Smiles Today",
       description:
         "Every action counts. Whether it's supporting education, the environment, or communities in crisis your volunteer work makes a difference.",
-      btnText: "Start Volunteering",
+      btnText: "Get Started",
       link: "/allVolunteerposts",
     },
     {
@@ -47,7 +47,7 @@ const Slider = () => {
       title: "Make Your Impact Matter",
       description:
         "Turn your passion into purpose. Connect with meaningful opportunities, meet like-minded people, and leave a lasting impact in your community.",
-      btnText: "Explore Opportunities",
+      btnText: "Get Started",
       link: "/allVolunteerposts",
     },
   ];
@@ -79,7 +79,7 @@ const Slider = () => {
                     initial={{ opacity: 0, y: -100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 2 }}
-                    className="text-xl md:text-3xl font-bold mb-4"
+                    className="text-base sm:text-xl md:text-3xl font-bold mb-4"
                   >
                     {slide.title}
                   </motion.h2>

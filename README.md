@@ -80,9 +80,6 @@ npm start
 ```
 5.Open http://localhost:3000 in your browser to see the app in action.
 
-If you want, I can help you add more sections like Features, Tech Stack, or Usage!
-
-
 ## 🔐 Environment Variables
 
 ### Client `.env`

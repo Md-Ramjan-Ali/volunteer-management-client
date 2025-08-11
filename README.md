@@ -68,7 +68,7 @@ git clone https://github.com/Md-Ramjan-Ali/volunteer-management-client
 ```
 2. Navigate to the project folder:
 ```bash
-cd volunteer-management
+cd volunteer-management-client
 ```
 3.Install dependencies:
 ```bash
